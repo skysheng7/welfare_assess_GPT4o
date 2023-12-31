@@ -7,6 +7,7 @@ import time
 from openai import OpenAI
 import os
 import requests
+import utils
 
 
 # connect to OpenAI API
