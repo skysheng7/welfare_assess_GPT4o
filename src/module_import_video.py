@@ -7,16 +7,14 @@ import time
 from openai import OpenAI
 import os
 import requests
-os.chdir('.\src')
-import utils
-
-
 # connect to OpenAI API
 load_dotenv()  # This loads the variables (API key) from .env
 openai_api_key = os.getenv('OPENAI_API_KEY')
 client = OpenAI()
 
 # get a list of good videos, bad videos, bad videos by categories
+os.chdir('C:/Users/skysheng/OneDrive - UBC/R package project and Git/lameness_GPT4V/src')
+import utils
 root_folder_path = 'C:\Users\skysheng\OneDrive - UBC\University of British Columbia\Research\PhD Project\Amazon project phase 2\Kay Yang\sorted_cow_videos_all'
 good_videos, bad_videos, bad_videos_by_category = get_video_paths(root_folder_path)
 
