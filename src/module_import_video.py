@@ -7,29 +7,41 @@ import time
 from openai import OpenAI
 import os
 import requests
+import numpy as np
+
 # connect to OpenAI API
 load_dotenv()  # This loads the variables (API key) from .env
 openai_api_key = os.getenv('OPENAI_API_KEY')
-client = OpenAI()
+client = OpenAI(api_key=openai_api_key)
 
 # get a list of good videos, bad videos, bad videos by categories
 os.chdir('C:/Users/skysheng/OneDrive - UBC/R package project and Git/lameness_GPT4V/src')
-import utils
-root_folder_path = 'C:\Users\skysheng\OneDrive - UBC\University of British Columbia\Research\PhD Project\Amazon project phase 2\Kay Yang\sorted_cow_videos_all'
+from utils import *
+root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Columbia/Research/PhD Project/Amazon project phase 2/Kay Yang/sorted_cow_videos_all'
 good_videos, bad_videos, bad_videos_by_category = get_video_paths(root_folder_path)
 
-
-
 # read in videos and seperate into frames
-video = cv2.VideoCapture("data/bison.mp4")
+video_path = bad_videos_by_category["approach"][0]
+extracted_frames = extract_frames(video_path, 1)
 
-base64Frames = []
-while video.isOpened():
-    success, frame = video.read()
-    if not success:
-        break
-    _, buffer = cv2.imencode(".jpg", frame)
-    base64Frames.append(base64.b64encode(buffer).decode("utf-8"))
+# display the frames extracted
+show_extracted_frames(extracted_frames)
 
-video.release()
-print(len(base64Frames), "frames read.")
+# prompt GPT-4V
+PROMPT_MESSAGES = [
+    {
+        "role": "user",
+        "content": [
+            "These are frames from a video that I want to upload. Generate a compelling description that I can upload along with the video.",
+            *map(lambda x: {"image": x, "resize": 768}, extracted_frames[0::2]),
+        ],
+    },
+]
+params = {
+    "model": "gpt-4-1106-vision-preview",
+    "messages": PROMPT_MESSAGES,
+    "max_tokens": 200,
+}
+
+result = client.chat.completions.create(**params)
+print(result.choices[0].message.content)

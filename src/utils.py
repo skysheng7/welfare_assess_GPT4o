@@ -1,7 +1,11 @@
 import os
 import glob
 import re
+import numpy as np
+import cv2
+import base64
 
+## Video reading and processing
 def get_video_paths(root_folder):
     good_videos = []
     bad_videos = []
@@ -36,3 +40,47 @@ def get_video_paths(root_folder):
                 bad_videos_by_category[category].extend(category_videos)
 
     return good_videos, bad_videos, bad_videos_by_category
+
+def extract_frames(video_path, frames_per_second=2):
+    video = cv2.VideoCapture(video_path)
+    base64Frames = []
+    frame_rate = video.get(cv2.CAP_PROP_FPS)  # Get the frame rate of the video
+
+    # Calculate the interval at which to capture frames
+    frame_interval = int(frame_rate / frames_per_second)
+
+    frame_count = 0
+    while video.isOpened():
+        success, frame = video.read()
+        if not success:
+            break
+
+        # Capture the frame if it's the right interval
+        if frame_count % frame_interval == 0:
+            _, buffer = cv2.imencode(".jpg", frame)
+            base64Frames.append(base64.b64encode(buffer).decode("utf-8"))
+
+        frame_count += 1
+
+    video.release()
+    print(len(base64Frames), "frames extracted.")
+    return base64Frames
+
+
+def show_extracted_frames(base64Frames):
+    # Assuming base64Frames is a list of base64 encoded images
+    for img_base64 in base64Frames:
+        # Decode the base64 string
+        img_bytes = base64.b64decode(img_base64.encode("utf-8"))
+        img_array = np.frombuffer(img_bytes, dtype=np.uint8)
+        img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
+
+        # Display the image
+        cv2.imshow('Frame', img)
+
+        # Wait for 25 ms and check if the 'Esc' key is pressed
+        if cv2.waitKey(25) & 0xFF == 27:  # 27 is the ASCII code for the 'Esc' key
+            break
+
+    # Close the window
+    cv2.destroyAllWindows()
