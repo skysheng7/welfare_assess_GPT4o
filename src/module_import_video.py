@@ -28,12 +28,13 @@ extracted_frames = extract_frames(video_path, 1)
 show_extracted_frames(extracted_frames)
 
 # generate descrition of 1 frame/image ended with base64
-text_prompt = "Describe what's in the image"
-describe_img(client, text_prompt, base64_image=extracted_frames[0], max_tokens=300, detail_level="low")
+#text_prompt = "Describe what's in the image"
+#describe_img(client, text_prompt, base64_image=extracted_frames[0], max_tokens=300, detail_level="low")
 
 # generate descrition of the video (list of frames)
-text_prompt = "These are frames from a video that I want to upload. Generate a compelling description that I can upload along with the video."
-describe_video(client, text_prompt, base64_frames=extracted_frames, max_tokens=500, detail_level="low")
+system_prompt = "You are an experienced expert in animal science focusing on dairy cow behavior and health, with 50 years of experience in observing dairy cow gait and behavior through video. You are expert in assessing the quality of videos to select the ones suitable for lameness assessment. \n Criteria for good video: Shows a single dairy cow walking smoothly in a straight line, entering from the leftmost side of the screen and exiting on the rightmost side, at a normal speed. \n Criteria for bad video, in 8 categories: [1] `direction` - cow moves from right to left, or in any direction contrary to that described for a good video [2] `stop` - cow pauses or sniffs the ground while walking, [3] `run` - cow runs or jogs, [4] `approach` - cow comes towards the camera, [5] `human` - excessive human interference or obstruction, [6] `slip` - cow slips while walking, [7] `multiple` - more than 1 cows in the video, [8] `other` - any other issue making the video hard for lameness assessment."
+user_prompt = "Your job is to review cow videos (a series of frames), and classify them as `good` or `bad` based on these criteria. If `bad`, specify which categories apply; if good, mark the category as `NA.` \n Essential: Give your assessment with a confidence score from 0-1 and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. \n Answer format: JSON \n {\n  \"quality\": \"...\",\n  \"category\": \"...\",\n  \"confidence\": \"...\",\n  \"reason\": \"...\"\n}"
+describe_video(client, system_prompt, text_prompt=user_prompt, base64_frames=extracted_frames, max_tokens=500, detail_level="low", respons_type="json", s=700, temp=0.5)
 
 
 

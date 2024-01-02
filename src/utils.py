@@ -110,7 +110,7 @@ def describe_img(client, text_prompt, base64_image, max_tokens=200, detail_level
     print(result.choices[0].message.content)  # print out the response
     print(result.usage)  # print out how many tokens were used
 
-def describe_video(client, text_prompt, base64_frames, max_tokens, detail_level="low"):
+def describe_video(client, system_prompt, text_prompt, base64_frames, max_tokens, detail_level="low", respons_type="text", s=7, temp=0.7):
     # Incorporating lambda function to iterate through base64_frames
     content = list(map(
         lambda frame: {
@@ -125,6 +125,10 @@ def describe_video(client, text_prompt, base64_frames, max_tokens, detail_level=
 
     prompt_messages = [
         {
+            "role": "system",
+            "content": system_prompt
+        },
+        {
             "role": "user",
             "content": [
                 {"type": "text", "text": text_prompt},
@@ -133,11 +137,24 @@ def describe_video(client, text_prompt, base64_frames, max_tokens, detail_level=
         },
     ]
 
-    params = {
-        "model": "gpt-4-vision-preview",
-        "messages": prompt_messages,
-        "max_tokens": max_tokens,
-    }
+    if (respons_type == "json"):
+
+        params = {
+            "model": "gpt-4-vision-preview",
+            "messages": prompt_messages,
+            "max_tokens": max_tokens,
+            "seed": s,
+            "temperature": temp,
+            "type": "json_object"
+        }
+    else:
+        params = {
+            "model": "gpt-4-vision-preview",
+            "messages": prompt_messages,
+            "max_tokens": max_tokens,
+            "seed": s,
+            "temperature": temp
+        }
 
     result = client.chat.completions.create(**params)
     print(result.choices[0].message.content)  # print out the response
