@@ -147,7 +147,7 @@ def describe_video(client, text_prompt, base64_frames, max_tokens=200, detail_le
     return result
 
 
-def describe_video_0shot(client, system_prompt, text_prompt, base64_frames, max_tokens=200, detail_level="low", respons_type="text", s=7, temp=0.7):
+def describe_video_0shot(client, system_prompt, text_prompt, base64_frames, max_tokens=200, detail_level="low", s=7, temp=0.7):
     # Incorporating lambda function to iterate through base64_frames
     content = list(map(
         lambda frame: {
@@ -173,25 +173,14 @@ def describe_video_0shot(client, system_prompt, text_prompt, base64_frames, max_
             ],
         },
     ]
-
-    if (respons_type == "json_object"):
-
-        params = {
-            "model": "gpt-4-vision-preview",
-            "messages": prompt_messages,
-            "max_tokens": max_tokens,
-            "seed": s,
-            "temperature": temp,
-            "response_format": {"type": "json_object"}
-        }
-    else:
-        params = {
-            "model": "gpt-4-vision-preview",
-            "messages": prompt_messages,
-            "max_tokens": max_tokens,
-            "seed": s,
-            "temperature": temp
-        }
+    
+    params = {
+        "model": "gpt-4-vision-preview",
+        "messages": prompt_messages,
+        "max_tokens": max_tokens,
+        "seed": s,
+        "temperature": temp
+    }
 
     result = client.chat.completions.create(**params)
     print(result.choices[0].message.content)  # print out the response
