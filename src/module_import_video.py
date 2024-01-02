@@ -27,83 +27,14 @@ extracted_frames = extract_frames(video_path, 1)
 # display the frames extracted
 show_extracted_frames(extracted_frames)
 
-# prompt GPT-4V
-PROMPT_MESSAGES = [
-    {
-        "role": "user",
-        "content": [
-            {
-            "type": "text",
-            #"text": "These are frames from a video that I want to upload. Generate a compelling description that I can upload along with the video."
-            "text": "decribe what's in the image"
-            },
-            {
-            "type": "image_url",
-                "image_url": {
-                    "url": f"data:image/jpeg;base64, extracted_frames[0]",
-                    "detail": "low"
-                }
-            }
-            #*map(lambda x: {"image": x, "resize": 512, "detail": "low"}, extracted_frames[0::3]),
-        ],
-    },
-]
-params = {
-    #"model": "gpt-4-1106-vision-preview",
-    "model": "gpt-4-vision-preview",
-    "messages": PROMPT_MESSAGES,
-    "max_tokens": 300,
-}
+# generate descrition of 1 frame/image ended with base64
+text_prompt = "Describe what's in the image"
+describe_img(client, text_prompt, base64_image=extracted_frames[0], max_tokens=300, detail_level="low")
+
+# generate descrition of the video (list of frames)
+text_prompt = "These are frames from a video that I want to upload. Generate a compelling description that I can upload along with the video."
+describe_video(client, text_prompt, base64_frames=extracted_frames, max_tokens=500, detail_level="low")
 
 
 
-
-# Modify the prompt to use only the first frame
-PROMPT_MESSAGES = [
-    {
-        "role": "user",
-        "content": [
-            "This is the first frame from a video that I want to upload. Generate a compelling description that I can upload along with the video.",
-            {"image": extracted_frames[0], "detail": "low"}
-        ],
-    },
-]
-
-# Setup the parameters for the API call
-params = {
-    "model": "gpt-4-vision-preview",
-    "messages": PROMPT_MESSAGES,
-    "max_tokens": 300,
-}
-
-
-
-
-
-result = client.chat.completions.create(**params)
-print(result.choices[0].message.content)
-
-
-# convert the response Text To Speech
-response = requests.post(
-    "https://api.openai.com/v1/audio/speech",
-    headers={
-        "Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}",
-    },
-    json={
-        "model": "tts-1-1106",
-        "input": result.choices[0].message.content,
-        "voice": "onyx",
-    },
-)
-
-audio = b""
-for chunk in response.iter_content(chunk_size=1024 * 1024):
-    audio += chunk
-Audio(audio)
-
-
-
-
-
-
+            
