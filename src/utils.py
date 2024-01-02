@@ -203,7 +203,11 @@ def describe_video_0shot(client, system_prompt, user_prompt, base64_frames, max_
 
     return result
 
+def output_token_cost(output_token):
+    return((output_token*0.03)/1000)
 
+def input_token_cost(prompt_tokens):
+    return((prompt_tokens*0.01)/1000)
 
 def save_results_to_csv(results_folder, results_file, video_path, choosen_quality, choosen_category, result, frames_per_second, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
     # create result file path
@@ -216,6 +220,12 @@ def save_results_to_csv(results_folder, results_file, video_path, choosen_qualit
     result_json = result_content.strip('```json\n').strip('```')
     json_data = json.loads(result_json) # Convert the string to a Python dictionary
 
+    # calculate usage
+    output_token = result.usage.completion_tokens
+    prompt_tokens = result.usage.prompt_tokens
+    output_token_p = output_token_cost(output_token)
+    prompt_tokens_p = input_token_cost(prompt_tokens)
+    total_cost = round((output_token_p+prompt_tokens_p), 3)
 
     data = {
         "video_path": video_path,
@@ -225,7 +235,7 @@ def save_results_to_csv(results_folder, results_file, video_path, choosen_qualit
         "predict_category": json_data.get('category', 'NA'),
         "predict_confidence": json_data.get('confidence', 'NA'),
         "predict_reason": json_data.get('reason', 'NA'),
-        "predict_result": result_content,
+        "predict_result": result,
         "model": "gpt-4-vision-preview",
         "date": datetime.now().date(),
         "frames_per_second": frames_per_second, 
@@ -234,7 +244,11 @@ def save_results_to_csv(results_folder, results_file, video_path, choosen_qualit
         "max_tokens": max_tokens,
         "detail_level": detail_level,
         "seed": seed,
-        "temperature": temperature
+        "temperature": temperature,
+        "completion_tokens": output_token,
+        "prompt_tokens": prompt_tokens,
+        "total_cost": total_cost
+
     }
 
     df = pd.DataFrame([data])
