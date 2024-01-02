@@ -11,9 +11,11 @@ import numpy as np
 import pandas as pd
 from datetime import datetime
 import json
+import random
 
 # define result directory
 results_folder = '../results'
+results_file = 'video_quality_assess_GPT4V_results.csv' # store the results in a csv file
 
 # connect to OpenAI API
 load_dotenv()  # This loads the variables (API key) from .env
@@ -39,18 +41,17 @@ detail_level="low"
 seed = 7
 temperature = 0.5
 
-# read in videos and seperate into frames
-video_path = select_video_path(0, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos)
-extracted_frames = extract_frames(video_path, frames_per_second)
+# randomly shuffle the video sequence
+random.seed(seed)
+random.shuffle(good_videos)
+random.shuffle(bad_videos)
+for category_videos in bad_videos_by_category.values(): # Shuffle each sublist in bad_videos_by_category
+    random.shuffle(category_videos)
 
-# display the frames extracted
-show_extracted_frames(extracted_frames)
-
-# generate prediction of the video (list of frames)
-result = describe_video_0shot(client, system_prompt, text_prompt=user_prompt, base64_frames=extracted_frames, max_tokens=max_tokens, detail_level=detail_level, s=seed, temp=temperature)
-results_file = 'video_quality_assess_GPT4V_results.csv' # store the results in a csv file
-save_results_to_csv(results_folder, results_file, video_path, choosen_quality, choosen_category, result, frames_per_second, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature)
-
+# read in videos and prompt to GPT-4V
+start_index = 0
+end_index = 10
+process_videos_in_range(start_index, end_index, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file)
 
 
 
@@ -58,4 +59,3 @@ save_results_to_csv(results_folder, results_file, video_path, choosen_quality, c
 #text_prompt = "Describe what's in the image"
 #describe_img(client, text_prompt, base64_image=extracted_frames[0], max_tokens=300, detail_level="low")
 
-            
