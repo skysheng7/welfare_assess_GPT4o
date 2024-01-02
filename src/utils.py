@@ -161,19 +161,42 @@ def describe_video(client, text_prompt, base64_frames, max_tokens=200, detail_le
 
     return result
 
-
-def describe_video_0shot(client, system_prompt, user_prompt, base64_frames, max_tokens=200, detail_level="low", s=7, temp=0.7):
-    # Incorporating lambda function to iterate through base64_frames
+def generate_image_content(base64_frames, detail_level="low"):
     content = list(map(
         lambda frame: {
-            "type": "image_url", 
+            "type": "image_url",
             "image_url": {
-                "url": f"data:image/jpg;base64, {frame}", 
+                "url": f"data:image/jpg;base64, {frame}",
                 "detail": detail_level
             }
-        }, 
+        },
         base64_frames
     ))
+    return content
+
+def generate_list_of_video_content(video_list, detail_level="low"):
+    content_list = list(map(
+        lambda i: {
+            {"type": "text", "text": f"video, {i}"},
+            *(generate_image_content(video_list[i], detail_level))
+        },
+        video_list
+    ))
+    return content_list
+
+
+def generate_list_of_video_content(video_list, detail_level="low"):
+    content_list = []
+    for i, frames in enumerate(video_list):
+        video_content = [{"type": "text", "text": f"video {i}"}]
+        video_content.extend(generate_image_content(frames, detail_level))
+        content_list.append(video_content)
+    return content_list
+
+
+def describe_video_0shot(client, system_prompt, user_prompt, base64_frames, max_tokens=200, detail_level="low", s=7, temp=0.7):
+    # paste the series of frames into the message content
+    content = generate_image_content(base64_frames, detail_level)
 
     prompt_messages = [
         {

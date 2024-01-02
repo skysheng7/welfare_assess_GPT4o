@@ -29,8 +29,8 @@ root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Colum
 good_videos, bad_videos, bad_videos_by_category = get_video_paths(root_folder_path)
 
 # choose which type of video to load
-choosen_quality = "bad" # "good", "bad"
-choosen_category = "approach" # 'approach', 'direction', 'human', 'run', 'slip', 'stop', 'two', 'NA.'
+choosen_quality = "good" # "good", "bad"
+choosen_category = "NA." # 'approach', 'direction', 'human', 'run', 'slip', 'stop', 'two', 'NA.'
 frames_per_second=2 # how many frames to extract each second
 
 # choose model parameters and write prompts
