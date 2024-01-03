@@ -47,9 +47,9 @@ def get_video_paths(root_folder):
 
 
 def select_video_path(i, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos):
-    if ((choosen_quality == "bad") and (choosen_category != "NA"))():
+    if ((choosen_quality == "bad") and (choosen_category != "NA")):
         video_path = bad_videos_by_category[choosen_category][i]
-    elif choosen_quality == "bad":
+    elif (choosen_quality == "bad"):
         video_path = bad_videos[i]
     else:
         video_path = good_videos[i]

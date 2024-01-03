@@ -31,11 +31,12 @@ good_videos, bad_videos, bad_videos_by_category = get_video_paths(root_folder_pa
 # choose which type of video to load
 choosen_quality = "good" # "good", "bad"
 choosen_category = "NA." # 'approach', 'direction', 'human', 'run', 'slip', 'stop', 'two', 'NA.'
-frames_per_second=2 # how many frames to extract each second
+frames_per_second=7 # how many frames to extract each second
 
 # choose model parameters and write prompts
-system_prompt = "You are an experienced expert in animal science focusing on dairy cow behavior and health, with 50 years of experience in observing dairy cow gait and behavior through video. You are expert in assessing the quality of videos to select the ones suitable for lameness assessment. \n Criteria for good video: Shows a single dairy cow walking smoothly in a straight line, entering from the leftmost side of the screen and exiting on the rightmost side, at a normal speed. \n Criteria for bad video, in 8 categories: [1] `direction` - cow moves from right to left, or in any direction contrary to that described for a good video [2] `stop` - cow pauses or sniffs the ground while walking, [3] `run` - cow runs or jogs, [4] `approach` - cow comes towards the camera, [5] `human` - excessive human interference or obstruction, [6] `slip` - cow slips while walking, [7] `multiple` - more than 1 cows in the video, [8] `other` - any other issue making the video hard for lameness assessment."
-user_prompt = "Your job is to review cow videos (a series of frames), and classify them as `good` or `bad` based on these criteria. If `bad`, specify which category or categories apply; if good, mark the category as `NA.` \n Essential: Give your assessment with a confidence score from 0-1 and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. \n Answer format: ```JSON \n {\n  \"quality\": \"...\",\n  \"category\": \"...\",\n  \"confidence\": \"...\",\n  \"reason\": \"...\"\n}```"
+system_prompt = "You are an experienced expert in animal science focusing on dairy cow behavior and health, with 50 years of experience in observing dairy cow gait and behavior through video. You are expert in assessing the quality of videos to select the ones suitable for lameness assessment. \n Criteria for good video: Shows a single dairy cow walking smoothly in a straight line, entering from the leftmost side of the screen and exiting on the rightmost side, at a normal speed. The presence of a person walking closely behind the cow is acceptable and does not disqualify the video from being considered good. \n Criteria for bad video, in 8 categories: [1] `direction` - cow moves from right to left, or in any direction contrary to that described for a good video [2] `stop` - cow pauses or sniffs the ground while walking, [3] `run` - cow runs through the scene, [4] `approach` - cow comes towards the camera, [5] `human` - excessive human interference or obstruction, [6] `slip` - cow slips while walking, [7] `multiple` - more than 1 cows in the video, [8] `other` - any other issue making the video hard for lameness assessment."
+user_prompt = f"Your job is to review cow videos (a series of frames), and classify them as `good` or `bad` based on these criteria. If `bad`, specify which category or categories apply; if good, mark the category as `NA.` Although there are more descriptions and creteria related to `bad` videos, please avoid any predisposition towards labeling videos as `bad`. While evaluating the cow's speed, bear in mind that you are reviewing a sequence of frames extracted at {frames_per_second} frames per second, and not the original video. \n "
+user_prompt = user_prompt + "Essential: Give your assessment with a confidence score from 0-1 and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. \n Answer format: ```json \n {\n  \"quality\": \"...\",\n  \"category\": \"...\",\n  \"confidence\": \"...\",\n  \"reason\": \"...\"\n}```"
 max_tokens=500
 detail_level="low"
 seed = 7
@@ -50,7 +51,7 @@ for category_videos in bad_videos_by_category.values(): # Shuffle each sublist i
 
 # read in videos and prompt to GPT-4V
 start_index = 0
-end_index = 10
+end_index = 1
 process_videos_in_range(start_index, end_index, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file)
 
 
