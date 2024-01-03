@@ -50,8 +50,8 @@ for category_videos in bad_videos_by_category.values(): # Shuffle each sublist i
     random.shuffle(category_videos)
 
 # read in videos and prompt to GPT-4V
-start_index = 3
-end_index = 5
+start_index = 5
+end_index = 7
 process_videos_in_range(start_index, end_index, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file)
 
 
