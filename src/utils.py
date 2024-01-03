@@ -72,9 +72,18 @@ def extract_frames(video_path, frames_per_second=2):
 
         # Capture the frame if it's the right interval
         if frame_count % frame_interval == 0:
-            # Add frame number as text on the frame
+            height, width, channels = frame.shape
+
+            # Add a transparent green shading area in the rightmost 1/3 of the frame
+            overlay = frame.copy()
+            alpha = 0.3  # Transparency factor
+            cv2.rectangle(overlay, (int(2*width/3), 0), (width, height), (0, 200, 0), -1)
+            cv2.addWeighted(overlay, alpha, frame, 1 - alpha, 0, frame)
+
+            # Increase the font size of the frame number and change its color to red
             font = cv2.FONT_HERSHEY_SIMPLEX
-            cv2.putText(frame, str(frame_count), (10, 30), font, 1, (0, 0, 255), 2, cv2.LINE_AA)
+            cv2.putText(frame, str(frame_count), (10, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
+
 
             _, buffer = cv2.imencode(".jpg", frame)
             base64Frames.append(base64.b64encode(buffer).decode("utf-8"))
@@ -102,7 +111,7 @@ def show_extracted_frames(base64Frames):
         cv2.imshow('Frame', img)
 
         # Wait for 25 ms and check if the 'Esc' key is pressed
-        if cv2.waitKey(25) & 0xFF == 27:  # 27 is the ASCII code for the 'Esc' key
+        if cv2.waitKey(60) & 0xFF == 27:  # 27 is the ASCII code for the 'Esc' key
             break
 
     # Close the window
@@ -291,6 +300,7 @@ def process_and_describe_video(i, choosen_quality, choosen_category, bad_videos_
     video_path = select_video_path(i, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos)
     extracted_frames = extract_frames(video_path, frames_per_second)
     show_extracted_frames(extracted_frames)
+    print(video_path)
 
     result = describe_video_0shot(client, system_prompt, user_prompt, base64_frames=extracted_frames, max_tokens=max_tokens, detail_level=detail_level, s=seed, temp=temperature)
     save_results_to_csv(results_folder, results_file, video_path, choosen_quality, choosen_category, result, frames_per_second, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature)
