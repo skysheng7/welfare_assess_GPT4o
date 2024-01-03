@@ -72,6 +72,10 @@ def extract_frames(video_path, frames_per_second=2):
 
         # Capture the frame if it's the right interval
         if frame_count % frame_interval == 0:
+            # Add frame number as text on the frame
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            cv2.putText(frame, str(frame_count), (10, 30), font, 1, (0, 0, 255), 2, cv2.LINE_AA)
+
             _, buffer = cv2.imencode(".jpg", frame)
             base64Frames.append(base64.b64encode(buffer).decode("utf-8"))
 
