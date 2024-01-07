@@ -230,7 +230,7 @@ def describe_video_0shot(client, system_prompt, user_prompt, base64_frames, max_
 
     return result
 
-def compare_2video(client, system_prompt, user_prompt1, user_prompt2. base64_frames1, base64_frames2, max_tokens=200, detail_level="low", s=7, temp=0.7):
+def compare_2video(client, system_prompt, user_prompt1, user_prompt2, base64_frames1, base64_frames2, max_tokens=200, detail_level="low", s=7, temp=0.7):
     # paste the series of frames into the message content
     content1 = generate_image_content(base64_frames=base64_frames1, detail_level=detail_level)
     content2 = generate_image_content(base64_frames=base64_frames2, detail_level=detail_level)
