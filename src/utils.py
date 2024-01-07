@@ -322,6 +322,59 @@ def save_results_to_csv(results_folder, results_file, video_path, choosen_qualit
         df.to_csv(full_path, mode='w', header=True, index=False)
         print(f"Data written to {full_path}")
 
+
+def save_pairwse_results_to_csv(results_folder, results_file, video_path, choosen_quality, choosen_category, result, frames_per_second, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
+    # create result file path
+    full_path = os.path.join(results_folder, results_file)
+    if not os.path.exists(results_folder):
+        os.makedirs(results_folder)
+
+    # extract content from result
+    result_content = result.choices[0].message.content
+    result_json = result_content.strip('```json\n').strip('```')
+    json_data = json.loads(result_json) # Convert the string to a Python dictionary
+
+    # calculate usage
+    output_token = result.usage.completion_tokens
+    prompt_tokens = result.usage.prompt_tokens
+    output_token_p = output_token_cost(output_token)
+    prompt_tokens_p = input_token_cost(prompt_tokens)
+    total_cost = round((output_token_p+prompt_tokens_p), 3)
+
+    data = {
+        "video_path": video_path,
+        "true_quality": choosen_quality,
+        "true_category": choosen_category,
+        "predict_quality": json_data.get('quality', 'NA'),
+        "predict_category": json_data.get('category', 'NA'),
+        "predict_confidence": json_data.get('confidence', 'NA'),
+        "predict_reason": json_data.get('reason', 'NA'),
+        "predict_result": result,
+        "model": "gpt-4-vision-preview",
+        "date": datetime.now().date(),
+        "frames_per_second": frames_per_second, 
+        "system_prompt": system_prompt,
+        "user_prompt": user_prompt,
+        "max_tokens": max_tokens,
+        "detail_level": detail_level,
+        "seed": seed,
+        "temperature": temperature,
+        "completion_tokens": output_token,
+        "prompt_tokens": prompt_tokens,
+        "total_cost": total_cost
+
+    }
+
+    df = pd.DataFrame([data])
+
+    if os.path.isfile(full_path):
+        df.to_csv(full_path, mode='a', header=False, index=False)
+        print(f"Data appended to {full_path}")
+    else:
+        df.to_csv(full_path, mode='w', header=True, index=False)
+        print(f"Data written to {full_path}")
+
+
 def process_and_describe_video(i, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file):
     video_path = select_video_path(i, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos)
     extracted_frames = extract_frames(video_path, frames_per_second)
