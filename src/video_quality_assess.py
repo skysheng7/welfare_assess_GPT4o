@@ -31,7 +31,7 @@ good_videos, bad_videos, bad_videos_by_category = get_video_paths(root_folder_pa
 # choose which type of video to load
 choosen_quality = "bad" # "good", "bad"
 choosen_category = "slip" # 'approach', 'direction', 'human', 'run', 'slip', 'stop', 'two', 'NA.'
-frames_per_second=4 # how many frames to extract each second
+frames_per_second=8 # how many frames to extract each second
 
 # choose model parameters and write prompts
 system_prompt = "You are an experienced expert in animal science focusing on dairy cow behavior and health, with 50 years of experience in observing dairy cow gait and behavior through video. You are expert in assessing the quality of videos to select the ones suitable for accurate lameness assessment. \n Criteria for good video: Shows a single dairy cow walking smoothly from left (shaded in green) to right in a fairly straight path with steady pace. The presence of a person walking closely behind the cow is acceptable and does not disqualify the video from being considered good. \n Criteria for bad video, in 8 categories: [1] `direction` - in the first frame where a cow show up, the cow did NOT show up from the left side (shaded green area), instead the cow enters from the right side of the screen [2] `stop` - cow pauses momentarily in the same spot [3] `approach` - the cow comes so close to the camera that sometimes the cow is facing straight to the camera or its hooves are not visible at the bottom of the screen [4] `human` - excessive human interference or obstruction [5] `multiple` - more than 1 cows in the video, [6] `slip` - cow slips or stumbles while walking"
