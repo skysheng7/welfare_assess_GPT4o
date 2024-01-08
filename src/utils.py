@@ -387,3 +387,25 @@ def process_and_describe_video(i, choosen_quality, choosen_category, bad_videos_
 def process_videos_in_range(start_index, end_index, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file):
     for i in range(start_index, end_index):
         process_and_describe_video(i, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file)
+
+def calculate_video_duration(video_path):
+    video = cv2.VideoCapture(video_path)
+    fps = video.get(cv2.CAP_PROP_FPS)
+    frame_count = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
+    duration = frame_count / fps
+    video.release()
+    return duration
+
+def create_duration_dataframe(good_videos, bad_videos_run):
+    data = []
+
+    for video_path in good_videos:
+        duration = calculate_video_duration(video_path)
+        data.append({'Video': os.path.basename(video_path), 'Duration': duration, 'Category': 'Good'})
+
+    for video_path in bad_videos_run:
+        duration = calculate_video_duration(video_path)
+        data.append({'Video': os.path.basename(video_path), 'Duration': duration, 'Category': 'Bad - Run'})
+
+    df = pd.DataFrame(data)
+    return df
