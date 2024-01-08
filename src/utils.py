@@ -75,19 +75,14 @@ def extract_frames(video_path, frames_per_second=2):
             height, width, channels = frame.shape
 
             # Add a transparent green shading area in the rightmost 1/3 of the frame
-            #overlay = frame.copy()
-            #alpha = 0.3  # Transparency factor
-            #cv2.rectangle(overlay, (int(3*width/4), 0), (width, height), (0, 200, 0), -1)
-            #cv2.addWeighted(overlay, alpha, frame, 1 - alpha, 0, frame)
+            overlay = frame.copy()
+            alpha = 0.3  # Transparency factor
+            cv2.rectangle(overlay, (0, 0), (int(width/4), height), (0, 200, 0), -1)
+            cv2.addWeighted(overlay, alpha, frame, 1 - alpha, 0, frame)
 
             # Increase the font size of the frame number and change its color to red
             font = cv2.FONT_HERSHEY_SIMPLEX
             cv2.putText(frame, str(frame_count), (10, 50), font, 2, (0, 0, 255), 3, cv2.LINE_AA)
-
-            # Draw a green arrow in the top right corner
-            arrow_start = (int(7 * width / 8), int(height / 8))
-            arrow_end = (int(width - 10), int(height / 8))
-            cv2.arrowedLine(frame, arrow_start, arrow_end, (0, 240, 0), 9, cv2.LINE_AA, 0, 0.3)
 
             _, buffer = cv2.imencode(".jpg", frame)
             base64Frames.append(base64.b64encode(buffer).decode("utf-8"))
