@@ -30,7 +30,7 @@ good_videos, bad_videos, bad_videos_by_category = get_video_paths(root_folder_pa
 
 # choose which type of video to load
 choosen_quality = "bad" # "good", "bad"
-choosen_category = "slip" # 'approach', 'direction', 'human', 'run', 'slip', 'stop', 'two', 'NA.'
+choosen_category = "slip" # 'approach', 'direction', 'human', 'stop', 'two', 'run', 'slip', 'NA.'
 frames_per_second=7 # how many frames to extract each second
 
 # choose model parameters and write prompts
@@ -39,7 +39,7 @@ user_prompt = f"Your job is to review cow videos (a series of frames) frame by f
 user_prompt = user_prompt + "Essential: Give your assessment with a confidence score from 0-1 and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. \n Answer format: ```json \n {\n  \"quality\": \"...\",\n  \"category\": \"...\",\n  \"confidence\": \"...\",\n  \"reason\": \"...\",\n  \"caution\": \"...\"}```"
 max_tokens=500
 detail_level="low"
-seed = 7
+seed = 4
 temperature = 0.5
 
 # randomly shuffle the video sequence
@@ -50,10 +50,27 @@ for category_videos in bad_videos_by_category.values(): # Shuffle each sublist i
     random.shuffle(category_videos)
 
 # read in videos and prompt to GPT-4V
-start_index = 0
-end_index = 1
+start_index = 2
+end_index = 3
 process_videos_in_range(start_index, end_index, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file)
 
+
+############################## add a voice over to the video ######################################
+response = requests.post(
+    "https://api.openai.com/v1/audio/speech",
+    headers={
+        "Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}",
+    },
+    json={
+        "model": "tts-1-1106",
+        "input": result.choices[0].message.content,
+        "voice": "onyx",
+    },
+)
+
+audio = b""
+for chunk in response.iter_content(chunk_size=1024 * 1024):
+    audio += chunk
 
 
 # generate descrition of 1 frame/image ended with base64

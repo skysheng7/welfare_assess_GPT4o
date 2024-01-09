@@ -280,6 +280,16 @@ def save_results_to_csv(results_folder, results_file, video_path, choosen_qualit
     result_content = result.choices[0].message.content
     result_json = result_content.strip('```json\n').strip('```')
     json_data = json.loads(result_json) # Convert the string to a Python dictionary
+    predict_qual = json_data.get('quality', 'NA')
+    predict_category = json_data.get('category', 'NA')
+    conf = json_data.get('confidence', 'NA')
+    reason = json_data.get('reason', 'NA')
+    caution = json_data.get('caution', 'NA')
+
+    # generate a voice over text
+    script = f"This is a {json_data.get('quality', 'NA')} video, and I'm {str(int(conf) * 100)}% confident. "
+    if (predict_qual == "bad"):
+        script = script + f"This video is categorized under {predict_category}."
 
     # calculate usage
     output_token = result.usage.completion_tokens
@@ -292,11 +302,11 @@ def save_results_to_csv(results_folder, results_file, video_path, choosen_qualit
         "video_path": video_path,
         "true_quality": choosen_quality,
         "true_category": choosen_category,
-        "predict_quality": json_data.get('quality', 'NA'),
-        "predict_category": json_data.get('category', 'NA'),
-        "predict_confidence": json_data.get('confidence', 'NA'),
-        "predict_reason": json_data.get('reason', 'NA'),
-        "predict_caution": json_data.get('caution', 'NA'),
+        "predict_quality": predict_qual,
+        "predict_category": predict_category,
+        "predict_confidence": conf,
+        "predict_reason": reason,
+        "predict_caution": caution,
         "predict_result": result,
         "model": "gpt-4-vision-preview",
         "date": datetime.now().date(),
@@ -333,6 +343,10 @@ def save_pairwse_results_to_csv(results_folder, results_file, video_path, choose
     result_content = result.choices[0].message.content
     result_json = result_content.strip('```json\n').strip('```')
     json_data = json.loads(result_json) # Convert the string to a Python dictionary
+    predict_qual = json_data.get('quality', 'NA')
+    predict_category = json_data.get('category', 'NA')
+    conf = json_data.get('confidence', 'NA')
+    reason = json_data.get('reason', 'NA')
 
     # calculate usage
     output_token = result.usage.completion_tokens
@@ -345,10 +359,10 @@ def save_pairwse_results_to_csv(results_folder, results_file, video_path, choose
         "video_path": video_path,
         "true_quality": choosen_quality,
         "true_category": choosen_category,
-        "predict_quality": json_data.get('quality', 'NA'),
-        "predict_category": json_data.get('category', 'NA'),
-        "predict_confidence": json_data.get('confidence', 'NA'),
-        "predict_reason": json_data.get('reason', 'NA'),
+        "predict_quality": predict_qual,
+        "predict_category": predict_category,
+        "predict_confidence": conf,
+        "predict_reason": reason,
         "predict_result": result,
         "model": "gpt-4-vision-preview",
         "date": datetime.now().date(),
