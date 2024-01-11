@@ -8,6 +8,7 @@ import pandas as pd
 from datetime import datetime
 import json
 import time
+import requests
 
 ## Video reading and processing
 def get_video_paths(root_folder):
@@ -287,9 +288,12 @@ def save_results_to_csv(results_folder, results_file, video_path, choosen_qualit
     caution = json_data.get('caution', 'NA')
 
     # generate a voice over text
-    script = f"This is a {json_data.get('quality', 'NA')} video, and I'm {str(int(conf) * 100)}% confident. "
+    script = f"This is a {json_data.get('quality', 'NA')} video, and I'm {str(int(float(conf) * 100))}% confident. "
     if (predict_qual == "bad"):
         script = script + f"This video is categorized under {predict_category}."
+    if (caution != "run"):
+        script = script + "However, please be cautious that the cow in this video is running a bit faster than normal walking speed."
+    script = script + "Here are the reasons for my prediction." + reason
 
     # calculate usage
     output_token = result.usage.completion_tokens
@@ -423,3 +427,21 @@ def create_duration_dataframe(good_videos, bad_videos_run):
 
     df = pd.DataFrame(data)
     return df
+
+
+def generate_voice_over(script):
+    response = requests.post(
+    "https://api.openai.com/v1/audio/speech",
+    headers={
+        "Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}",
+    },
+    json={
+        "model": "tts-1-1106",
+        "input": script,
+        "voice": "onyx",
+    },
+    )
+
+    audio = b""
+    for chunk in response.iter_content(chunk_size=1024 * 1024):
+        audio += chunk

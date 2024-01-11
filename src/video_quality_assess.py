@@ -55,22 +55,7 @@ end_index = 3
 process_videos_in_range(start_index, end_index, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file)
 
 
-############################## add a voice over to the video ######################################
-response = requests.post(
-    "https://api.openai.com/v1/audio/speech",
-    headers={
-        "Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}",
-    },
-    json={
-        "model": "tts-1-1106",
-        "input": result.choices[0].message.content,
-        "voice": "onyx",
-    },
-)
 
-audio = b""
-for chunk in response.iter_content(chunk_size=1024 * 1024):
-    audio += chunk
 
 
 # generate descrition of 1 frame/image ended with base64
