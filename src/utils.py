@@ -9,6 +9,8 @@ from datetime import datetime
 import json
 import time
 import requests
+from moviepy.editor import VideoFileClip, AudioFileClip, CompositeAudioClip
+
 
 ## Video reading and processing
 def get_video_paths(root_folder):
@@ -294,6 +296,8 @@ def save_results_to_csv(results_folder, results_file, video_path, choosen_qualit
     if (caution != "run"):
         script = script + "However, please be cautious that the cow in this video is running a bit faster than normal walking speed."
     script = script + "Here are the reasons for my prediction." + reason
+    
+    #generate_voice_over(script, video_path, results_folder)
 
     # calculate usage
     output_token = result.usage.completion_tokens
@@ -429,19 +433,46 @@ def create_duration_dataframe(good_videos, bad_videos_run):
     return df
 
 
-def generate_voice_over(script):
+def generate_voice_over(script, video_file_path, output_file_path):
+    # Generate audio using OpenAI's Text-to-Speech API
     response = requests.post(
-    "https://api.openai.com/v1/audio/speech",
-    headers={
-        "Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}",
-    },
-    json={
-        "model": "tts-1-1106",
-        "input": script,
-        "voice": "onyx",
-    },
+        "https://api.openai.com/v1/audio/speech",
+        headers={
+            "Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}",
+        },
+        json={
+            "model": "tts-1-1106",
+            "input": script,
+            "voice": "onyx",
+        },
     )
 
-    audio = b""
-    for chunk in response.iter_content(chunk_size=1024 * 1024):
-        audio += chunk
+    # Extract just the file name (without extension) from the video file path
+    video_file_name = os.path.splitext(os.path.basename(video_file_path))[0]
+
+    # Save the generated audio to a file named after the video file
+    audio_file_path = f"{video_file_name}_temp_audio.mp3"
+    with open(audio_file_path, "wb") as file:
+        for chunk in response.iter_content(chunk_size=1024 * 1024):
+            file.write(chunk)
+
+    # Load the video file
+    video = VideoFileClip(video_file_path)
+
+    # Load the generated audio file
+    audio = AudioFileClip(audio_file_path)
+
+    # Ensure the audio matches the length of the video
+    audio = audio.set_duration(video.duration)
+
+    # Create a composite audio clip (video's audio + generated audio)
+    composite_audio = CompositeAudioClip([video.audio, audio])
+
+    # Set the composite audio to the video
+    video = video.set_audio(composite_audio)
+
+    # Write the result to a file
+    video.write_videofile(output_file_path, codec="libx264", audio_codec="aac")
+
+    # Clean up: Remove the temporary audio file
+    os.remove(audio_file_path)
