@@ -504,11 +504,7 @@ def convert_jpg_to_base64(jpg_image_path):
     return base64_string
 
 
-def generate_prompt_messages(system_prompt, user_prompt1, user_prompt2, train_images, cur_test, detail_level, max_tokens, s, temp):
-    # Function to generate the content for image messages
-    def generate_image_content(base64_frames, detail_level):
-        return [{"type": "image_url", "image_url": {"url": f"data:image/jpg;base64, {frame}", "detail": detail_level}} for frame in base64_frames]
-
+def generate_prompt_messages(client, system_prompt, user_prompt1, user_prompt2, train_images, cur_test, detail_level, max_tokens, s, temp):
     # Generate the content for the train images
     train_content = generate_image_content(base64_frames=train_images, detail_level=detail_level)
 
@@ -548,3 +544,8 @@ def generate_prompt_messages(system_prompt, user_prompt1, user_prompt2, train_im
     print(result.usage)  # print out how many tokens were used
 
     return result
+
+def test_images_in_range(start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, detail_level, max_tokens, s, temp):
+    for i in range(start_index, end_index):
+        result = generate_prompt_messages(client, system_prompt, user_prompt1, user_prompt2, train_images, test_images[i], detail_level, max_tokens, s, temp)
+        
