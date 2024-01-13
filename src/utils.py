@@ -10,6 +10,8 @@ import json
 import time
 import requests
 from moviepy.editor import VideoFileClip, AudioFileClip, CompositeAudioClip
+from PIL import Image
+from io import BytesIO
 
 
 ## Video reading and processing
@@ -476,3 +478,27 @@ def generate_voice_over(script, video_file_path, output_file_path):
 
     # Clean up: Remove the temporary audio file
     os.remove(audio_file_path)
+
+def convert_to_jpeg_base64(png_image_path):
+    # Open the PNG image
+    with Image.open(png_image_path) as img:
+        # Convert to JPEG
+        buffer = BytesIO()
+        img.convert('RGB').save(buffer, format="JPEG")
+        # Encode to Base64
+        jpeg_base64 = base64.b64encode(buffer.getvalue()).decode()
+    return jpeg_base64
+
+def convert_jpg_to_base64(jpg_image_path):
+    # Open the JPG image
+    with Image.open(jpg_image_path) as img:
+        # Create a BytesIO object to hold the byte stream
+        buffer = BytesIO()
+        
+        # Save the image to the buffer
+        img.save(buffer, format="JPEG")
+        
+        # Get the byte stream and encode it to Base64
+        base64_string = base64.b64encode(buffer.getvalue()).decode()
+
+    return base64_string
