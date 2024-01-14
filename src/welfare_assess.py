@@ -108,7 +108,7 @@ test_images_in_range(results_path, start_index, end_index, client, system_prompt
 root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Columbia/Other projects/welfare_assessment_GPT4V/Nasal_discharge'
 train = os.path.join(root_folder_path, "train")
 test = os.path.join(root_folder_path, "test")
-results_file = 'welfare_assess_nasal_discharge.csv' # store the results in a csv file
+results_file = 'welfare_assess_nasal_discharge2.csv' # store the results in a csv file
 results_path = crete_result_path(results_folder, results_file)
 
 # train image examples: Get all PNG files in the train folder and sort them
@@ -123,7 +123,7 @@ test_images = [convert_jpg_to_base64(os.path.join(test, f)) for f in test_files]
 # generate prompts
 system_prompt = "You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. \n "
 user_prompt1 = "Below are images containing text descriptions and criteria for assessing nasal discharge of dairy cows. Please read these examples in the images. Creteria and example images: \n "
-task = "Your task involves evaluating the nasal discharge of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. Enter `0` under `nasal_discharge` if there is no evidence of nasal discharge. Enter `2` under `nasal_discharge` if there is evidence of nasal discharge.  Enter `NA` if the image is not clear enough for assessment.\n "
+task = "Your task involves evaluating the nasal discharge of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. Enter `0` under `nasal_discharge` if there is no evidence of nasal discharge. Enter `2` under `nasal_discharge` if there is evidence of nasal discharge.  Enter `NA` if the image is not clear enough for assessment. Focus specifically on identifying any discharge (liquid) present. It's common for cows to have remnants of feed or straw on their noses from eating, appearing as brownish debris. Please note that these remnants are not considered discharge\n "
 performance_emotion_boost ="\n Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. \n"
 answer_format = "\n Answer format: ```json \n {\n  \"nasal_discharge\": \"...\",\n  \"confidence\": \"...\",\n  \"reason\": \"...\"}``` \n"
 test_image_lead = "\n The following image requires your assessment of the cow's nasal discharge conditions: \n"
