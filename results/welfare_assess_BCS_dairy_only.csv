@@ -1,0 +1,127 @@
+test_image,true_bcs,true_note,predict_bcs,predict_confidence,predict_reason,predict_result,model,date,system_prompt,user_prompt,max_tokens,detail_level,seed,temperature,completion_tokens,prompt_tokens,total_cost
+0_normal_bcs5.JPG,0,normal,0,0.8,"The cow in the image appears to have a regular body condition. The backbone is not prominently visible, and there is a moderate amount of flesh on the body. The animal does not exhibit the pronounced angularity and leanness of Score 1, nor does it show the excessive fat deposition that would be indicative of Score 2. The lighting and angle of the photo make it slightly challenging to assess with absolute certainty, hence the confidence score is not a full 1.0.","ChatCompletion(id='chatcmpl-8gkaPXAXULLw4LVaMgRgQSVL1Ek99', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""body_condition_score"": ""0"",\n  ""confidence"": ""0.8"",\n  ""reason"": ""The cow in the image appears to have a regular body condition. The backbone is not prominently visible, and there is a moderate amount of flesh on the body. The animal does not exhibit the pronounced angularity and leanness of Score 1, nor does it show the excessive fat deposition that would be indicative of Score 2. The lighting and angle of the photo make it slightly challenging to assess with absolute certainty, hence the confidence score is not a full 1.0.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705199545, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=125, prompt_tokens=1927, total_tokens=2052))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the body condition of dairy cows. Please read these textual descriptions and examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the body condition score (body_condition_score) of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. 0: regular body condition; 1: very lean; 2: very fat.
+ 
+ Give your assessment with a confidence score from 0-1 and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""body_condition_score"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's body condition: 
+
+**test images**
+",1000,high,7,0.5,125,1927,0.023
+0_normal_bcs6.JPG,0,normal,1,0.8,"The cow in the image appears to have prominent hip bones and a lack of fat cover on the ribs and tailhead, which is consistent with a 'very lean' classification. The spine is also quite visible, indicating a lower body condition score. While the image does not provide a full lateral view to assess all the typical anatomical points thoroughly, the visible indicators suggest a score of 1. The confidence is not 1.0 due to the limited view of the cow, which restricts a full assessment.","ChatCompletion(id='chatcmpl-8gkae7oNIBkcsrwygYRy2HK1wZUBf', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""body_condition_score"": ""1"",\n  ""confidence"": ""0.8"",\n  ""reason"": ""The cow in the image appears to have prominent hip bones and a lack of fat cover on the ribs and tailhead, which is consistent with a \'very lean\' classification. The spine is also quite visible, indicating a lower body condition score. While the image does not provide a full lateral view to assess all the typical anatomical points thoroughly, the visible indicators suggest a score of 1. The confidence is not 1.0 due to the limited view of the cow, which restricts a full assessment.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705199560, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=132, prompt_tokens=1927, total_tokens=2059))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the body condition of dairy cows. Please read these textual descriptions and examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the body condition score (body_condition_score) of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. 0: regular body condition; 1: very lean; 2: very fat.
+ 
+ Give your assessment with a confidence score from 0-1 and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""body_condition_score"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's body condition: 
+
+**test images**
+",1000,high,7,0.5,132,1927,0.023
+1_thin_bcs1.JPG,1,thin,1,0.8,"The cow in the image appears to have a prominent backbone and the short ribs are quite visible, which are indicative of a lower body condition score. The areas around the tail head and pins show a lack of fat cover. Comparing with the provided examples, this cow most closely resembles the cow with Score 1, which is characterized as 'very lean'. The angle of the photo and the cow's position make it slightly challenging to assess with absolute certainty, hence the confidence score is not a full 1.0.","ChatCompletion(id='chatcmpl-8gkamdjrfUbvSsbCppTI0NveZfZd6', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""body_condition_score"": ""1"",\n  ""confidence"": ""0.8"",\n  ""reason"": ""The cow in the image appears to have a prominent backbone and the short ribs are quite visible, which are indicative of a lower body condition score. The areas around the tail head and pins show a lack of fat cover. Comparing with the provided examples, this cow most closely resembles the cow with Score 1, which is characterized as \'very lean\'. The angle of the photo and the cow\'s position make it slightly challenging to assess with absolute certainty, hence the confidence score is not a full 1.0.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705199568, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=133, prompt_tokens=2777, total_tokens=2910))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the body condition of dairy cows. Please read these textual descriptions and examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the body condition score (body_condition_score) of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. 0: regular body condition; 1: very lean; 2: very fat.
+ 
+ Give your assessment with a confidence score from 0-1 and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""body_condition_score"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's body condition: 
+
+**test images**
+",1000,high,7,0.5,133,2777,0.032
+1_thin_bcs2.JPG,1,thin,1,0.8,"The image shows the side profile of a dairy cow focusing on the rib and hip areas. The ribs are quite prominent, which suggests a lack of subcutaneous fat covering. This is similar to the example provided for Score 1 in the criteria images, where the cow is considered very lean. The hip bones are also visible and there's a noticeable angularity to the body shape, which aligns with characteristics of a lower body condition score. However, the confidence is not 1.0 because the image does not show the entire cow, and a full assessment would ideally include additional views and considerations of the cow's overall health and behavior.","ChatCompletion(id='chatcmpl-8gkasjgOv1mgmSJee0sfTMl5jRKkl', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""body_condition_score"": ""1"",\n  ""confidence"": ""0.8"",\n  ""reason"": ""The image shows the side profile of a dairy cow focusing on the rib and hip areas. The ribs are quite prominent, which suggests a lack of subcutaneous fat covering. This is similar to the example provided for Score 1 in the criteria images, where the cow is considered very lean. The hip bones are also visible and there\'s a noticeable angularity to the body shape, which aligns with characteristics of a lower body condition score. However, the confidence is not 1.0 because the image does not show the entire cow, and a full assessment would ideally include additional views and considerations of the cow\'s overall health and behavior.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705199574, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=158, prompt_tokens=2437, total_tokens=2595))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the body condition of dairy cows. Please read these textual descriptions and examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the body condition score (body_condition_score) of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. 0: regular body condition; 1: very lean; 2: very fat.
+ 
+ Give your assessment with a confidence score from 0-1 and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""body_condition_score"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's body condition: 
+
+**test images**
+",1000,high,7,0.5,158,2437,0.029
+1_thin_bcs3.JPG,1,thin,1,0.8,"The cow in the image appears to be very lean. The backbone is prominent and the hook bones are visible and sharp. There is a noticeable lack of fatty tissue covering the loin area, and the rump appears sunken, which is consistent with the characteristics of a score 1 body condition as per the provided criteria and examples. The image is not entirely clear and the angle is not optimal for a full assessment, which slightly reduces the confidence level of the score.","ChatCompletion(id='chatcmpl-8gkayHUJizguYqs4eCZkTF3dm0TLz', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""body_condition_score"": ""1"",\n  ""confidence"": ""0.8"",\n  ""reason"": ""The cow in the image appears to be very lean. The backbone is prominent and the hook bones are visible and sharp. There is a noticeable lack of fatty tissue covering the loin area, and the rump appears sunken, which is consistent with the characteristics of a score 1 body condition as per the provided criteria and examples. The image is not entirely clear and the angle is not optimal for a full assessment, which slightly reduces the confidence level of the score.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705199580, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=122, prompt_tokens=2437, total_tokens=2559))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the body condition of dairy cows. Please read these textual descriptions and examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the body condition score (body_condition_score) of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. 0: regular body condition; 1: very lean; 2: very fat.
+ 
+ Give your assessment with a confidence score from 0-1 and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""body_condition_score"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's body condition: 
+
+**test images**
+",1000,high,7,0.5,122,2437,0.028
+2_fat_bcs4.JPG,2,fat,0,0.8,"The cow in the image appears to be in a regular body condition. The backbone is not prominently visible, and there is some fat cover on the body, indicating that the cow is neither very lean nor very fat. The cow does not exhibit the pronounced angularity and lack of fat cover associated with a score of 1, nor does it display the excessive fat deposition typical of a score of 2. The image quality and angle may somewhat limit the assessment, which is why the confidence score is not 1.0.","ChatCompletion(id='chatcmpl-8gkb6kPaikyJ5PBjpUXJLe8dFExjV', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""body_condition_score"": ""0"",\n  ""confidence"": ""0.8"",\n  ""reason"": ""The cow in the image appears to be in a regular body condition. The backbone is not prominently visible, and there is some fat cover on the body, indicating that the cow is neither very lean nor very fat. The cow does not exhibit the pronounced angularity and lack of fat cover associated with a score of 1, nor does it display the excessive fat deposition typical of a score of 2. The image quality and angle may somewhat limit the assessment, which is why the confidence score is not 1.0.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705199588, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=134, prompt_tokens=2097, total_tokens=2231))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the body condition of dairy cows. Please read these textual descriptions and examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the body condition score (body_condition_score) of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. 0: regular body condition; 1: very lean; 2: very fat.
+ 
+ Give your assessment with a confidence score from 0-1 and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""body_condition_score"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's body condition: 
+
+**test images**
+",1000,high,7,0.5,134,2097,0.025
+2_fat_bcs7.JPG,2,fat,1,0.8,"The cow in the image appears to have prominent hip bones and a noticeable outline of the ribs, which is consistent with the characteristics of a cow with a body condition score of 1, indicating a very lean condition. The lack of visible fat deposits and the angularity of the body support this assessment. However, the image provided does not show the entire cow, and certain areas critical for a comprehensive assessment, such as the tail head and the loin area, are not fully visible, which slightly reduces the confidence in the assessment.","ChatCompletion(id='chatcmpl-8gkbCdW7T1CH2ZekCWqmXo3T5bvF9', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""body_condition_score"": ""1"",\n  ""confidence"": ""0.8"",\n  ""reason"": ""The cow in the image appears to have prominent hip bones and a noticeable outline of the ribs, which is consistent with the characteristics of a cow with a body condition score of 1, indicating a very lean condition. The lack of visible fat deposits and the angularity of the body support this assessment. However, the image provided does not show the entire cow, and certain areas critical for a comprehensive assessment, such as the tail head and the loin area, are not fully visible, which slightly reduces the confidence in the assessment.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705199594, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=134, prompt_tokens=1927, total_tokens=2061))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the body condition of dairy cows. Please read these textual descriptions and examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the body condition score (body_condition_score) of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. 0: regular body condition; 1: very lean; 2: very fat.
+ 
+ Give your assessment with a confidence score from 0-1 and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""body_condition_score"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's body condition: 
+
+**test images**
+",1000,high,7,0.5,134,1927,0.023

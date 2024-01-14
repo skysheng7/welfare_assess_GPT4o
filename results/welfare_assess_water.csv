@@ -1,0 +1,73 @@
+test_image,true_water,predict_water,predict_confidence,predict_reason,predict_result,model,date,system_prompt,user_prompt,max_tokens,detail_level,seed,temperature,completion_tokens,prompt_tokens,total_cost
+clean_w3.JPG,clean,dirty,high,"The water point shows clear signs of dirt and staining along the inner sides and bottom of the trough. There is a buildup of substances that resemble algae, mineral deposits, or other forms of grime that are consistent with the 'dirty' classification from the provided criteria. The water itself is not visible, but the condition of the drinkers suggests that the water quality is likely compromised as well. The assessment is based on the visible evidence of poor maintenance and contamination.","ChatCompletion(id='chatcmpl-8gm6yaPuhLj5S3pinzqliDsRKTTI0', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""cleanliness"": ""dirty"",\n  ""confidence"": ""high"",\n  ""reason"": ""The water point shows clear signs of dirt and staining along the inner sides and bottom of the trough. There is a buildup of substances that resemble algae, mineral deposits, or other forms of grime that are consistent with the \'dirty\' classification from the provided criteria. The water itself is not visible, but the condition of the drinkers suggests that the water quality is likely compromised as well. The assessment is based on the visible evidence of poor maintenance and contamination.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705205408, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=117, prompt_tokens=2239, total_tokens=2356))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of water points. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of water points shown in the subsequent image, based on the previously provided criteria and examples. Enter `clean` under `cleanliness` if drinkers and water are clean at the moment of inspection. Enter `partly dirty` under `cleanliness` if drinkers are dirty, but water is fresh and clean at moment of inspection or only part of several drinkers clean and containing clean water. Enter `dirty` under `cleanliness` if drinkers and water are both dirty at moment of inspection. Enter `NA` if the image is not clear enough for inspection. 
+ 
+ Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""cleanliness"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cleanliness of water points: 
+
+**test images**
+",1000,high,7,0.5,117,2239,0.026
+partlyDirty_w2.JPG,partlyDirty,partly dirty,90,"The water in the image shows signs of contamination with greenish algae-like growth and some debris, but it is not as heavily soiled as the 'dirty' example provided. The drinker itself has a buildup of grime and sediment, indicating it has not been cleaned recently. However, the water does not appear to be thick with dirt or have a heavy presence of feces or mold, which would classify it as 'dirty' according to the provided criteria. Therefore, it seems appropriate to classify it as 'partly dirty' because the drinker is dirty, but the water, while not completely clean, does not seem to be in the worst condition depicted by the 'dirty' classification.","ChatCompletion(id='chatcmpl-8gm733aYNqFBWp13T4KvKAkB8yjjC', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""cleanliness"": ""partly dirty"",\n  ""confidence"": ""90"",\n  ""reason"": ""The water in the image shows signs of contamination with greenish algae-like growth and some debris, but it is not as heavily soiled as the \'dirty\' example provided. The drinker itself has a buildup of grime and sediment, indicating it has not been cleaned recently. However, the water does not appear to be thick with dirt or have a heavy presence of feces or mold, which would classify it as \'dirty\' according to the provided criteria. Therefore, it seems appropriate to classify it as \'partly dirty\' because the drinker is dirty, but the water, while not completely clean, does not seem to be in the worst condition depicted by the \'dirty\' classification.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705205413, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=168, prompt_tokens=2579, total_tokens=2747))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of water points. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of water points shown in the subsequent image, based on the previously provided criteria and examples. Enter `clean` under `cleanliness` if drinkers and water are clean at the moment of inspection. Enter `partly dirty` under `cleanliness` if drinkers are dirty, but water is fresh and clean at moment of inspection or only part of several drinkers clean and containing clean water. Enter `dirty` under `cleanliness` if drinkers and water are both dirty at moment of inspection. Enter `NA` if the image is not clear enough for inspection. 
+ 
+ Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""cleanliness"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cleanliness of water points: 
+
+**test images**
+",1000,high,7,0.5,168,2579,0.031
+partlyDirty_w4.JPG,partlyDirty,dirty,high,"The water point in the image shows visible signs of dirt and staining on both the inner sides of the trough and on the water surface. There is a presence of dark discoloration and buildup that suggests the presence of grime or algae, which is consistent with the 'Dirty' classification according to the provided criteria. The condition of the water point does not match the 'Clean' or 'Partly dirty' descriptions, as the entire visible area of the trough and the water contained within it appear to be compromised.","ChatCompletion(id='chatcmpl-8gm7CoIIttmPznTq2b3WyHdIjgja7', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""cleanliness"": ""dirty"",\n  ""confidence"": ""high"",\n  ""reason"": ""The water point in the image shows visible signs of dirt and staining on both the inner sides of the trough and on the water surface. There is a presence of dark discoloration and buildup that suggests the presence of grime or algae, which is consistent with the \'Dirty\' classification according to the provided criteria. The condition of the water point does not match the \'Clean\' or \'Partly dirty\' descriptions, as the entire visible area of the trough and the water contained within it appear to be compromised.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705205422, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=129, prompt_tokens=2069, total_tokens=2198))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of water points. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of water points shown in the subsequent image, based on the previously provided criteria and examples. Enter `clean` under `cleanliness` if drinkers and water are clean at the moment of inspection. Enter `partly dirty` under `cleanliness` if drinkers are dirty, but water is fresh and clean at moment of inspection or only part of several drinkers clean and containing clean water. Enter `dirty` under `cleanliness` if drinkers and water are both dirty at moment of inspection. Enter `NA` if the image is not clear enough for inspection. 
+ 
+ Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""cleanliness"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cleanliness of water points: 
+
+**test images**
+",1000,high,7,0.5,129,2069,0.025
+veryDirty_w1.JPG,veryDirty,dirty,high,"The water in the trough is visibly contaminated with large amounts of feces and debris, indicating a lack of maintenance and a clear deviation from the clean standard. This matches the 'dirty' classification because both the drinker and the water are dirty at the moment of inspection.","ChatCompletion(id='chatcmpl-8gm7MFWfaYng4X6osOY2DZOlflCqC', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""cleanliness"": ""dirty"",\n  ""confidence"": ""high"",\n  ""reason"": ""The water in the trough is visibly contaminated with large amounts of feces and debris, indicating a lack of maintenance and a clear deviation from the clean standard. This matches the \'dirty\' classification because both the drinker and the water are dirty at the moment of inspection.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705205432, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=80, prompt_tokens=2579, total_tokens=2659))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of water points. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of water points shown in the subsequent image, based on the previously provided criteria and examples. Enter `clean` under `cleanliness` if drinkers and water are clean at the moment of inspection. Enter `partly dirty` under `cleanliness` if drinkers are dirty, but water is fresh and clean at moment of inspection or only part of several drinkers clean and containing clean water. Enter `dirty` under `cleanliness` if drinkers and water are both dirty at moment of inspection. Enter `NA` if the image is not clear enough for inspection. 
+ 
+ Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""cleanliness"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cleanliness of water points: 
+
+**test images**
+",1000,high,7,0.5,80,2579,0.028

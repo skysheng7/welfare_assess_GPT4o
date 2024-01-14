@@ -1,0 +1,127 @@
+test_image,true_nasal_discharge,predict_nasal_discharge,predict_confidence,predict_reason,predict_result,model,date,system_prompt,user_prompt,max_tokens,detail_level,seed,temperature,completion_tokens,prompt_tokens,total_cost
+0_noDischarge_n1.JPG,0,2,90,"The image shows the cow's nostrils with visible discharge that appears to be of a yellowish color and of a consistency that could be considered thick, similar to the example provided for Score 2 in the criteria. The discharge is not transparent, which further supports the score of 2. The confidence level is not 100 due to the angle and lighting of the photo which may slightly obscure the full extent of the discharge, but the evidence is clear enough to assert that there is nasal discharge present.","ChatCompletion(id='chatcmpl-8glOdOVY6qR15mBDwF3Qt7KAhHbOD', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""nasal_discharge"": ""2"",\n  ""confidence"": ""90"",\n  ""reason"": ""The image shows the cow\'s nostrils with visible discharge that appears to be of a yellowish color and of a consistency that could be considered thick, similar to the example provided for Score 2 in the criteria. The discharge is not transparent, which further supports the score of 2. The confidence level is not 100 due to the angle and lighting of the photo which may slightly obscure the full extent of the discharge, but the evidence is clear enough to assert that there is nasal discharge present.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705202659, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=128, prompt_tokens=2189, total_tokens=2317))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing nasal discharge of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the nasal discharge of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. Enter `0` under `nasal_discharge` if there is no evidence of nasal discharge. Enter `2` under `nasal_discharge` if there is evidence of nasal discharge.
+ 
+ Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""nasal_discharge"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's nasal discharge conditions: 
+
+**test images**
+",1000,high,7,0.5,128,2189,0.026
+0_noDischarge_n2.JPG,0,2,90,"The image shows the cow's nostrils with a visible accumulation of a substance that appears to be nasal discharge, as it is consistent with the characteristics outlined in the criteria, which defines nasal discharge as a clearly visible flow/discharge from the nostrils. The discharge appears to be of a thick consistency and has some coloration, which could indicate the presence of nasal discharge as per the scoring system provided. The confidence level is not 100% due to the image quality and angle, which could potentially obscure some details necessary for a definitive assessment.","ChatCompletion(id='chatcmpl-8glOkMoAQ97uqUWy4BZEXM0v32rcF', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""nasal_discharge"": ""2"",\n  ""confidence"": ""90"",\n  ""reason"": ""The image shows the cow\'s nostrils with a visible accumulation of a substance that appears to be nasal discharge, as it is consistent with the characteristics outlined in the criteria, which defines nasal discharge as a clearly visible flow/discharge from the nostrils. The discharge appears to be of a thick consistency and has some coloration, which could indicate the presence of nasal discharge as per the scoring system provided. The confidence level is not 100% due to the image quality and angle, which could potentially obscure some details necessary for a definitive assessment.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705202666, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=136, prompt_tokens=2189, total_tokens=2325))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing nasal discharge of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the nasal discharge of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. Enter `0` under `nasal_discharge` if there is no evidence of nasal discharge. Enter `2` under `nasal_discharge` if there is evidence of nasal discharge.
+ 
+ Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""nasal_discharge"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's nasal discharge conditions: 
+
+**test images**
+",1000,high,7,0.5,136,2189,0.026
+0_noDischarge_n7.JPG,0,2,90,"The cow in the image displays a visible discharge from the nostrils, which is consistent with the description provided for a score of 2. The discharge appears to be of a thick consistency and is not transparent, which suggests that it may be indicative of some level of nasal irritation or infection. The criteria specify that any clearly visible flow/discharge from the nostrils warrants a score of 2. While it is not possible to determine the exact color due to the image quality, the presence of discharge is evident. The confidence level is not 100% because the assessment is based on a single image and without the ability to observe the cow over time or in person, which could provide additional context or information.","ChatCompletion(id='chatcmpl-8glP0uV9RHC1NmUSSTPlFEkHMZSxk', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""nasal_discharge"": ""2"",\n  ""confidence"": ""90"",\n  ""reason"": ""The cow in the image displays a visible discharge from the nostrils, which is consistent with the description provided for a score of 2. The discharge appears to be of a thick consistency and is not transparent, which suggests that it may be indicative of some level of nasal irritation or infection. The criteria specify that any clearly visible flow/discharge from the nostrils warrants a score of 2. While it is not possible to determine the exact color due to the image quality, the presence of discharge is evident. The confidence level is not 100% because the assessment is based on a single image and without the ability to observe the cow over time or in person, which could provide additional context or information.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705202682, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=169, prompt_tokens=2189, total_tokens=2358))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing nasal discharge of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the nasal discharge of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. Enter `0` under `nasal_discharge` if there is no evidence of nasal discharge. Enter `2` under `nasal_discharge` if there is evidence of nasal discharge.
+ 
+ Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""nasal_discharge"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's nasal discharge conditions: 
+
+**test images**
+",1000,high,7,0.5,169,2189,0.027
+2_discharge_n3.JPG,2,2,90,"The cow in the image displays a visible nasal discharge that can be observed dripping from the nostrils. This discharge appears to be of a consistent flow rather than an isolated droplet, indicating an active discharge process. The criteria for scoring nasal discharge as '2' include evidence of clearly visible nasal discharge, which is met in this case. The confidence level is not 100% because the image does not provide information on the color or consistency of the discharge, which could further substantiate the assessment.","ChatCompletion(id='chatcmpl-8glP9EHweJpHAddI6JocLszvicXFo', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""nasal_discharge"": ""2"",\n  ""confidence"": ""90"",\n  ""reason"": ""The cow in the image displays a visible nasal discharge that can be observed dripping from the nostrils. This discharge appears to be of a consistent flow rather than an isolated droplet, indicating an active discharge process. The criteria for scoring nasal discharge as \'2\' include evidence of clearly visible nasal discharge, which is met in this case. The confidence level is not 100% because the image does not provide information on the color or consistency of the discharge, which could further substantiate the assessment.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705202691, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=127, prompt_tokens=2189, total_tokens=2316))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing nasal discharge of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the nasal discharge of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. Enter `0` under `nasal_discharge` if there is no evidence of nasal discharge. Enter `2` under `nasal_discharge` if there is evidence of nasal discharge.
+ 
+ Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""nasal_discharge"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's nasal discharge conditions: 
+
+**test images**
+",1000,high,7,0.5,127,2189,0.026
+2_discharge_n4.JPG,2,2,High,"The cow in the image displays a clear and visible nasal discharge that is dripping from the nostrils, which matches the description and photographic illustration of score 2 for evidence of nasal discharge according to the provided criteria. The discharge is consistent with the defined characteristics of being clearly visible.","ChatCompletion(id='chatcmpl-8glPF21ueVyQwEFbs0SWq4cDG2EzC', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""nasal_discharge"": ""2"",\n  ""confidence"": ""High"",\n  ""reason"": ""The cow in the image displays a clear and visible nasal discharge that is dripping from the nostrils, which matches the description and photographic illustration of score 2 for evidence of nasal discharge according to the provided criteria. The discharge is consistent with the defined characteristics of being clearly visible.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705202697, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=83, prompt_tokens=2189, total_tokens=2272))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing nasal discharge of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the nasal discharge of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. Enter `0` under `nasal_discharge` if there is no evidence of nasal discharge. Enter `2` under `nasal_discharge` if there is evidence of nasal discharge.
+ 
+ Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""nasal_discharge"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's nasal discharge conditions: 
+
+**test images**
+",1000,high,7,0.5,83,2189,0.024
+2_discharge_n5.JPG,2,2,90,"The cow in the image displays a visible nasal discharge hanging from its nostrils, which is consistent with the description and photographic illustration of score 2 provided in the criteria. The discharge appears to be of a thick consistency, which aligns with the characteristics of nasal discharge described in the assessment criteria. The confidence level is not 100% due to the potential variability in lighting and image quality that might affect the precise assessment of the discharge's color and consistency.","ChatCompletion(id='chatcmpl-8glPMd0OSPPhNUo3WJ1doZVOoKYPx', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""nasal_discharge"": ""2"",\n  ""confidence"": ""90"",\n  ""reason"": ""The cow in the image displays a visible nasal discharge hanging from its nostrils, which is consistent with the description and photographic illustration of score 2 provided in the criteria. The discharge appears to be of a thick consistency, which aligns with the characteristics of nasal discharge described in the assessment criteria. The confidence level is not 100% due to the potential variability in lighting and image quality that might affect the precise assessment of the discharge\'s color and consistency.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705202704, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=119, prompt_tokens=2189, total_tokens=2308))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing nasal discharge of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the nasal discharge of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. Enter `0` under `nasal_discharge` if there is no evidence of nasal discharge. Enter `2` under `nasal_discharge` if there is evidence of nasal discharge.
+ 
+ Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""nasal_discharge"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's nasal discharge conditions: 
+
+**test images**
+",1000,high,7,0.5,119,2189,0.025
+2_discharge_n6.JPG,2,2,90,"The cow in the image displays a visible nasal discharge that can be observed without the need for physical contact. The discharge appears to be of a thick consistency and is clearly visible hanging from the nostrils, which aligns with the criteria for a score of 2, indicating evidence of nasal discharge. The confidence level is not 100% due to the potential variability in lighting and angle of the photograph that could affect the perception of the discharge's color and consistency. However, the evidence is strong enough to confidently assign a score of 2.","ChatCompletion(id='chatcmpl-8glPUrByLqzDljCVrTfoLQPNbJLSW', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""nasal_discharge"": ""2"",\n  ""confidence"": ""90"",\n  ""reason"": ""The cow in the image displays a visible nasal discharge that can be observed without the need for physical contact. The discharge appears to be of a thick consistency and is clearly visible hanging from the nostrils, which aligns with the criteria for a score of 2, indicating evidence of nasal discharge. The confidence level is not 100% due to the potential variability in lighting and angle of the photograph that could affect the perception of the discharge\'s color and consistency. However, the evidence is strong enough to confidently assign a score of 2.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1705202712, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=136, prompt_tokens=2189, total_tokens=2325))",gpt-4-vision-preview,2024-01-13,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing nasal discharge of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the nasal discharge of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. Enter `0` under `nasal_discharge` if there is no evidence of nasal discharge. Enter `2` under `nasal_discharge` if there is evidence of nasal discharge.
+ 
+ Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""nasal_discharge"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment of the cow's nasal discharge conditions: 
+
+**test images**
+",1000,high,7,0.5,136,2189,0.026
