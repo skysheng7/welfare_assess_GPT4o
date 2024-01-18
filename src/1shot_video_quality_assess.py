@@ -29,7 +29,7 @@ root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Colum
 good_videos, bad_videos, bad_videos_by_category = get_video_paths(root_folder_path)
 
 # randomly shuffle the video sequence
-frames_per_second=3 # how many frames to extract each second
+frames_per_second=2 # how many frames to extract each second
 seed = 7
 random.seed(seed)
 random.shuffle(good_videos)
@@ -126,7 +126,7 @@ max_tokens=1000
 detail_level="low"
 temperature = 0.5
 choosen_quality1 = "good"
-choosen_quality2 = "bad"
+choosen_quality2 = "good"
 full_path = crete_result_path(results_folder, results_file)
 
 # select a good video as example
@@ -135,7 +135,7 @@ extracted_frames1 = extract_frames(video_path1, frames_per_second)
 show_extracted_frames(extracted_frames1)
 print(video_path1)
 
-for i in range(4, 10):
+for i in range(5, 10):
     # select a good video as test
     video_path2 = select_video_path(i, choosen_quality= choosen_quality2, choosen_category = "NA", bad_videos_by_category=bad_videos_by_category , bad_videos=bad_videos, good_videos=good_videos)
     extracted_frames2 = extract_frames(video_path2, frames_per_second)
