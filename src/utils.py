@@ -846,3 +846,53 @@ def test_images_in_range(full_path, start_index, end_index, client, system_promp
         elif(assessment_type == "water"):
             save_water_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
 
+
+def save_1shot_quality_assess_results_to_csv(full_path, video_path1, video_path2, result, system_prompt, user_prompt1, user_prompt2, choosen_quality1, choosen_quality2, frames_per_second, max_tokens, detail_level, seed, temperature):
+
+    # extract content from result
+    result_content = result.choices[0].message.content
+    result_json = result_content.strip('```json\n').strip('```')
+    json_data = json.loads(result_json) # Convert the string to a Python dictionary
+    predict_qual = json_data.get('quality', 'NA')
+    conf = json_data.get('confidence', 'NA')
+    reason = json_data.get('reason', 'NA')
+
+    # calculate usage
+    output_token = result.usage.completion_tokens
+    prompt_tokens = result.usage.prompt_tokens
+    output_token_p = output_token_cost(output_token)
+    prompt_tokens_p = input_token_cost(prompt_tokens)
+    total_cost = round((output_token_p+prompt_tokens_p), 3)
+
+    data = {
+        "example_video_path": video_path1,
+        "video_path2": video_path2,
+        "example_true_quality": choosen_quality1,
+        "true_quality2": choosen_quality2,
+        "predict_quality": predict_qual,
+        "predict_confidence": conf,
+        "predict_reason": reason,
+        "predict_result": result,
+        "model": "gpt-4-vision-preview",
+        "date": datetime.now().date(),
+        "frames_per_second": frames_per_second, 
+        "system_prompt": system_prompt,
+        "user_prompt": user_prompt1 + "\n ** example video ** \n" + user_prompt2 + "\n ** test video** \n",
+        "max_tokens": max_tokens,
+        "detail_level": detail_level,
+        "seed": seed,
+        "temperature": temperature,
+        "completion_tokens": output_token,
+        "prompt_tokens": prompt_tokens,
+        "total_cost": total_cost
+
+    }
+
+    df = pd.DataFrame([data])
+
+    if os.path.isfile(full_path):
+        df.to_csv(full_path, mode='a', header=False, index=False)
+        print(f"Data appended to {full_path}")
+    else:
+        df.to_csv(full_path, mode='w', header=True, index=False)
+        print(f"Data written to {full_path}")

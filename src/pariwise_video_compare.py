@@ -125,30 +125,26 @@ user_prompt2 = "Second, here is a test video needs your assessment for video qua
 max_tokens=1000
 detail_level="low"
 temperature = 0.5
+choosen_quality1 = "good"
+choosen_quality2 = "good"
+full_path = crete_result_path(results_folder, results_file)
 
 # select a good video as example
-video_path1 = select_video_path(i=644, choosen_quality = "good", choosen_category = "NA.", bad_videos_by_category=bad_videos_by_category, bad_videos=bad_videos, good_videos=good_videos)
+video_path1 = select_video_path(i=644, choosen_quality = choosen_quality1, choosen_category = "NA.", bad_videos_by_category=bad_videos_by_category, bad_videos=bad_videos, good_videos=good_videos)
 extracted_frames1 = extract_frames(video_path1, frames_per_second)
 show_extracted_frames(extracted_frames1)
 print(video_path1)
 
-# select a good video as test
-video_path2 = select_video_path(i=9, choosen_quality= "good", choosen_category = "NA.", bad_videos_by_category=bad_videos_by_category , bad_videos=bad_videos, good_videos=good_videos)
-extracted_frames2 = extract_frames(video_path2, frames_per_second)
-show_extracted_frames(extracted_frames2)
-print(video_path2)
+for i in range(1, 10):
+    # select a good video as test
+    video_path2 = select_video_path(i, choosen_quality= choosen_quality2, choosen_category = "NA.", bad_videos_by_category=bad_videos_by_category , bad_videos=bad_videos, good_videos=good_videos)
+    extracted_frames2 = extract_frames(video_path2, frames_per_second)
+    show_extracted_frames(extracted_frames2)
+    print(video_path2)
 
-# extract result answer
-result = compare_2video(client, system_prompt, user_prompt1, user_prompt2, base64_frames1=extracted_frames1, base64_frames2=extracted_frames2, max_tokens=max_tokens, detail_level=detail_level, s=seed, temp=temperature)
-result_content = result.choices[0].message.content
-
-# calculate usage
-output_token = result.usage.completion_tokens
-prompt_tokens = result.usage.prompt_tokens
-output_token_p = output_token_cost(output_token)
-prompt_tokens_p = input_token_cost(prompt_tokens)
-total_cost = round((output_token_p+prompt_tokens_p), 3)
-print(total_cost)
+    # extract result answer
+    result = compare_2video(client, system_prompt, user_prompt1, user_prompt2, base64_frames1=extracted_frames1, base64_frames2=extracted_frames2, max_tokens=max_tokens, detail_level=detail_level, s=seed, temp=temperature)
+    save_1shot_quality_assess_results_to_csv(full_path, video_path1, video_path2, result, system_prompt, user_prompt1, user_prompt2, choosen_quality1, choosen_quality2, frames_per_second, max_tokens, detail_level, seed, temperature)
 
 
 ###################################################################################################
