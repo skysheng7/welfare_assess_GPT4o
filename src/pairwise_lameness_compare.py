@@ -25,11 +25,11 @@ client = OpenAI(api_key=openai_api_key)
 # get a list of good videos, bad videos, bad videos by categories
 os.chdir('C:/Users/skysheng/OneDrive - UBC/R package project and Git/lameness_GPT4V/src')
 from utils import *
-root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Columbia/Research/PhD Project/Amazon project phase 2/Kay Yang/sorted_cow_videos_all'
+root_folder_path = 'C:\\Users\\skysheng\\OneDrive - UBC\\University of British Columbia\\Research\\PhD Project\\Amazon project phase 2\\Sora Jeong\\results\\30cow_artificial_group_compressed'
 good_videos, bad_videos, bad_videos_by_category = get_video_paths(root_folder_path)
 
 # randomly shuffle the video sequence
-frames_per_second=2 # how many frames to extract each second
+frames_per_second=3 # how many frames to extract each second
 seed = 7
 random.seed(seed)
 random.shuffle(good_videos)
