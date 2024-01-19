@@ -24,6 +24,7 @@ client = OpenAI(api_key=openai_api_key)
 # get a list of good videos, bad videos, bad videos by categories
 os.chdir('C:/Users/skysheng/OneDrive - UBC/R package project and Git/lameness_GPT4V/src')
 from utils import *
+from welfare_assess_helpers import *
 
 # choose model parameters  
 seed = 7

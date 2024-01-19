@@ -28,6 +28,9 @@ from utils import *
 root_folder_path = 'C:\\Users\\skysheng\\OneDrive - UBC\\University of British Columbia\\Research\\PhD Project\\Amazon project phase 2\\Sora Jeong\\results\\30cow_artificial_group_compressed'
 good_videos, bad_videos, bad_videos_by_category = get_video_paths(root_folder_path)
 
+# get a list of pairwise lameness comparison results
+pairwise_result_df = 'C:\\Users\\skysheng\\OneDrive - UBC\\R package project and Git\\lameness_rank\\05-Amazon_MTurk_expert_response_30cow_pairwise\\results\\all_experts'
+
 # randomly shuffle the video sequence
 frames_per_second=3 # how many frames to extract each second
 seed = 7

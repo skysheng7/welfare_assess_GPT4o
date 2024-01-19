@@ -50,6 +50,12 @@ def get_video_paths(root_folder):
 
     return good_videos, bad_videos, bad_videos_by_category
 
+def crete_result_path(results_folder, results_file):
+    # create result file path
+    full_path = os.path.join(results_folder, results_file)
+    if not os.path.exists(results_folder):
+        os.makedirs(results_folder)
+    return(full_path)
 
 def select_video_path(i, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos):
     if ((choosen_quality == "bad") and (choosen_category != "NA")):
@@ -395,458 +401,6 @@ def save_pairwse_results_to_csv(results_folder, results_file, video_path, choose
         print(f"Data written to {full_path}")
 
 
-def process_and_describe_video(i, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file):
-    video_path = select_video_path(i, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos)
-    extracted_frames = extract_frames(video_path, frames_per_second)
-    show_extracted_frames(extracted_frames)
-    print(video_path)
-
-    result = describe_video_0shot(client, system_prompt, user_prompt, base64_frames=extracted_frames, max_tokens=max_tokens, detail_level=detail_level, s=seed, temp=temperature)
-    save_results_to_csv(results_folder, results_file, video_path, choosen_quality, choosen_category, result, frames_per_second, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature)
-
-def process_videos_in_range(start_index, end_index, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file):
-    for i in range(start_index, end_index):
-        process_and_describe_video(i, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file)
-
-def calculate_video_duration(video_path):
-    video = cv2.VideoCapture(video_path)
-    fps = video.get(cv2.CAP_PROP_FPS)
-    frame_count = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
-    duration = frame_count / fps
-    video.release()
-    return duration
-
-def create_duration_dataframe(good_videos, bad_videos_run):
-    data = []
-
-    for video_path in good_videos:
-        duration = calculate_video_duration(video_path)
-        data.append({'Video': os.path.basename(video_path), 'Duration': duration, 'Category': 'Good'})
-
-    for video_path in bad_videos_run:
-        duration = calculate_video_duration(video_path)
-        data.append({'Video': os.path.basename(video_path), 'Duration': duration, 'Category': 'Bad - Run'})
-
-    df = pd.DataFrame(data)
-    return df
-
-
-def generate_voice_over(script, video_file_path, output_file_path):
-    # Generate audio using OpenAI's Text-to-Speech API
-    response = requests.post(
-        "https://api.openai.com/v1/audio/speech",
-        headers={
-            "Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}",
-        },
-        json={
-            "model": "tts-1-1106",
-            "input": script,
-            "voice": "onyx",
-        },
-    )
-
-    # Extract just the file name (without extension) from the video file path
-    video_file_name = os.path.splitext(os.path.basename(video_file_path))[0]
-
-    # Save the generated audio to a file named after the video file
-    audio_file_path = f"{video_file_name}_temp_audio.mp3"
-    with open(audio_file_path, "wb") as file:
-        for chunk in response.iter_content(chunk_size=1024 * 1024):
-            file.write(chunk)
-
-    # Load the video file
-    video = VideoFileClip(video_file_path)
-
-    # Load the generated audio file
-    audio = AudioFileClip(audio_file_path)
-
-    # Ensure the audio matches the length of the video
-    audio = audio.set_duration(video.duration)
-
-    # Create a composite audio clip (video's audio + generated audio)
-    composite_audio = CompositeAudioClip([video.audio, audio])
-
-    # Set the composite audio to the video
-    video = video.set_audio(composite_audio)
-
-    # Write the result to a file
-    video.write_videofile(output_file_path, codec="libx264", audio_codec="aac")
-
-    # Clean up: Remove the temporary audio file
-    os.remove(audio_file_path)
-
-def convert_to_jpeg_base64(png_image_path):
-    # Open the PNG image
-    with Image.open(png_image_path) as img:
-        # Convert to JPEG
-        buffer = BytesIO()
-        img.convert('RGB').save(buffer, format="JPEG")
-        # Encode to Base64
-        jpeg_base64 = base64.b64encode(buffer.getvalue()).decode()
-    return jpeg_base64
-
-def convert_jpg_to_base64(jpg_image_path):
-    # Open the JPG image
-    with Image.open(jpg_image_path) as img:
-        # Create a BytesIO object to hold the byte stream
-        buffer = BytesIO()
-        
-        # Save the image to the buffer
-        img.save(buffer, format="JPEG")
-        
-        # Get the byte stream and encode it to Base64
-        base64_string = base64.b64encode(buffer.getvalue()).decode()
-
-    return base64_string
-
-
-def prompt_welfare_assess_test_image(client, system_prompt, user_prompt1, user_prompt2, train_images, cur_test, detail_level, max_tokens, s, temp):
-    # Generate the content for the train images
-    train_content = generate_image_content(base64_frames=train_images, detail_level=detail_level)
-
-    # Constructing prompt messages
-    prompt_messages = [
-        {
-            "role": "system",
-            "content": system_prompt
-        },
-        {
-            "role": "user",
-            "content": [
-                {"type": "text", "text": user_prompt1},
-                *train_content,  # Using the list of dictionaries generated by the function
-                {"type": "text", "text": user_prompt2},
-                {"type": "image_url",
-                 "image_url": {
-                    "url": f"data:image/jpg;base64, {cur_test}",
-                    "detail": detail_level}
-                }
-            ],
-        },
-    ]
-
-    # Parameters for the API call
-    params = {
-        "model": "gpt-4-vision-preview",
-        "messages": prompt_messages,
-        "max_tokens": max_tokens,
-        "seed": s,
-        "temperature": temp
-    }
-
-    # Assuming client.chat.completions.create is a function call to an external API
-    result = client.chat.completions.create(**params)
-    print(result.choices[0].message.content)  # print out the response
-    print(result.usage)  # print out how many tokens were used
-
-    return result
-
-def crete_result_path(results_folder, results_file):
-    # create result file path
-    full_path = os.path.join(results_folder, results_file)
-    if not os.path.exists(results_folder):
-        os.makedirs(results_folder)
-    return(full_path)
-
-def save_bcs_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
-    
-
-    # extract the true label of the image
-    parts = re.split(r'[_.]', cur_file_name)
-    true_bcs = parts[0]  
-    true_note = parts[1]
-
-    # extract content from result
-    result_content = result.choices[0].message.content
-    result_json = result_content.strip('```json\n').strip('```')
-    json_data = json.loads(result_json) # Convert the string to a Python dictionary
-    predict_bcs = json_data.get('body_condition_score', 'NA')
-    conf = json_data.get('confidence', 'NA')
-    reason = json_data.get('reason', 'NA')
-
-    # calculate usage
-    output_token = result.usage.completion_tokens
-    prompt_tokens = result.usage.prompt_tokens
-    output_token_p = output_token_cost(output_token)
-    prompt_tokens_p = input_token_cost(prompt_tokens)
-    total_cost = round((output_token_p+prompt_tokens_p), 3)
-
-    data = {
-        "test_image": cur_file_name,
-        "true_bcs": true_bcs,
-        "true_note": true_note,
-        "predict_bcs": predict_bcs,
-        "predict_confidence": conf,
-        "predict_reason": reason,
-        "predict_result": result,
-        "model": "gpt-4-vision-preview",
-        "date": datetime.now().date(),
-        "system_prompt": system_prompt,
-        "user_prompt": user_prompt,
-        "max_tokens": max_tokens,
-        "detail_level": detail_level,
-        "seed": seed,
-        "temperature": temperature,
-        "completion_tokens": output_token,
-        "prompt_tokens": prompt_tokens,
-        "total_cost": total_cost
-
-    }
-
-    df = pd.DataFrame([data])
-
-    if os.path.isfile(full_path):
-        df.to_csv(full_path, mode='a', header=False, index=False)
-        print(f"Data appended to {full_path}")
-    else:
-        df.to_csv(full_path, mode='w', header=True, index=False)
-        print(f"Data written to {full_path}")
-
-def save_integument_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
-    
-
-    # extract the true label of the image
-    parts = re.split(r'[_.]', cur_file_name)
-    true_integument_alterations = parts[0]  
-
-    # extract content from result
-    result_content = result.choices[0].message.content
-    result_json = result_content.strip('```json\n').strip('```')
-    json_data = json.loads(result_json) # Convert the string to a Python dictionary
-    predict_integument_alterations = json_data.get('integument_alterations', 'NA')
-    conf = json_data.get('confidence', 'NA')
-    reason = json_data.get('reason', 'NA')
-
-    # calculate usage
-    output_token = result.usage.completion_tokens
-    prompt_tokens = result.usage.prompt_tokens
-    output_token_p = output_token_cost(output_token)
-    prompt_tokens_p = input_token_cost(prompt_tokens)
-    total_cost = round((output_token_p+prompt_tokens_p), 3)
-
-    data = {
-        "test_image": cur_file_name,
-        "true_integument_alterations": true_integument_alterations,
-        "predict_integument_alterations": predict_integument_alterations,
-        "predict_confidence": conf,
-        "predict_reason": reason,
-        "predict_result": result,
-        "model": "gpt-4-vision-preview",
-        "date": datetime.now().date(),
-        "system_prompt": system_prompt,
-        "user_prompt": user_prompt,
-        "max_tokens": max_tokens,
-        "detail_level": detail_level,
-        "seed": seed,
-        "temperature": temperature,
-        "completion_tokens": output_token,
-        "prompt_tokens": prompt_tokens,
-        "total_cost": total_cost
-
-    }
-
-    df = pd.DataFrame([data])
-
-    if os.path.isfile(full_path):
-        df.to_csv(full_path, mode='a', header=False, index=False)
-        print(f"Data appended to {full_path}")
-    else:
-        df.to_csv(full_path, mode='w', header=True, index=False)
-        print(f"Data written to {full_path}")
-
-
-def save_nasal_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
-    
-
-    # extract the true label of the image
-    parts = re.split(r'[_.]', cur_file_name)
-    true_nasal_discharge = parts[0]  
-
-    # extract content from result
-    result_content = result.choices[0].message.content
-    result_json = result_content.strip('```json\n').strip('```')
-    json_data = json.loads(result_json) # Convert the string to a Python dictionary
-    predict_nasal_discharge = json_data.get('nasal_discharge', 'NA')
-    conf = json_data.get('confidence', 'NA')
-    reason = json_data.get('reason', 'NA')
-
-    # calculate usage
-    output_token = result.usage.completion_tokens
-    prompt_tokens = result.usage.prompt_tokens
-    output_token_p = output_token_cost(output_token)
-    prompt_tokens_p = input_token_cost(prompt_tokens)
-    total_cost = round((output_token_p+prompt_tokens_p), 3)
-
-    data = {
-        "test_image": cur_file_name,
-        "true_nasal_discharge": true_nasal_discharge,
-        "predict_nasal_discharge": predict_nasal_discharge,
-        "predict_confidence": conf,
-        "predict_reason": reason,
-        "predict_result": result,
-        "model": "gpt-4-vision-preview",
-        "date": datetime.now().date(),
-        "system_prompt": system_prompt,
-        "user_prompt": user_prompt,
-        "max_tokens": max_tokens,
-        "detail_level": detail_level,
-        "seed": seed,
-        "temperature": temperature,
-        "completion_tokens": output_token,
-        "prompt_tokens": prompt_tokens,
-        "total_cost": total_cost
-
-    }
-
-    df = pd.DataFrame([data])
-
-    if os.path.isfile(full_path):
-        df.to_csv(full_path, mode='a', header=False, index=False)
-        print(f"Data appended to {full_path}")
-    else:
-        df.to_csv(full_path, mode='w', header=True, index=False)
-        print(f"Data written to {full_path}")
-
-
-def save_cleanliness_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
-    
-
-    # extract the true label of the image
-    parts = re.split(r'[_.]', cur_file_name)
-    true_cleanliness = parts[0]  
-    # gather true label
-    true_udder = 0
-    if 'udder' in cur_file_name:
-        true_udder = 2
-    true_hindquarter = 0
-    if 'hindquarter' in cur_file_name:
-        true_hindquarter = 2
-    true_hindleg = 0
-    if 'hindleg' in cur_file_name:
-        true_hindleg = 2
-
-    # extract content from result
-    result_content = result.choices[0].message.content
-    result_json = result_content.strip('```json\n').strip('```')
-    json_data = json.loads(result_json) # Convert the string to a Python dictionary
-    predict_udder = json_data.get('udder', 'NA')
-    predict_hindquarter = json_data.get('hindquarter', 'NA')
-    predict_hindleg = json_data.get('hindleg', 'NA')
-    conf = json_data.get('confidence', 'NA')
-    reason = json_data.get('reason', 'NA')
-
-    # calculate usage
-    output_token = result.usage.completion_tokens
-    prompt_tokens = result.usage.prompt_tokens
-    output_token_p = output_token_cost(output_token)
-    prompt_tokens_p = input_token_cost(prompt_tokens)
-    total_cost = round((output_token_p+prompt_tokens_p), 3)
-
-    data = {
-        "test_image": cur_file_name,
-        "true_cleanliness": true_cleanliness,
-        "true_udder": true_udder,
-        "predict_udder": predict_udder,
-        "true_hindquarter": true_hindquarter,
-        "predict_hindquarter": predict_hindquarter,
-        "true_hindleg": true_hindleg,
-        "predict_hindleg": predict_hindleg,
-        "predict_confidence": conf,
-        "predict_reason": reason,
-        "predict_result": result,
-        "model": "gpt-4-vision-preview",
-        "date": datetime.now().date(),
-        "system_prompt": system_prompt,
-        "user_prompt": user_prompt,
-        "max_tokens": max_tokens,
-        "detail_level": detail_level,
-        "seed": seed,
-        "temperature": temperature,
-        "completion_tokens": output_token,
-        "prompt_tokens": prompt_tokens,
-        "total_cost": total_cost
-
-    }
-
-    df = pd.DataFrame([data])
-
-    if os.path.isfile(full_path):
-        df.to_csv(full_path, mode='a', header=False, index=False)
-        print(f"Data appended to {full_path}")
-    else:
-        df.to_csv(full_path, mode='w', header=True, index=False)
-        print(f"Data written to {full_path}")
-
-def save_water_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
-    
-
-    # extract the true label of the image
-    parts = re.split(r'[_.]', cur_file_name)
-    true_water = parts[0]  
-
-    # extract content from result
-    result_content = result.choices[0].message.content
-    result_json = result_content.strip('```json\n').strip('```')
-    json_data = json.loads(result_json) # Convert the string to a Python dictionary
-    predict_water = json_data.get('cleanliness', 'NA')
-    conf = json_data.get('confidence', 'NA')
-    reason = json_data.get('reason', 'NA')
-
-    # calculate usage
-    output_token = result.usage.completion_tokens
-    prompt_tokens = result.usage.prompt_tokens
-    output_token_p = output_token_cost(output_token)
-    prompt_tokens_p = input_token_cost(prompt_tokens)
-    total_cost = round((output_token_p+prompt_tokens_p), 3)
-
-    data = {
-        "test_image": cur_file_name,
-        "true_water": true_water,
-        "predict_water": predict_water,
-        "predict_confidence": conf,
-        "predict_reason": reason,
-        "predict_result": result,
-        "model": "gpt-4-vision-preview",
-        "date": datetime.now().date(),
-        "system_prompt": system_prompt,
-        "user_prompt": user_prompt,
-        "max_tokens": max_tokens,
-        "detail_level": detail_level,
-        "seed": seed,
-        "temperature": temperature,
-        "completion_tokens": output_token,
-        "prompt_tokens": prompt_tokens,
-        "total_cost": total_cost
-
-    }
-
-    df = pd.DataFrame([data])
-
-    if os.path.isfile(full_path):
-        df.to_csv(full_path, mode='a', header=False, index=False)
-        print(f"Data appended to {full_path}")
-    else:
-        df.to_csv(full_path, mode='w', header=True, index=False)
-        print(f"Data written to {full_path}")
-
-
-def test_images_in_range(full_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, test_files, detail_level, max_tokens, s, temp, assessment_type):
-    user_prompt = user_prompt1 + "\n**example images**\n" + user_prompt2 + "\n**test images**\n"
-    for i in range(start_index, end_index):
-        cur_file_name = test_files[i]
-        result = prompt_welfare_assess_test_image(client, system_prompt, user_prompt1, user_prompt2, train_images, test_images[i], detail_level, max_tokens, s, temp)
-        if (assessment_type == "BCS"):
-            save_bcs_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
-        elif (assessment_type == "integument_alterations"):
-            save_integument_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
-        elif (assessment_type == "nasal"):
-            save_nasal_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
-        elif(assessment_type == "cleanliness"):
-            save_cleanliness_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
-        elif(assessment_type == "water"):
-            save_water_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
-
-
 def save_1shot_quality_assess_results_to_csv(full_path, video_path1, video_path2, result, system_prompt, user_prompt1, user_prompt2, choosen_quality1, choosen_quality2, frames_per_second, max_tokens, detail_level, seed, temperature):
 
     # extract content from result
@@ -896,3 +450,41 @@ def save_1shot_quality_assess_results_to_csv(full_path, video_path1, video_path2
     else:
         df.to_csv(full_path, mode='w', header=True, index=False)
         print(f"Data written to {full_path}")
+
+
+def process_and_describe_video(i, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file):
+    video_path = select_video_path(i, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos)
+    extracted_frames = extract_frames(video_path, frames_per_second)
+    show_extracted_frames(extracted_frames)
+    print(video_path)
+
+    result = describe_video_0shot(client, system_prompt, user_prompt, base64_frames=extracted_frames, max_tokens=max_tokens, detail_level=detail_level, s=seed, temp=temperature)
+    save_results_to_csv(results_folder, results_file, video_path, choosen_quality, choosen_category, result, frames_per_second, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature)
+
+def process_videos_in_range(start_index, end_index, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file):
+    for i in range(start_index, end_index):
+        process_and_describe_video(i, choosen_quality, choosen_category, bad_videos_by_category, bad_videos, good_videos, frames_per_second, client, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, results_folder, results_file)
+
+def calculate_video_duration(video_path):
+    video = cv2.VideoCapture(video_path)
+    fps = video.get(cv2.CAP_PROP_FPS)
+    frame_count = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
+    duration = frame_count / fps
+    video.release()
+    return duration
+
+def create_duration_dataframe(good_videos, bad_videos_run):
+    data = []
+
+    for video_path in good_videos:
+        duration = calculate_video_duration(video_path)
+        data.append({'Video': os.path.basename(video_path), 'Duration': duration, 'Category': 'Good'})
+
+    for video_path in bad_videos_run:
+        duration = calculate_video_duration(video_path)
+        data.append({'Video': os.path.basename(video_path), 'Duration': duration, 'Category': 'Bad - Run'})
+
+    df = pd.DataFrame(data)
+    return df
+
+
