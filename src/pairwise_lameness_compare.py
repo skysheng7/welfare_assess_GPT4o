@@ -42,13 +42,13 @@ sorted_pairwise_result['loser'] = sorted_pairwise_result['loser'].astype(int)
 ####################################### pairwise lameness comparison ##############################
 ###################################################################################################
 # write prompts
-system_prompt = "You are an experienced expert in animal science focusing on dairy cow lameness assessment, with 50 years of experience in conducting lameness assessment on dairy farms. "
+system_prompt = "You are an experienced expert in animal science focusing on dairy cow lameness assessment, with 50 years of experience in conducting lameness assessment on dairy farms. You are allowed to assess lameness of real animals."
 user_prompt1 = "Your task involves watching two videos (a series of frames), each showing a different cow walking. After viewing both videos, you need to decide which of the two cows is more lame. For the cow you judge as more lame, write down its 4-digit ID as the `winner`. For the other cow, record its ID as the `loser`. If both cows seem equally lame, you can choose any cow as the `winner` or `loser`, but make sure to write `0` under the column `degree` to indicate they have equal levels of lameness. you also need to assess the extent of lameness difference between them. Rate this difference on a scale from 0 to 3 and record it under `degree`. A rating of 0 indicates that both cows are equally lame, while a rating of 3 suggests a significant difference in lameness between the `winner` and the `loser`. It's important to watch the frames of each video in numerical order, from the smallest to the largest number. Make sure to view the series of frames in ascending numerical order, starting from the smallest to the largest number, as indicated by the red numbers on the top left corner of each frame.\n."
 user_prompt1 = user_prompt1 + "Essential: Briefly explain your reasoning under `reason` to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. I'll tip you $50 for this task. \n Answer format: ```json \n {\n  \"winner\": \"...\",\n \"loser\": \"...\",\n  \"degree\": \"...\",\n  \"reason\": \"...\"\n}``` "
 
 # choose model parameter
-frames_per_second=4 # how many frames to extract each second
-seed = 7
+frames_per_second=2 # how many frames to extract each second
+seed = 800
 max_tokens=1000
 detail_level="low"
 temperature = 0.5
@@ -59,8 +59,8 @@ for i in range(0, 1):
     cow2 = sorted_pairwise_result.iloc[i]['loser']
     degree = sorted_pairwise_result.iloc[i]['degree']
 
-    win_cow_path = find_mp4_with_digits(all_mp4, cow1)
-    lose_cow_path = find_mp4_with_digits(all_mp4, cow2)
+    win_cow_path = find_mp4_with_digits(all_mp4, cow1)[0]
+    lose_cow_path = find_mp4_with_digits(all_mp4, cow2)[0]
 
     # continue writing prompts
     user_prompt1 = user_prompt1 + f"First, here is the video of cow {cow1}(ID) walking:"
