@@ -37,10 +37,10 @@ temperature = 0.5
 #################################### welfare assessment: BCS ######################################
 ###################################################################################################
 # set input and output dir
-root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Columbia/Other projects/welfare_assessment_GPT4V/BCS'
+root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Columbia/Other projects/welfare_assessment_GPT4V/data/BCS'
 train = os.path.join(root_folder_path, "train")
 test = os.path.join(root_folder_path, "test")
-results_file = 'welfare_assess_BCS_dairy_dual_purpose.csv' # store the results in a csv file
+results_file = 'welfare_assess_BCS_dairy_dual_purpose_test.csv' # store the results in a csv file
 results_path = crete_result_path(results_folder, results_file)
 
 # train image examples: Get all PNG files in the train folder and sort them
@@ -63,7 +63,7 @@ user_prompt2 = task + performance_emotion_boost + answer_format + test_image_lea
 
 # prompt GPT-4V
 start_index = 0
-end_index = len(test_files)
+end_index = 1
 test_images_in_range(results_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, test_files, detail_level, max_tokens, s=seed, temp=temperature, assessment_type = "BCS")
 
 
@@ -72,10 +72,10 @@ test_images_in_range(results_path, start_index, end_index, client, system_prompt
 ############################### welfare assessment: integument alterations ########################
 ###################################################################################################
 # set input and output dir
-root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Columbia/Other projects/welfare_assessment_GPT4V/Integument_alterations'
+root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Columbia/Other projects/welfare_assessment_GPT4V/data/Integument_alterations'
 train = os.path.join(root_folder_path, "train")
 test = os.path.join(root_folder_path, "test")
-results_file = 'welfare_assess_integument_alterations.csv' # store the results in a csv file
+results_file = 'welfare_assess_integument_alterations_test.csv' # store the results in a csv file
 results_path = crete_result_path(results_folder, results_file)
 
 # train image examples: Get all PNG files in the train folder and sort them
