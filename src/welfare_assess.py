@@ -14,7 +14,7 @@ import json
 import random
 
 # define result directory
-results_folder = '../results'
+results_folder = '../results/results_welfare_assess/trial1'
 
 # connect to OpenAI API
 load_dotenv()  # This loads the variables (API key) from .env
@@ -37,10 +37,10 @@ temperature = 0.5
 #################################### welfare assessment: BCS ######################################
 ###################################################################################################
 # set input and output dir
-root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Columbia/Other projects/welfare_assessment_GPT4V/data/BCS'
+root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Columbia/Other projects/welfare_assessment_GPT4V/data_official/BCS'
 train = os.path.join(root_folder_path, "train")
 test = os.path.join(root_folder_path, "test")
-results_file = 'welfare_assess_BCS_dairy_dual_purpose_test.csv' # store the results in a csv file
+results_file = 'welfare_assess_BCS_test.csv' # store the results in a csv file
 results_path = crete_result_path(results_folder, results_file)
 
 # train image examples: Get all PNG files in the train folder and sort them

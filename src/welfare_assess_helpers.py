@@ -90,6 +90,7 @@ def save_bcs_results_to_csv(full_path, cur_file_name, result, system_prompt, use
     parts = re.split(r'[_.]', cur_file_name)
     true_bcs = parts[0]  
     true_note = parts[1]
+    true_cow_type = parts[2]
 
     # extract content from result
     result_content = result.choices[0].message.content
@@ -108,6 +109,7 @@ def save_bcs_results_to_csv(full_path, cur_file_name, result, system_prompt, use
 
     data = {
         "test_image": cur_file_name,
+        "cow_type": true_cow_type,
         "true_bcs": true_bcs,
         "true_note": true_note,
         "predict_bcs": predict_bcs,
