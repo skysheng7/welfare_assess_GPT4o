@@ -1,0 +1,181 @@
+test_image,cow_type,true_bcs,true_note,predict_score,predict_confidence,predict_reason,predict_result,model,date,system_prompt,user_prompt,max_tokens,detail_level,seed,temperature,completion_tokens,prompt_tokens,total_cost
+0_clean_udder_DSC_0248-1-1024x680.jpg,udder,0,clean,2,high,"The udder of the dairy cow in the image shows distinct plaques of dirt across a significant portion of its surface, including areas that are around the teats. This level of dirtiness matches the description and photographic example for a score of 2, indicating a dirty udder according to the provided assessment criteria.","ChatCompletion(id='chatcmpl-8qFxynzYiyBaBagIknGbxAITAZCwM', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the dairy cow in the image shows distinct plaques of dirt across a significant portion of its surface, including areas that are around the teats. This level of dirtiness matches the description and photographic example for a score of 2, indicating a dirty udder according to the provided assessment criteria.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1707465122, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=91, prompt_tokens=2510, total_tokens=2601))",gpt-4-vision-preview,2024-02-08,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of the udder of dairy cow shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria and examples. 0: clean; 2: dirty.
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,91,2510,0.028
+0_clean_udder_DSC_0449-1024x680.jpg,udder,0,clean,2,high,"The udder of the dairy cow in the image shows distinct plaques of dirt across its surface, especially around the teats. This level of dirtiness aligns with the provided example of Score 2, where any dirt on and around the teats indicates a dirty udder. The dirt appears to be adherent and covers a significant area, which exceeds the criteria for a clean udder (Score 0). Therefore, based on the criteria and examples provided, the assessment result is a score of 2, indicating a dirty udder. The confidence in this assessment is high due to the clear visibility of the dirt and the direct match with the 'Score 2' criteria.","ChatCompletion(id='chatcmpl-8qFy8L25UcHfZ0mOgssG2nKjQPNTU', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the dairy cow in the image shows distinct plaques of dirt across its surface, especially around the teats. This level of dirtiness aligns with the provided example of Score 2, where any dirt on and around the teats indicates a dirty udder. The dirt appears to be adherent and covers a significant area, which exceeds the criteria for a clean udder (Score 0). Therefore, based on the criteria and examples provided, the assessment result is a score of 2, indicating a dirty udder. The confidence in this assessment is high due to the clear visibility of the dirt and the direct match with the \'Score 2\' criteria.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1707465132, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=168, prompt_tokens=2510, total_tokens=2678))",gpt-4-vision-preview,2024-02-08,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of the udder of dairy cow shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria and examples. 0: clean; 2: dirty.
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,168,2510,0.03
+0_clean_udder_IMG_0434-1024x768.jpg,udder,0,clean,2,high,"The udder of the dairy cow in the image shows distinct areas of dirt accumulation that resemble the 'Score 2' example provided in the criteria. There are visible patches of dirt on and around the teats, which according to the classification criteria, warrants a score of 2 for a dirty udder. The dirt appears to be more than minor splashing and includes areas that could be considered as plaques of dirt. The assessment is made with high confidence as the dirt is clearly visible and matches the description and photographic illustration for a 'Score 2' classification.","ChatCompletion(id='chatcmpl-8qFyKi5tNAwvlkmcaZOnSzRlg2qgo', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the dairy cow in the image shows distinct areas of dirt accumulation that resemble the \'Score 2\' example provided in the criteria. There are visible patches of dirt on and around the teats, which according to the classification criteria, warrants a score of 2 for a dirty udder. The dirt appears to be more than minor splashing and includes areas that could be considered as plaques of dirt. The assessment is made with high confidence as the dirt is clearly visible and matches the description and photographic illustration for a \'Score 2\' classification.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1707465144, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=142, prompt_tokens=2510, total_tokens=2652))",gpt-4-vision-preview,2024-02-08,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of the udder of dairy cow shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria and examples. 0: clean; 2: dirty.
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,142,2510,0.029
+0_clean_udder_VS_03-1024x768.jpg,udder,0,clean,2,high,"The udder of the dairy cow in the image shows distinct plaques of dirt across its surface. There is a considerable amount of dirt and manure on and around the teats, which matches the description for a score of 2 as per the provided criteria. The dirt observed is more than minor splashing and consists of three-dimensional layers, which could potentially increase the risk of mastitis and other udder health issues. The assessment is made with high confidence as the visible dirt on the udder is clearly extensive and matches the example image provided for score 2.","ChatCompletion(id='chatcmpl-8qFyQnDo6lwVpsVnVeKcPX2MvItb5', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the dairy cow in the image shows distinct plaques of dirt across its surface. There is a considerable amount of dirt and manure on and around the teats, which matches the description for a score of 2 as per the provided criteria. The dirt observed is more than minor splashing and consists of three-dimensional layers, which could potentially increase the risk of mastitis and other udder health issues. The assessment is made with high confidence as the visible dirt on the udder is clearly extensive and matches the example image provided for score 2.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1707465150, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=143, prompt_tokens=2510, total_tokens=2653))",gpt-4-vision-preview,2024-02-08,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of the udder of dairy cow shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria and examples. 0: clean; 2: dirty.
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,143,2510,0.029
+0_clean_udder_VS_OK_05-1024x767.jpg,udder,0,clean,0,high,"The udder of the dairy cow in the image appears to be mostly clean with no distinct plaques of dirt or any dirt on and around the teats. There is minor discoloration which could be attributed to the cow's natural skin pigmentation or very minor splashing, but it does not amount to the size of the palm of a hand or cover more than half of the area under consideration. Therefore, according to the provided criteria, the udder would be classified as score 0, indicating cleanliness.","ChatCompletion(id='chatcmpl-8qFyXyrE5wvuI945C39wk2nqz4LsQ', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""0"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the dairy cow in the image appears to be mostly clean with no distinct plaques of dirt or any dirt on and around the teats. There is minor discoloration which could be attributed to the cow\'s natural skin pigmentation or very minor splashing, but it does not amount to the size of the palm of a hand or cover more than half of the area under consideration. Therefore, according to the provided criteria, the udder would be classified as score 0, indicating cleanliness.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1707465157, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=131, prompt_tokens=2510, total_tokens=2641))",gpt-4-vision-preview,2024-02-08,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of the udder of dairy cow shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria and examples. 0: clean; 2: dirty.
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,131,2510,0.029
+2_dirty_udder_DSC_0175-1024x680.jpg,udder,2,dirty,2,high,"The udder of the dairy cow in the image shows distinct areas of dirt and staining, particularly around the lower parts near the teats. This level of dirtiness is consistent with the 'Score 2' example provided, indicating a clear presence of dirt that could potentially increase the risk of mastitis and other health issues. The assessment is made with high confidence based on the clear visibility of dirt and the comparison with the provided scoring criteria and examples.","ChatCompletion(id='chatcmpl-8qFygJufqk2fXUf3mekiwDm2jMiZe', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the dairy cow in the image shows distinct areas of dirt and staining, particularly around the lower parts near the teats. This level of dirtiness is consistent with the \'Score 2\' example provided, indicating a clear presence of dirt that could potentially increase the risk of mastitis and other health issues. The assessment is made with high confidence based on the clear visibility of dirt and the comparison with the provided scoring criteria and examples.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1707465166, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=117, prompt_tokens=2510, total_tokens=2627))",gpt-4-vision-preview,2024-02-08,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of the udder of dairy cow shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria and examples. 0: clean; 2: dirty.
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,117,2510,0.029
+2_dirty_udder_DSC_0203-1024x680.jpg,udder,2,dirty,2,high,"The image shows distinct plaques of dirt on the udder and the surrounding areas, including the upper hind legs and flank. The dirt covers a significant area and is not limited to minor splashing or isolated spots. The criteria for a score of 2 include 'distinct plaques of dirt on udder or any dirt on and around the teats,' which is consistent with the condition of the cow in the image. Therefore, the assessment is made with high confidence based on the visible evidence of dirt accumulation in the specified areas.","ChatCompletion(id='chatcmpl-8qFyrJzyekT35HEKShcAin6roEA0e', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The image shows distinct plaques of dirt on the udder and the surrounding areas, including the upper hind legs and flank. The dirt covers a significant area and is not limited to minor splashing or isolated spots. The criteria for a score of 2 include \'distinct plaques of dirt on udder or any dirt on and around the teats,\' which is consistent with the condition of the cow in the image. Therefore, the assessment is made with high confidence based on the visible evidence of dirt accumulation in the specified areas.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1707465177, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=134, prompt_tokens=2510, total_tokens=2644))",gpt-4-vision-preview,2024-02-08,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of the udder of dairy cow shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria and examples. 0: clean; 2: dirty.
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,134,2510,0.029
+2_dirty_udder_DSC_0253-1024x680.jpg,udder,2,dirty,2,high,"The image shows the udder of the dairy cow with distinct plaques of dirt that cover a significant portion of the udder surface. The dirt is not limited to minor splashing but constitutes a thick layer, which is consistent with a score of 2 according to the provided criteria and examples. The dirt appears to be encrusted and widespread, extending onto and around the teats, which further supports the assessment score of 2 for a dirty udder.","ChatCompletion(id='chatcmpl-8qFyyHslYKnf2yz9ELW0OPoq7KGJT', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The image shows the udder of the dairy cow with distinct plaques of dirt that cover a significant portion of the udder surface. The dirt is not limited to minor splashing but constitutes a thick layer, which is consistent with a score of 2 according to the provided criteria and examples. The dirt appears to be encrusted and widespread, extending onto and around the teats, which further supports the assessment score of 2 for a dirty udder.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1707465184, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=122, prompt_tokens=2510, total_tokens=2632))",gpt-4-vision-preview,2024-02-08,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of the udder of dairy cow shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria and examples. 0: clean; 2: dirty.
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,122,2510,0.029
+2_dirty_udder_VS_02-768x1024.jpg,udder,2,dirty,2,high,"The cow's udder and surrounding areas are heavily covered with distinct plaques of dirt, which are three-dimensional and cover more than half of the area under consideration. This condition matches the description and photographic example provided for a score of 2, indicating a dirty udder. The extent of dirt coverage is significant, leading to a high confidence in this assessment.","ChatCompletion(id='chatcmpl-8qFz5KA8OXzQMlH87ZX7VwfX7veni', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow\'s udder and surrounding areas are heavily covered with distinct plaques of dirt, which are three-dimensional and cover more than half of the area under consideration. This condition matches the description and photographic example provided for a score of 2, indicating a dirty udder. The extent of dirt coverage is significant, leading to a high confidence in this assessment.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1707465191, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=100, prompt_tokens=2510, total_tokens=2610))",gpt-4-vision-preview,2024-02-08,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of the udder of dairy cow shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria and examples. 0: clean; 2: dirty.
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,100,2510,0.028
+2_dirty_udder_VS_07-1024x768.jpg,udder,2,dirty,2,high,"The cow's udder has significant areas covered with dirt, which are not just minor splashes but rather distinct plaques of dirt that cover more than half of the area under consideration. This matches the description and photographic example for a score of 2, indicating a dirty udder according to the provided criteria.","ChatCompletion(id='chatcmpl-8qFz9StObH5XvsWzalzqNxyZ67CcR', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow\'s udder has significant areas covered with dirt, which are not just minor splashes but rather distinct plaques of dirt that cover more than half of the area under consideration. This matches the description and photographic example for a score of 2, indicating a dirty udder according to the provided criteria.""\n}\n```', role='assistant', function_call=None, tool_calls=None))], created=1707465195, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=90, prompt_tokens=2510, total_tokens=2600))",gpt-4-vision-preview,2024-02-08,"You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are images containing text descriptions and criteria for assessing the cleanliness of dairy cows. Please read these examples in the images. Creteria and example images: 
+ 
+**example images**
+Your task involves evaluating the cleanliness of the udder of dairy cow shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria and examples. 0: clean; 2: dirty.
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,90,2510,0.028
