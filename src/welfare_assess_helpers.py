@@ -83,7 +83,7 @@ def prompt_welfare_assess_test_image(client, system_prompt, user_prompt1, user_p
 
 
 
-def save_bcs_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
+def save_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
     
 
     # extract the true label of the image
@@ -96,7 +96,7 @@ def save_bcs_results_to_csv(full_path, cur_file_name, result, system_prompt, use
     result_content = result.choices[0].message.content
     result_json = result_content.strip('```json\n').strip('```')
     json_data = json.loads(result_json) # Convert the string to a Python dictionary
-    predict_bcs = json_data.get('body_condition_score', 'NA')
+    predict_score = json_data.get('assessment_result', 'NA')
     conf = json_data.get('confidence', 'NA')
     reason = json_data.get('reason', 'NA')
 
@@ -112,7 +112,7 @@ def save_bcs_results_to_csv(full_path, cur_file_name, result, system_prompt, use
         "cow_type": true_cow_type,
         "true_bcs": true_bcs,
         "true_note": true_note,
-        "predict_bcs": predict_bcs,
+        "predict_score": predict_score,
         "predict_confidence": conf,
         "predict_reason": reason,
         "predict_result": result,
@@ -139,136 +139,9 @@ def save_bcs_results_to_csv(full_path, cur_file_name, result, system_prompt, use
         df.to_csv(full_path, mode='w', header=True, index=False)
         print(f"Data written to {full_path}")
 
-def save_integument_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
-    
-
-    # extract the true label of the image
-    parts = re.split(r'[_.]', cur_file_name)
-    true_integument_alterations = parts[0]  
-
-    # extract content from result
-    result_content = result.choices[0].message.content
-    result_json = result_content.strip('```json\n').strip('```')
-    json_data = json.loads(result_json) # Convert the string to a Python dictionary
-    predict_integument_alterations = json_data.get('integument_alterations', 'NA')
-    conf = json_data.get('confidence', 'NA')
-    reason = json_data.get('reason', 'NA')
-
-    # calculate usage
-    output_token = result.usage.completion_tokens
-    prompt_tokens = result.usage.prompt_tokens
-    output_token_p = output_token_cost(output_token)
-    prompt_tokens_p = input_token_cost(prompt_tokens)
-    total_cost = round((output_token_p+prompt_tokens_p), 3)
-
-    data = {
-        "test_image": cur_file_name,
-        "true_integument_alterations": true_integument_alterations,
-        "predict_integument_alterations": predict_integument_alterations,
-        "predict_confidence": conf,
-        "predict_reason": reason,
-        "predict_result": result,
-        "model": "gpt-4-vision-preview",
-        "date": datetime.now().date(),
-        "system_prompt": system_prompt,
-        "user_prompt": user_prompt,
-        "max_tokens": max_tokens,
-        "detail_level": detail_level,
-        "seed": seed,
-        "temperature": temperature,
-        "completion_tokens": output_token,
-        "prompt_tokens": prompt_tokens,
-        "total_cost": total_cost
-
-    }
-
-    df = pd.DataFrame([data])
-
-    if os.path.isfile(full_path):
-        df.to_csv(full_path, mode='a', header=False, index=False)
-        print(f"Data appended to {full_path}")
-    else:
-        df.to_csv(full_path, mode='w', header=True, index=False)
-        print(f"Data written to {full_path}")
-
-def save_cleanliness_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
-    
-
-    # extract the true label of the image
-    parts = re.split(r'[_.]', cur_file_name)
-    true_cleanliness = parts[0]  
-    # gather true label
-    true_udder = 0
-    if 'udder' in cur_file_name:
-        true_udder = 2
-    true_hindquarter = 0
-    if 'hindquarter' in cur_file_name:
-        true_hindquarter = 2
-    true_hindleg = 0
-    if 'hindleg' in cur_file_name:
-        true_hindleg = 2
-
-    # extract content from result
-    result_content = result.choices[0].message.content
-    result_json = result_content.strip('```json\n').strip('```')
-    json_data = json.loads(result_json) # Convert the string to a Python dictionary
-    predict_udder = json_data.get('udder', 'NA')
-    predict_hindquarter = json_data.get('hindquarter', 'NA')
-    predict_hindleg = json_data.get('hindleg', 'NA')
-    conf = json_data.get('confidence', 'NA')
-    reason = json_data.get('reason', 'NA')
-
-    # calculate usage
-    output_token = result.usage.completion_tokens
-    prompt_tokens = result.usage.prompt_tokens
-    output_token_p = output_token_cost(output_token)
-    prompt_tokens_p = input_token_cost(prompt_tokens)
-    total_cost = round((output_token_p+prompt_tokens_p), 3)
-
-    data = {
-        "test_image": cur_file_name,
-        "true_cleanliness": true_cleanliness,
-        "true_udder": true_udder,
-        "predict_udder": predict_udder,
-        "true_hindquarter": true_hindquarter,
-        "predict_hindquarter": predict_hindquarter,
-        "true_hindleg": true_hindleg,
-        "predict_hindleg": predict_hindleg,
-        "predict_confidence": conf,
-        "predict_reason": reason,
-        "predict_result": result,
-        "model": "gpt-4-vision-preview",
-        "date": datetime.now().date(),
-        "system_prompt": system_prompt,
-        "user_prompt": user_prompt,
-        "max_tokens": max_tokens,
-        "detail_level": detail_level,
-        "seed": seed,
-        "temperature": temperature,
-        "completion_tokens": output_token,
-        "prompt_tokens": prompt_tokens,
-        "total_cost": total_cost
-
-    }
-
-    df = pd.DataFrame([data])
-
-    if os.path.isfile(full_path):
-        df.to_csv(full_path, mode='a', header=False, index=False)
-        print(f"Data appended to {full_path}")
-    else:
-        df.to_csv(full_path, mode='w', header=True, index=False)
-        print(f"Data written to {full_path}")
-
-def test_images_in_range(full_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, test_files, detail_level, max_tokens, s, temp, assessment_type):
+def test_images_in_range(full_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, test_files, detail_level, max_tokens, s, temp):
     user_prompt = user_prompt1 + "\n**example images**\n" + user_prompt2 + "\n**test images**\n"
     for i in range(start_index, end_index):
         cur_file_name = test_files[i]
         result = prompt_welfare_assess_test_image(client, system_prompt, user_prompt1, user_prompt2, train_images, test_images[i], detail_level, max_tokens, s, temp)
-        if (assessment_type == "BCS"):
-            save_bcs_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
-        elif (assessment_type == "integument_alterations"):
-            save_integument_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
-        elif(assessment_type == "cleanliness"):
-            save_cleanliness_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
-        
+        save_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
