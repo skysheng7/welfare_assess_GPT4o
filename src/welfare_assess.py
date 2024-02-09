@@ -14,7 +14,7 @@ import json
 import random
 
 # define result directory
-results_folder = '../results/results_welfare_assess/trial1'
+results_folder = '../results_welfare_assess/trial1'
 
 # connect to OpenAI API
 load_dotenv()  # This loads the variables (API key) from .env
@@ -56,14 +56,14 @@ test_images = [convert_jpg_to_base64(os.path.join(test, f)) for f in test_files]
 system_prompt = "You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. \n "
 user_prompt1 = "Below are images containing text descriptions and criteria for assessing the body condition of dairy cows. Please read these examples in the images. Creteria and example images: \n "
 task = "Your task involves evaluating the body condition score (body_condition_score) of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. 0: regular body condition; 1: very lean; 2: very fat.\n "
-performance_emotion_boost ="\n Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. \n"
+performance_emotion_boost ="\n Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. \n"
 answer_format = "\n Answer format: ```json \n {\n  \"body_condition_score\": \"...\",\n  \"confidence\": \"...\",\n  \"reason\": \"...\"}``` \n"
 test_image_lead = "\n The following image requires your assessment of the cow's body condition: \n"
 user_prompt2 = task + performance_emotion_boost + answer_format + test_image_lead
 
 # prompt GPT-4V
-start_index = 0
-end_index = 1
+start_index = 1
+end_index = len(test_files)
 test_images_in_range(results_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, test_files, detail_level, max_tokens, s=seed, temp=temperature, assessment_type = "BCS")
 
 
@@ -101,40 +101,6 @@ start_index = 0
 end_index = len(test_images)
 test_images_in_range(results_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, test_files, detail_level, max_tokens, s=seed, temp=temperature, assessment_type = "integument_alterations")
 
-###################################################################################################
-############################## welfare assessment: nasal discharge ################################
-###################################################################################################
-
-# set input and output dir
-root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Columbia/Other projects/welfare_assessment_GPT4V/Nasal_discharge'
-train = os.path.join(root_folder_path, "train")
-test = os.path.join(root_folder_path, "test")
-results_file = 'welfare_assess_nasal_discharge2.csv' # store the results in a csv file
-results_path = crete_result_path(results_folder, results_file)
-
-# train image examples: Get all PNG files in the train folder and sort them
-train_files = [f for f in os.listdir(train) if f.lower().endswith('.png')]
-train_files.sort()
-train_images = [convert_to_jpeg_base64(os.path.join(train, f)) for f in train_files] # Convert PNG images to JPEG and then to Base64
-
-# test image examples: 
-test_files = [f for f in os.listdir(test) if f.lower().endswith('.jpg')]
-test_images = [convert_jpg_to_base64(os.path.join(test, f)) for f in test_files]
-
-# generate prompts
-system_prompt = "You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. \n "
-user_prompt1 = "Below are images containing text descriptions and criteria for assessing nasal discharge of dairy cows. Please read these examples in the images. Creteria and example images: \n "
-task = "Your task involves evaluating the nasal discharge of the dairy cow shown in the subsequent image, based on the previously provided criteria and examples. Enter `0` under `nasal_discharge` if there is no evidence of nasal discharge. Enter `2` under `nasal_discharge` if there is evidence of nasal discharge.  Enter `NA` if the image is not clear enough for assessment. Focus specifically on identifying any discharge (liquid) present. It's common for cows to have remnants of feed or straw on their noses from eating, appearing as brownish debris. Please note that these remnants are not considered discharge\n "
-performance_emotion_boost ="\n Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. \n"
-answer_format = "\n Answer format: ```json \n {\n  \"nasal_discharge\": \"...\",\n  \"confidence\": \"...\",\n  \"reason\": \"...\"}``` \n"
-test_image_lead = "\n The following image requires your assessment of the cow's nasal discharge conditions: \n"
-user_prompt2 = task + performance_emotion_boost + answer_format + test_image_lead
-
-# prompt GPT-4V
-start_index = 0
-end_index = len(test_files)
-test_images_in_range(results_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, test_files, detail_level, max_tokens, s=seed, temp=temperature, assessment_type = "nasal")
-
 
 ###################################################################################################
 ####################### welfare assessment: udder, hindquarter, hindleg ###########################
@@ -171,39 +137,6 @@ end_index = len(test_files)
 test_images_in_range(results_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, test_files, detail_level, max_tokens, s=seed, temp=temperature, assessment_type = "cleanliness")
 
 
-
-###################################################################################################
-################################### welfare assessment: water #####################################
-###################################################################################################
-# set input and output dir
-root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Columbia/Other projects/welfare_assessment_GPT4V/Water'
-train = os.path.join(root_folder_path, "train")
-test = os.path.join(root_folder_path, "test")
-results_file = 'welfare_assess_water.csv' # store the results in a csv file
-results_path = crete_result_path(results_folder, results_file)
-
-# train image examples: Get all PNG files in the train folder and sort them
-train_files = [f for f in os.listdir(train) if f.lower().endswith('.png')]
-train_files.sort()
-train_images = [convert_to_jpeg_base64(os.path.join(train, f)) for f in train_files] # Convert PNG images to JPEG and then to Base64
-
-# test image examples: 
-test_files = [f for f in os.listdir(test) if f.lower().endswith('.jpg')]
-test_images = [convert_jpg_to_base64(os.path.join(test, f)) for f in test_files]
-
-# generate prompts
-system_prompt = "You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. \n "
-user_prompt1 = "Below are images containing text descriptions and criteria for assessing the cleanliness of water points. Please read these examples in the images. Creteria and example images: \n "
-task = "Your task involves evaluating the cleanliness of water points shown in the subsequent image, based on the previously provided criteria and examples. Enter `clean` under `cleanliness` if drinkers and water are clean at the moment of inspection. Enter `partly dirty` under `cleanliness` if drinkers are dirty, but water is fresh and clean at moment of inspection or only part of several drinkers clean and containing clean water. Enter `dirty` under `cleanliness` if drinkers and water are both dirty at moment of inspection. Enter `NA` if the image is not clear enough for inspection. \n "
-performance_emotion_boost ="\n Give your assessment with a confidence score and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. \n"
-answer_format = "\n Answer format: ```json \n {\n  \"cleanliness\": \"...\",\n  \"confidence\": \"...\",\n  \"reason\": \"...\"}``` \n"
-test_image_lead = "\n The following image requires your assessment of the cleanliness of water points: \n"
-user_prompt2 = task + performance_emotion_boost + answer_format + test_image_lead
-
-# prompt GPT-4V
-start_index = 0
-end_index = len(test_files)
-test_images_in_range(results_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, test_files, detail_level, max_tokens, s=seed, temp=temperature, assessment_type = "water")
 
 
 

@@ -191,60 +191,6 @@ def save_integument_results_to_csv(full_path, cur_file_name, result, system_prom
         df.to_csv(full_path, mode='w', header=True, index=False)
         print(f"Data written to {full_path}")
 
-
-def save_nasal_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
-    
-
-    # extract the true label of the image
-    parts = re.split(r'[_.]', cur_file_name)
-    true_nasal_discharge = parts[0]  
-
-    # extract content from result
-    result_content = result.choices[0].message.content
-    result_json = result_content.strip('```json\n').strip('```')
-    json_data = json.loads(result_json) # Convert the string to a Python dictionary
-    predict_nasal_discharge = json_data.get('nasal_discharge', 'NA')
-    conf = json_data.get('confidence', 'NA')
-    reason = json_data.get('reason', 'NA')
-
-    # calculate usage
-    output_token = result.usage.completion_tokens
-    prompt_tokens = result.usage.prompt_tokens
-    output_token_p = output_token_cost(output_token)
-    prompt_tokens_p = input_token_cost(prompt_tokens)
-    total_cost = round((output_token_p+prompt_tokens_p), 3)
-
-    data = {
-        "test_image": cur_file_name,
-        "true_nasal_discharge": true_nasal_discharge,
-        "predict_nasal_discharge": predict_nasal_discharge,
-        "predict_confidence": conf,
-        "predict_reason": reason,
-        "predict_result": result,
-        "model": "gpt-4-vision-preview",
-        "date": datetime.now().date(),
-        "system_prompt": system_prompt,
-        "user_prompt": user_prompt,
-        "max_tokens": max_tokens,
-        "detail_level": detail_level,
-        "seed": seed,
-        "temperature": temperature,
-        "completion_tokens": output_token,
-        "prompt_tokens": prompt_tokens,
-        "total_cost": total_cost
-
-    }
-
-    df = pd.DataFrame([data])
-
-    if os.path.isfile(full_path):
-        df.to_csv(full_path, mode='a', header=False, index=False)
-        print(f"Data appended to {full_path}")
-    else:
-        df.to_csv(full_path, mode='w', header=True, index=False)
-        print(f"Data written to {full_path}")
-
-
 def save_cleanliness_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
     
 
@@ -314,59 +260,6 @@ def save_cleanliness_results_to_csv(full_path, cur_file_name, result, system_pro
         df.to_csv(full_path, mode='w', header=True, index=False)
         print(f"Data written to {full_path}")
 
-def save_water_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
-    
-
-    # extract the true label of the image
-    parts = re.split(r'[_.]', cur_file_name)
-    true_water = parts[0]  
-
-    # extract content from result
-    result_content = result.choices[0].message.content
-    result_json = result_content.strip('```json\n').strip('```')
-    json_data = json.loads(result_json) # Convert the string to a Python dictionary
-    predict_water = json_data.get('cleanliness', 'NA')
-    conf = json_data.get('confidence', 'NA')
-    reason = json_data.get('reason', 'NA')
-
-    # calculate usage
-    output_token = result.usage.completion_tokens
-    prompt_tokens = result.usage.prompt_tokens
-    output_token_p = output_token_cost(output_token)
-    prompt_tokens_p = input_token_cost(prompt_tokens)
-    total_cost = round((output_token_p+prompt_tokens_p), 3)
-
-    data = {
-        "test_image": cur_file_name,
-        "true_water": true_water,
-        "predict_water": predict_water,
-        "predict_confidence": conf,
-        "predict_reason": reason,
-        "predict_result": result,
-        "model": "gpt-4-vision-preview",
-        "date": datetime.now().date(),
-        "system_prompt": system_prompt,
-        "user_prompt": user_prompt,
-        "max_tokens": max_tokens,
-        "detail_level": detail_level,
-        "seed": seed,
-        "temperature": temperature,
-        "completion_tokens": output_token,
-        "prompt_tokens": prompt_tokens,
-        "total_cost": total_cost
-
-    }
-
-    df = pd.DataFrame([data])
-
-    if os.path.isfile(full_path):
-        df.to_csv(full_path, mode='a', header=False, index=False)
-        print(f"Data appended to {full_path}")
-    else:
-        df.to_csv(full_path, mode='w', header=True, index=False)
-        print(f"Data written to {full_path}")
-
-
 def test_images_in_range(full_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, test_files, detail_level, max_tokens, s, temp, assessment_type):
     user_prompt = user_prompt1 + "\n**example images**\n" + user_prompt2 + "\n**test images**\n"
     for i in range(start_index, end_index):
@@ -376,10 +269,6 @@ def test_images_in_range(full_path, start_index, end_index, client, system_promp
             save_bcs_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
         elif (assessment_type == "integument_alterations"):
             save_integument_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
-        elif (assessment_type == "nasal"):
-            save_nasal_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
         elif(assessment_type == "cleanliness"):
             save_cleanliness_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
-        elif(assessment_type == "water"):
-            save_water_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
-
+        
