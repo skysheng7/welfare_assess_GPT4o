@@ -55,10 +55,29 @@ def convert_jpg_to_base64(jpg_image_path):
 
     return base64_string
 
+def generate_image_content_with_description(all_images, all_files, detail_level="low"):
+    content = []
+    for image_index in range(0, len(all_images)):
+        cur_file = all_files[image_index]
+        cur_image = all_images[image_index]
 
-def prompt_welfare_assess_test_image(client, system_prompt, user_prompt1, user_prompt2, train_images, cur_test, detail_level, max_tokens, s, temp):
+        parts = cur_file.split('_')
+        example_description = "\nExample image of a cow assessed as " + parts[0] + " " + parts[1] + ": \n"
+
+        content.append({"type": "text", "text": example_description})
+        content.append({
+            "type": "image_url",
+            "image_url": {
+                "url": f"data:image/jpg;base64, {cur_image}",
+                "detail": detail_level
+            }
+        })
+
+    return content
+
+def prompt_welfare_assess_test_image(client, system_prompt, user_prompt1, user_prompt2, train_images, train_files, cur_test, detail_level, max_tokens, s, temp):
     # Generate the content for the train images
-    train_content = generate_image_content(base64_frames=train_images, detail_level=detail_level)
+    train_content = generate_image_content_with_description(train_images, train_files, detail_level=detail_level)
 
     # Constructing prompt messages
     prompt_messages = [
@@ -99,14 +118,13 @@ def prompt_welfare_assess_test_image(client, system_prompt, user_prompt1, user_p
 
 
 
-def save_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature):
+def save_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed, temperature, body_type, treatment):
     
 
     # extract the true label of the image
     parts = re.split(r'[_.]', cur_file_name)
-    true_bcs = parts[0]  
+    true_score = parts[0]  
     true_note = parts[1]
-    true_cow_type = parts[2]
 
     # extract content from result
     result_content = result.choices[0].message.content
@@ -125,8 +143,9 @@ def save_results_to_csv(full_path, cur_file_name, result, system_prompt, user_pr
 
     data = {
         "test_image": cur_file_name,
-        "cow_type": true_cow_type,
-        "true_bcs": true_bcs,
+        "assess_area": body_type,
+        "treatment": treatment,
+        "true_score": true_score,
         "true_note": true_note,
         "predict_score": predict_score,
         "predict_confidence": conf,
@@ -155,9 +174,10 @@ def save_results_to_csv(full_path, cur_file_name, result, system_prompt, user_pr
         df.to_csv(full_path, mode='w', header=True, index=False)
         print(f"Data written to {full_path}")
 
-def test_images_in_range(full_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, test_files, detail_level, max_tokens, s, temp):
+def test_images_in_range(full_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, train_files, test_images, test_files, detail_level, max_tokens, s, temp, body_type, treatment):
     user_prompt = user_prompt1 + "\n**example images**\n" + user_prompt2 + "\n**test images**\n"
     for i in range(start_index, end_index):
         cur_file_name = test_files[i]
-        result = prompt_welfare_assess_test_image(client, system_prompt, user_prompt1, user_prompt2, train_images, test_images[i], detail_level, max_tokens, s, temp)
-        save_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp)
+        cur_image = test_images[i]
+        result = prompt_welfare_assess_test_image(client, system_prompt, user_prompt1, user_prompt2, train_images, train_files, cur_image, detail_level, max_tokens, s, temp)
+        save_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp, body_type, treatment)

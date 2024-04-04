@@ -37,10 +37,13 @@ temperature = 0.5
 ############################## welfare assessment: Hindleg_cleanliness ############################
 ###################################################################################################
 # set input and output dir
+body_type = "hindleg cleanliness"
 root_folder_path = 'C:/Users/skysheng/OneDrive - UBC/University of British Columbia/Other projects/welfare_assessment_GPT4V/data_official/Hindleg_cleanliness'
 train = os.path.join(root_folder_path, "train")
 test = os.path.join(root_folder_path, "test")
-treatment = "original" # specify the image processing treatment: "original", "segment", or "segment_bodyPart"
+treatment_list = os.listdir(test)
+treatment = treatment_list[0] # specify the image processing treatment: "original", "segment", or "segment_bodyPart"
+cur_test = os.path.join(test, treatment)
 
 description_path = os.path.join(train, 'description.txt')
 with open(description_path, 'r', encoding='utf-8') as file:
@@ -54,13 +57,13 @@ train_files.sort()
 train_images = convert_images_to_base64(train, train_files) # convert to base64 format
 
 # test image examples: 
-test_files = [f for f in os.listdir(test) if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
-test_images = convert_images_to_base64(test, test_files)
+test_files = [f for f in os.listdir(cur_test) if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
+test_images = convert_images_to_base64(cur_test, test_files)
 
 # generate prompts
-system_prompt = "You are an experienced expert in animal welfare science focusing on dairy cow behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. \n "
-user_prompt1 = "Below are images containing text descriptions and criteria for assessing the cleanliness of dairy cows. Please read these examples in the images. Creteria and example images: \n "
-task = "Your task involves evaluating the cleanliness of the hindleg of dairy cow shown in the subsequent image, and record your score under \"assessment_result\", based on the previously provided criteria and examples. 0: clean; 2: dirty.\n "
+system_prompt = "You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. \n "
+user_prompt1 = "Below are text instructions for assessing " + body_type + " of cattle as part of the routine welfare assessment on farm: " + description + "\n Below are some example images you can learn from: \n "
+task = "\nYour task involves evaluating the " + body_type + " of cattle shown in the subsequent image, and record your score under \"assessment_result\", based on the previously provided criteria descriptions and examples. \n "
 performance_emotion_boost ="\n Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. \n"
 answer_format = "\n Answer format: ```json \n {\n  \"assessment_result\": \"...\",\n  \"confidence\": \"...\",\n  \"reason\": \"...\"}``` \n"
 test_image_lead = "\n The following image requires your assessment: \n"
@@ -68,8 +71,9 @@ user_prompt2 = task + performance_emotion_boost + answer_format + test_image_lea
 
 # prompt GPT-4V
 start_index = 0
-end_index = len(test_files)
-test_images_in_range(results_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, test_images, test_files, detail_level, max_tokens, s=seed, temp=temperature)
+end_index = 1
+#end_index = len(test_files)
+test_images_in_range(results_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, train_files, test_images, test_files, detail_level, max_tokens, s=seed, temp=temperature, body_type, treatment)
 
 
 
