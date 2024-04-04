@@ -23,7 +23,6 @@ load_dotenv()  # This loads the variables (API key) from .env
 openai_api_key = os.getenv('OPENAI_API_KEY')
 client = OpenAI(api_key=openai_api_key)
 
-# get a list of good videos, bad videos, bad videos by categories
 os.chdir('C:/Users/skysheng/OneDrive - UBC/R package project and Git/lameness_GPT4V/src')
 from utils import *
 from welfare_assess_helpers import *
@@ -33,9 +32,6 @@ seed = 7
 max_tokens=1000
 detail_level="high"
 temperature = 0.2
-
-
-
 
 ###################################################################################################
 ############################## welfare assessment: Hindleg_cleanliness ############################
@@ -47,7 +43,7 @@ body_type = "hindleg cleanliness"
 train = os.path.join(root_folder_path, "train")
 test = os.path.join(root_folder_path, "test")
 treatment_list = os.listdir(test)
-
+treatment= "original"
 for treatment in treatment_list: # specify the image processing treatment: "original", "segment", or "segment_bodyPart"
     cur_test = os.path.join(test, treatment)
 
@@ -95,8 +91,6 @@ for treatment in treatment_list: # specify the image processing treatment: "orig
     description_path = os.path.join(train, 'description.txt')
     with open(description_path, 'r', encoding='utf-8') as file:
         description = file.read()
-    results_file = 'welfare_assess_cleanliness_result.csv' # store the results in a csv file
-    results_path = crete_result_path(results_folder, results_file)
 
     # Get all PNG and JPG files in the train folder and sort them
     train_files = [f for f in os.listdir(train) if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
