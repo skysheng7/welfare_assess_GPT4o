@@ -43,7 +43,7 @@ body_type = "hindleg cleanliness"
 train = os.path.join(root_folder_path, "train")
 test = os.path.join(root_folder_path, "test")
 treatment_list = os.listdir(test)
-treatment= "original"
+
 for treatment in treatment_list: # specify the image processing treatment: "original", "segment", or "segment_bodyPart"
     cur_test = os.path.join(test, treatment)
 
