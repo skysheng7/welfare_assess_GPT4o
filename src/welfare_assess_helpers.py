@@ -15,6 +15,22 @@ from io import BytesIO
 import re
 
 
+def convert_images_to_base64(folder_path, all_files):
+    
+    all_images = []
+    for f in all_files:
+        file_path = os.path.join(folder_path, f)
+        if f.lower().endswith('.png'):
+            # Convert PNG images to JPEG and then to Base64
+            base64_string = convert_to_jpeg_base64(file_path)
+        elif f.lower().endswith(('.jpg', '.jpeg')):
+            # Convert JPG images directly to Base64
+            base64_string = convert_jpg_to_base64(file_path)
+        all_images.append(base64_string)
+    
+    return all_images
+
+
 def convert_to_jpeg_base64(png_image_path):
     # Open the PNG image
     with Image.open(png_image_path) as img:
