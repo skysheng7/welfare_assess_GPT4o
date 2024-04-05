@@ -28,7 +28,7 @@ openai_api_key = os.getenv('OPENAI_API_KEY')
 client = OpenAI(api_key=openai_api_key)
 
 # choose model parameters  
-seed = 7
+seed = 700
 max_tokens=1000
 detail_level="high"
 temperature = 0.5
@@ -152,6 +152,6 @@ for treatment in treatment_list: # specify the image processing treatment: "orig
     user_prompt2 = task + performance_emotion_boost + answer_format + test_image_lead
 
     # prompt GPT-4V
-    start_index = 0
+    start_index = 3
     end_index = len(test_files)
     test_images_in_range(results_path, start_index, end_index, client, system_prompt, user_prompt1, user_prompt2, train_images, train_files, test_images, test_files, detail_level, max_tokens, s=seed, temp=temperature, body_type=body_type, treatment=treatment)

@@ -719,3 +719,1413 @@ Your task involves evaluating the **hindleg cleanliness** of cattle shown in the
 
 **test images**
 ",1000,high,7,0.5,131,2720,0.031
+0_clean_hindquarter_DSC_0203-1024x680.jpg,hindquarter cleanliness,original,0,clean,2,high,"The cow in the image has significant patches of dirt on the hindquarters, including the upper hind leg, flank, and rear-view areas. These patches appear to be three-dimensional layers of dirt that cover more than half of the area under consideration, thus fitting the description for a score of 2. The dirt covers a substantial portion of the hindquarters, similar to the example images provided for cows assessed as 2 dirty. The assessment is made with high confidence due to the clear visibility of the dirt and the extent of coverage, which closely matches the criteria for a score of 2.","ChatCompletion(id='chatcmpl-9AU704QCwo4Sw0FRlGtt0Vo0CR7Ac', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has significant patches of dirt on the hindquarters, including the upper hind leg, flank, and rear-view areas. These patches appear to be three-dimensional layers of dirt that cover more than half of the area under consideration, thus fitting the description for a score of 2. The dirt covers a substantial portion of the hindquarters, similar to the example images provided for cows assessed as 2 dirty. The assessment is made with high confidence due to the clear visibility of the dirt and the extent of coverage, which closely matches the criteria for a score of 2.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286058, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=144, prompt_tokens=3230, total_tokens=3374))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,144,3230,0.037
+0_clean_hindquarter_VS_01-1024x768.jpg,hindquarter cleanliness,original,0,clean,2,high,"The cow in the image has significant areas of its hindquarters covered with plaques of dirt. The dirt is clearly visible as large patches that cover more than half of the area under consideration. These plaques of dirt are not minor splashes but rather large, three-dimensional layers that adhere to the skin and fur of the upper hind leg, flank, and rear-view including the tail. The degree of dirtiness meets the criteria for a score of 2, as it is extensive and not limited to minor splashes.","ChatCompletion(id='chatcmpl-9AU7L42xQs8rAnxOi6BJELPuBwJnY', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has significant areas of its hindquarters covered with plaques of dirt. The dirt is clearly visible as large patches that cover more than half of the area under consideration. These plaques of dirt are not minor splashes but rather large, three-dimensional layers that adhere to the skin and fur of the upper hind leg, flank, and rear-view including the tail. The degree of dirtiness meets the criteria for a score of 2, as it is extensive and not limited to minor splashes.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286079, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=130, prompt_tokens=3230, total_tokens=3360))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,130,3230,0.036
+0_clean_hindquarter_VS_OK_05-1024x767.jpg,hindquarter cleanliness,original,0,clean,0,high,"The cow in the image has a clean hindquarter with no visible plaques of dirt and only minor splashing. The upper hind leg, flank, and rear-view including tail show no large areas of dirt that would amount to the size of the palm of a hand. The cleanliness is consistent with the examples provided for a score of 0, indicating no significant dirt accumulation.","ChatCompletion(id='chatcmpl-9AU7tiH0utRhpFOJ2UTM6w1usbWNv', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""0"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has a clean hindquarter with no visible plaques of dirt and only minor splashing. The upper hind leg, flank, and rear-view including tail show no large areas of dirt that would amount to the size of the palm of a hand. The cleanliness is consistent with the examples provided for a score of 0, indicating no significant dirt accumulation.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286113, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=101, prompt_tokens=3230, total_tokens=3331))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,101,3230,0.035
+0_clean_hindquarter_VS_OK_07-1024x765.jpg,hindquarter cleanliness,original,0,clean,0,high,"The cow in the image has clean hindquarters with no signs of plaques or substantial dirt accumulation. The upper hind leg, flank, and rear-view including the tail are visible and show only minor splashing, which is consistent with a score of 0 according to the provided criteria. There are no three-dimensional layers of dirt that would amount to the size of the palm of a hand covering more than half of the area under consideration. The cleanliness of the cow is similar to the example images provided for a score of 0, indicating that the cow has been well-maintained in a clean environment.","ChatCompletion(id='chatcmpl-9AU8Ul6cG9rri7SSVNjeftgnlJGbW', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""0"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has clean hindquarters with no signs of plaques or substantial dirt accumulation. The upper hind leg, flank, and rear-view including the tail are visible and show only minor splashing, which is consistent with a score of 0 according to the provided criteria. There are no three-dimensional layers of dirt that would amount to the size of the palm of a hand covering more than half of the area under consideration. The cleanliness of the cow is similar to the example images provided for a score of 0, indicating that the cow has been well-maintained in a clean environment.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286150, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=147, prompt_tokens=3230, total_tokens=3377))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,147,3230,0.037
+2_dirty_hindquarter_DSC_0197-1024x680.jpg,hindquarter cleanliness,original,2,dirty,2,high,"The image shows the hindquarters of the cow with significant areas covered in plaques of dirt. The dirt is clearly visible as three-dimensional layers that cover more than half of the area under consideration, particularly around the flank and upper hind leg. This is consistent with the provided criteria for a score of 2, which indicates separate or continuous plaques of dirt. The example images of cows assessed as 2 dirty show similar levels of dirt coverage, which supports the high confidence in this assessment.","ChatCompletion(id='chatcmpl-9AU8sOVjRP1ZM3KUxYR8g5w90M0Cd', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The image shows the hindquarters of the cow with significant areas covered in plaques of dirt. The dirt is clearly visible as three-dimensional layers that cover more than half of the area under consideration, particularly around the flank and upper hind leg. This is consistent with the provided criteria for a score of 2, which indicates separate or continuous plaques of dirt. The example images of cows assessed as 2 dirty show similar levels of dirt coverage, which supports the high confidence in this assessment.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286174, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=124, prompt_tokens=3230, total_tokens=3354))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,124,3230,0.036
+2_dirty_hindquarter_DSC_0255-1024x680.jpg,hindquarter cleanliness,original,2,dirty,2,high,"The cow in the image has large areas of its hindquarters covered with plaques of dirt. The dirt covers a significant portion of the hind leg, flank, and rear-view area, including around the tail, which is consistent with the description for a score of 2. The plaques are three-dimensional and exceed the size of a human hand, which is evident when comparing the size of the plaques to the overall size of the cow. The assessment is made with high confidence as the image clearly shows the extent of dirtiness that falls under the provided criteria for a score of 2.","ChatCompletion(id='chatcmpl-9AU9OQoltTDQ14hg3mbQFVpkgagLl', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has large areas of its hindquarters covered with plaques of dirt. The dirt covers a significant portion of the hind leg, flank, and rear-view area, including around the tail, which is consistent with the description for a score of 2. The plaques are three-dimensional and exceed the size of a human hand, which is evident when comparing the size of the plaques to the overall size of the cow. The assessment is made with high confidence as the image clearly shows the extent of dirtiness that falls under the provided criteria for a score of 2.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286206, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=145, prompt_tokens=3230, total_tokens=3375))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,145,3230,0.037
+2_dirty_hindquarter_DSC_0352-1024x680.jpg,hindquarter cleanliness,original,2,dirty,2,high,"The cow in the image has multiple areas on its hindquarters with three-dimensional layers of dirt that are larger than the size of a palm of a hand. These areas cover more than half of the hindquarters, which according to the provided criteria, warrants a score of 2 for being dirty. The pattern and extent of dirtiness are consistent with the example images provided for a cow assessed as 2 dirty.","ChatCompletion(id='chatcmpl-9AU9tKYLVdjWZQFPdDSB5YzIjId9l', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has multiple areas on its hindquarters with three-dimensional layers of dirt that are larger than the size of a palm of a hand. These areas cover more than half of the hindquarters, which according to the provided criteria, warrants a score of 2 for being dirty. The pattern and extent of dirtiness are consistent with the example images provided for a cow assessed as 2 dirty.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286237, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=108, prompt_tokens=3230, total_tokens=3338))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,108,3230,0.036
+2_dirty_hindquarter_VS_10-1024x768.jpg,hindquarter cleanliness,original,2,dirty,2,high,"The cow in the image has significant areas of its hindquarters covered with plaques of dirt. The dirt is clearly visible as large patches that cover more than half of the area under consideration. These patches are three-dimensional and extensive, consistent with the description of a score of 2 for dirtiness. The upper hind leg, flank, and rear-view including the tail (excluding the udder) all show plaques of dirt that are in line with the example images provided for a cow assessed as 2 dirty. The assessment is made with high confidence due to the clear visibility and size of the dirt plaques, which match the criteria for a score of 2.","ChatCompletion(id='chatcmpl-9AUAPD3otjjI7w3nLyfGNtkGAaG3j', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has significant areas of its hindquarters covered with plaques of dirt. The dirt is clearly visible as large patches that cover more than half of the area under consideration. These patches are three-dimensional and extensive, consistent with the description of a score of 2 for dirtiness. The upper hind leg, flank, and rear-view including the tail (excluding the udder) all show plaques of dirt that are in line with the example images provided for a cow assessed as 2 dirty. The assessment is made with high confidence due to the clear visibility and size of the dirt plaques, which match the criteria for a score of 2.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286269, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=161, prompt_tokens=3230, total_tokens=3391))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,161,3230,0.037
+0_clean_hindquarter_DSC_0203-1024x680_seg.png,hindquarter cleanliness,segment,0,clean,2,high,"The cow in the image exhibits significant areas of dirt accumulation on its hindquarters, including the upper hind leg, flank, and rear-view excluding the udder. The dirt appears to be in the form of plaques, which are three-dimensional layers of dirt that cover more than half of the area under consideration. The size of the dirt patches is consistent with the definition of plaques as being at least the size of the palm of a hand. These findings align with the provided criteria for a score of 2, indicating that the cow is assessed as 'dirty.' The assessment is made with high confidence because the visual evidence is clear and unambiguous, closely matching the example image provided for a cow assessed as 2 dirty.","ChatCompletion(id='chatcmpl-9AUAvY4UczMtO6VsqJ3yec8cfyKlV', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image exhibits significant areas of dirt accumulation on its hindquarters, including the upper hind leg, flank, and rear-view excluding the udder. The dirt appears to be in the form of plaques, which are three-dimensional layers of dirt that cover more than half of the area under consideration. The size of the dirt patches is consistent with the definition of plaques as being at least the size of the palm of a hand. These findings align with the provided criteria for a score of 2, indicating that the cow is assessed as \'dirty.\' The assessment is made with high confidence because the visual evidence is clear and unambiguous, closely matching the example image provided for a cow assessed as 2 dirty.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286301, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=172, prompt_tokens=3230, total_tokens=3402))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,172,3230,0.037
+0_clean_hindquarter_VS_01-1024x768_seg.png,hindquarter cleanliness,segment,0,clean,2,high,"The cow in the image exhibits significant areas of dirt accumulation on its hindquarters, including the upper hind leg, flank, and tail. The dirt is not just minor splashing but appears to be continuous plaques that cover more than half of the area under consideration, as defined by the criteria for a score of 2. The dirt on the flank and upper leg is substantial and adheres to the body in thick layers, which is indicative of poor cleanliness. The assessment is made with high confidence due to the clear visibility of the dirt and its extensive coverage, which aligns with the provided examples for a score of 2.","ChatCompletion(id='chatcmpl-9AUBQkK77Ia8aCvSU89FU8vGaKtzX', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image exhibits significant areas of dirt accumulation on its hindquarters, including the upper hind leg, flank, and tail. The dirt is not just minor splashing but appears to be continuous plaques that cover more than half of the area under consideration, as defined by the criteria for a score of 2. The dirt on the flank and upper leg is substantial and adheres to the body in thick layers, which is indicative of poor cleanliness. The assessment is made with high confidence due to the clear visibility of the dirt and its extensive coverage, which aligns with the provided examples for a score of 2.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286332, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=152, prompt_tokens=3230, total_tokens=3382))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,152,3230,0.037
+0_clean_hindquarter_VS_OK_05-1024x767_seg.png,hindquarter cleanliness,segment,0,clean,2,high,"The cow in the image exhibits significant areas of dirt accumulation on its hindquarters, including the upper hind leg, flank, and tail. The dirt is not just minor splashing but appears to be continuous and substantial plaques, which according to the assessment criteria, warrants a score of 2. The dirt covers more than half of the area under consideration, and there are three-dimensional layers of dirt that are easily visible, meeting the criteria for a score of 2. The assessment is made with high confidence as the cow's condition closely matches the provided example image of a cow assessed as 2 dirty.","ChatCompletion(id='chatcmpl-9AUBwhVoX6VsCgxRkl2W1NhQntrmP', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image exhibits significant areas of dirt accumulation on its hindquarters, including the upper hind leg, flank, and tail. The dirt is not just minor splashing but appears to be continuous and substantial plaques, which according to the assessment criteria, warrants a score of 2. The dirt covers more than half of the area under consideration, and there are three-dimensional layers of dirt that are easily visible, meeting the criteria for a score of 2. The assessment is made with high confidence as the cow\'s condition closely matches the provided example image of a cow assessed as 2 dirty.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286364, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=147, prompt_tokens=3230, total_tokens=3377))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,147,3230,0.037
+0_clean_hindquarter_VS_OK_07-1024x765_seg.png,hindquarter cleanliness,segment,0,clean,0,high,"The cow in the image displays a clean hindquarter area with no visible plaques of dirt or significant splashing. The upper hind leg, flank, and rear-view including the tail exhibit only minor natural discolorations consistent with the cow's coat pattern rather than dirt. There is no evidence of three-dimensional layers of dirt that would amount to the size of the palm of a hand, which would be required to score a 2. Therefore, according to the provided assessment criteria, this cow's hindquarter cleanliness can be confidently scored as 0.","ChatCompletion(id='chatcmpl-9AUCSLO4ANo70uoafrICJBFgH8PWx', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""0"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image displays a clean hindquarter area with no visible plaques of dirt or significant splashing. The upper hind leg, flank, and rear-view including the tail exhibit only minor natural discolorations consistent with the cow\'s coat pattern rather than dirt. There is no evidence of three-dimensional layers of dirt that would amount to the size of the palm of a hand, which would be required to score a 2. Therefore, according to the provided assessment criteria, this cow\'s hindquarter cleanliness can be confidently scored as 0.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286396, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=136, prompt_tokens=3230, total_tokens=3366))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,136,3230,0.036
+2_dirty_hindquarter_DSC_0197-1024x680_seg.png,hindquarter cleanliness,segment,2,dirty,2,high,"The image shows the hindquarters of the cow with significant areas covered in plaques of dirt. The dirt is clearly three-dimensional and covers more than half of the area under consideration, which includes the upper hind leg, flank, and rear-view including the tail (excluding the udder). This matches the description provided for a score of 2, where separate or continuous plaques of dirt are visible on the hindquarters. The extent and thickness of the dirt observed in the image are consistent with the provided example images for a score of 2, leading to a high confidence in the assessment.","ChatCompletion(id='chatcmpl-9AUCzC5BYmqcNQMzChHUEJhe2kGWy', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The image shows the hindquarters of the cow with significant areas covered in plaques of dirt. The dirt is clearly three-dimensional and covers more than half of the area under consideration, which includes the upper hind leg, flank, and rear-view including the tail (excluding the udder). This matches the description provided for a score of 2, where separate or continuous plaques of dirt are visible on the hindquarters. The extent and thickness of the dirt observed in the image are consistent with the provided example images for a score of 2, leading to a high confidence in the assessment.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286429, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=145, prompt_tokens=3230, total_tokens=3375))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,145,3230,0.037
+2_dirty_hindquarter_DSC_0255-1024x680_seg.png,hindquarter cleanliness,segment,2,dirty,2,high,"The image shows the hindquarters of a cow with significant areas covered in plaques of dirt, which appear to be dried feces or mud. The plaques are three-dimensional and cover more than half of the area under consideration, including the upper hind leg, flank, and rear-view. This assessment is consistent with the provided criteria for a score of 2, which is defined as separate or continuous plaques of dirt. The condition of the cow's hindquarters closely resembles the example images provided for a cow assessed as 2 dirty, supporting a high confidence in this assessment.","ChatCompletion(id='chatcmpl-9AUDVq51gHScVep52mChstez8nZjU', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The image shows the hindquarters of a cow with significant areas covered in plaques of dirt, which appear to be dried feces or mud. The plaques are three-dimensional and cover more than half of the area under consideration, including the upper hind leg, flank, and rear-view. This assessment is consistent with the provided criteria for a score of 2, which is defined as separate or continuous plaques of dirt. The condition of the cow\'s hindquarters closely resembles the example images provided for a cow assessed as 2 dirty, supporting a high confidence in this assessment.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286461, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=142, prompt_tokens=3230, total_tokens=3372))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,142,3230,0.037
+2_dirty_hindquarter_DSC_0352-1024x680_seg.png,hindquarter cleanliness,segment,2,dirty,2,high,"The cow in the image exhibits a significant amount of dirt accumulation on the upper hind leg and flank areas. There are distinct areas where dirt forms continuous plaques that are larger than the size of a human palm. This aligns with the criteria for a score of 2, which indicates separate or continuous plaques of dirt. The dirt coverage is extensive and clearly visible, hence the high confidence in the assessment.","ChatCompletion(id='chatcmpl-9AUE0L43p1snB6azfdGlcio6sL5D3', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image exhibits a significant amount of dirt accumulation on the upper hind leg and flank areas. There are distinct areas where dirt forms continuous plaques that are larger than the size of a human palm. This aligns with the criteria for a score of 2, which indicates separate or continuous plaques of dirt. The dirt coverage is extensive and clearly visible, hence the high confidence in the assessment.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286492, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=108, prompt_tokens=3230, total_tokens=3338))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,108,3230,0.036
+2_dirty_hindquarter_VS_10-1024x768_seg.png,hindquarter cleanliness,segment,2,dirty,2,high,"The cow in the image displays a significant amount of dirt on the hindquarters, including the upper hind leg, flank, and rear-view areas. There are clearly visible plaques of dirt that are more than half the size of a human palm, covering more than half of the area under consideration. This level of dirtiness fits the description for a score of 2, as it goes beyond minor splashing and consists of separate or continuous plaques of dirt. The assessment is made with high confidence based on the clear visibility of the dirt and its extent, which is in line with the provided criteria descriptions and example images of cows assessed as 2 dirty.","ChatCompletion(id='chatcmpl-9AUEXgh2v8mEiERsMICV5pNrZCFiJ', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image displays a significant amount of dirt on the hindquarters, including the upper hind leg, flank, and rear-view areas. There are clearly visible plaques of dirt that are more than half the size of a human palm, covering more than half of the area under consideration. This level of dirtiness fits the description for a score of 2, as it goes beyond minor splashing and consists of separate or continuous plaques of dirt. The assessment is made with high confidence based on the clear visibility of the dirt and its extent, which is in line with the provided criteria descriptions and example images of cows assessed as 2 dirty.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286525, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=157, prompt_tokens=2890, total_tokens=3047))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,157,2890,0.034
+0_clean_hindquarter_DSC_0203-1024x680_segBody.png,hindquarter cleanliness,segment_bodyPart,0,clean,2,high,"The hindquarters of the cow in the image display significant areas covered with plaques of dirt. The dirt is not just minor splashing but consists of separate and continuous plaques that are clearly visible and cover a substantial area of the hindquarters, including the upper hind leg and flank. This assessment is consistent with the provided examples of cows assessed as 2 dirty, where the cleanliness criterion specifies that a score of 2 is given for separate or continuous plaques of dirt. The degree of dirtiness observed in the image is comparable to the example images for the score of 2, thus leading to a high confidence in the assessment.","ChatCompletion(id='chatcmpl-9AUF23Sx4czNQZo2QY52mBX64lN53', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The hindquarters of the cow in the image display significant areas covered with plaques of dirt. The dirt is not just minor splashing but consists of separate and continuous plaques that are clearly visible and cover a substantial area of the hindquarters, including the upper hind leg and flank. This assessment is consistent with the provided examples of cows assessed as 2 dirty, where the cleanliness criterion specifies that a score of 2 is given for separate or continuous plaques of dirt. The degree of dirtiness observed in the image is comparable to the example images for the score of 2, thus leading to a high confidence in the assessment.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286556, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=153, prompt_tokens=2890, total_tokens=3043))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,153,2890,0.033
+0_clean_hindquarter_VS_01-1024x768_segBody.png,hindquarter cleanliness,segment_bodyPart,0,clean,2,high,"The cow in the image displays significant dirt accumulation across the hindquarters. There are visible plaques of dirt that are both separate and continuous, covering more than half of the area under consideration. The degree of dirtiness meets the criteria for a score of 2, as it is beyond minor splashing and consists of three-dimensional layers of dirt. The assessment is made with high confidence based on the clear visibility of dirt plaques and the adherence to the provided scoring criteria.","ChatCompletion(id='chatcmpl-9AUFX7HaM4tMDAzWFrKEKjszuLkFT', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image displays significant dirt accumulation across the hindquarters. There are visible plaques of dirt that are both separate and continuous, covering more than half of the area under consideration. The degree of dirtiness meets the criteria for a score of 2, as it is beyond minor splashing and consists of three-dimensional layers of dirt. The assessment is made with high confidence based on the clear visibility of dirt plaques and the adherence to the provided scoring criteria.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286587, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=120, prompt_tokens=2890, total_tokens=3010))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,120,2890,0.033
+0_clean_hindquarter_VS_OK_05-1024x767_segBody.png,hindquarter cleanliness,segment_bodyPart,0,clean,2,high,"The cow in the image displays significant areas of dirt accumulation on its hindquarters, including the upper hind leg, flank, and rear-view excluding the tail. The dirt appears to be in the form of large plaques that cover more than half of the area under consideration, which meets the criteria for a score of 2 as per the hindquarter cleanliness assessment guidelines. These plaques are three-dimensional and exceed the size of the palm of a hand. The degree of dirtiness is similar to the provided example images of cows assessed as 2 dirty, hence the high confidence in the assessment.","ChatCompletion(id='chatcmpl-9AUG4lx8e5H3ijiKKL188UV0OXIv1', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image displays significant areas of dirt accumulation on its hindquarters, including the upper hind leg, flank, and rear-view excluding the tail. The dirt appears to be in the form of large plaques that cover more than half of the area under consideration, which meets the criteria for a score of 2 as per the hindquarter cleanliness assessment guidelines. These plaques are three-dimensional and exceed the size of the palm of a hand. The degree of dirtiness is similar to the provided example images of cows assessed as 2 dirty, hence the high confidence in the assessment.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286620, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=144, prompt_tokens=3230, total_tokens=3374))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,144,3230,0.037
+0_clean_hindquarter_VS_OK_07-1024x765_segBody.png,hindquarter cleanliness,segment_bodyPart,0,clean,2,high,"The cow in the image displays significant dirt accumulation on the hindquarters, including the upper hind leg and flank areas. There are visible plaques of dirt that appear to be more than half of the area under consideration, which is consistent with the provided definition for a score of 2. The dirt is not just minor splashing but forms separate or continuous plaques, clearly visible and covering a substantial area. The assessment is made with high confidence as the visible signs of dirtiness match the criteria for a score of 2 as per the provided examples and definitions.","ChatCompletion(id='chatcmpl-9AUGZQUF8LvJ6H7Gl8MwAOSnnr6fA', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image displays significant dirt accumulation on the hindquarters, including the upper hind leg and flank areas. There are visible plaques of dirt that appear to be more than half of the area under consideration, which is consistent with the provided definition for a score of 2. The dirt is not just minor splashing but forms separate or continuous plaques, clearly visible and covering a substantial area. The assessment is made with high confidence as the visible signs of dirtiness match the criteria for a score of 2 as per the provided examples and definitions.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286651, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=138, prompt_tokens=2890, total_tokens=3028))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,138,2890,0.033
+2_dirty_hindquarter_DSC_0197-1024x680_segBody.png,hindquarter cleanliness,segment_bodyPart,2,dirty,2,high,"The hindquarter of the cow in the image shows extensive areas covered with plaques of dirt which are clearly more than half of the area under consideration. The dirt is both separate and continuous, adhering to the skin and hair, which matches the description for a score of 2. The condition is similar to the provided example images of cows assessed as 2 dirty, where there is a significant amount of three-dimensional layers of dirt present.","ChatCompletion(id='chatcmpl-9AUH5DEJtuazFBDku5bKoyXEpcOtl', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The hindquarter of the cow in the image shows extensive areas covered with plaques of dirt which are clearly more than half of the area under consideration. The dirt is both separate and continuous, adhering to the skin and hair, which matches the description for a score of 2. The condition is similar to the provided example images of cows assessed as 2 dirty, where there is a significant amount of three-dimensional layers of dirt present.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286683, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=114, prompt_tokens=2890, total_tokens=3004))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,114,2890,0.032
+2_dirty_hindquarter_DSC_0255-1024x680_segBody.png,hindquarter cleanliness,segment_bodyPart,2,dirty,2,high,"The image shows the hindquarters of a cow with extensive areas covered in plaques of dirt which are clearly three-dimensional and larger than the size of a palm. This is consistent with the provided example images of cows assessed as 2 dirty, where similar extensive dirt coverage is present. The assessment criteria specify that a score of 2 is given for separate or continuous plaques of dirt, which is what we observe in the image. The dirt covers more than half of the area under consideration, including the upper hind leg, flank, and rear-view, excluding the udder.","ChatCompletion(id='chatcmpl-9AUHehKqOkG051TqxbhYRy9KHZkfK', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The image shows the hindquarters of a cow with extensive areas covered in plaques of dirt which are clearly three-dimensional and larger than the size of a palm. This is consistent with the provided example images of cows assessed as 2 dirty, where similar extensive dirt coverage is present. The assessment criteria specify that a score of 2 is given for separate or continuous plaques of dirt, which is what we observe in the image. The dirt covers more than half of the area under consideration, including the upper hind leg, flank, and rear-view, excluding the udder.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286718, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=142, prompt_tokens=2890, total_tokens=3032))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,142,2890,0.033
+2_dirty_hindquarter_DSC_0352-1024x680_segBody.png,hindquarter cleanliness,segment_bodyPart,2,dirty,2,high,"The hindquarter of the cow in the image shows extensive areas covered with dirt, which includes both splashing and three-dimensional layers of dirt. There are multiple plaques of dirt that are much larger than the size of a human palm, covering more than half of the area under consideration. This assessment is consistent with the provided examples of cows assessed as 2 dirty, where the dirt coverage is significant and not confined to minor splashing.","ChatCompletion(id='chatcmpl-9AUI8xJHRu8PwCf5TZInjQJM5laai', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The hindquarter of the cow in the image shows extensive areas covered with dirt, which includes both splashing and three-dimensional layers of dirt. There are multiple plaques of dirt that are much larger than the size of a human palm, covering more than half of the area under consideration. This assessment is consistent with the provided examples of cows assessed as 2 dirty, where the dirt coverage is significant and not confined to minor splashing.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286748, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=113, prompt_tokens=2890, total_tokens=3003))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,113,2890,0.032
+2_dirty_hindquarter_VS_10-1024x768_segBody.png,hindquarter cleanliness,segment_bodyPart,2,dirty,2,high,"The cow in the image has significant areas of its hindquarters covered with dirt that appears to be dried and caked on, forming plaques. These areas of dirt are larger than the palm of a hand and cover more than half of the area under consideration, which includes the upper hind leg, flank, and rear-view including the tail (excluding the udder). This matches the description provided for a score of 2, indicating that the cow's hindquarters are dirty with separate or continuous plaques of dirt.","ChatCompletion(id='chatcmpl-9AUIdvIYiKABEKTaJwugFDhwcdVOZ', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has significant areas of its hindquarters covered with dirt that appears to be dried and caked on, forming plaques. These areas of dirt are larger than the palm of a hand and cover more than half of the area under consideration, which includes the upper hind leg, flank, and rear-view including the tail (excluding the udder). This matches the description provided for a score of 2, indicating that the cow\'s hindquarters are dirty with separate or continuous plaques of dirt.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286779, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=130, prompt_tokens=2720, total_tokens=2850))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **hindquarter cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of applicable body parts is defined as the degree of dirt on the body parts considered
+-	Splashing (e.g. feces, mud)
+-	Plaques: three-dimensional layers of dirt amounting to seize of the palm of hand if more than half of the area under consideration is covered
+Access one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	Hind quarters – upper hind leg, flank and rear-view including tail (excluding udder)
+
+Hind quarters:
+0 – no dirt or minor splashing
+2 – separate or continuous plaques of dirt
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **hindquarter cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,130,2720,0.031
+0_clean_udder_DSC_0248-1-1024x680.jpg,udder cleanliness,original,0,clean,2,high,"The cow's udder in the image shows distinct plaques of dirt, which are three-dimensional layers of dirt that are clearly visible and cover a significant portion of the udder. There is also dirt around the teats. This level of dirtiness meets the criteria for a score of 2, as it goes beyond minor splashing and includes distinct plaques of dirt on the udder and around the teats.","ChatCompletion(id='chatcmpl-9AUJCWvTFt7bq3dOydQuSKUAysBIq', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow\'s udder in the image shows distinct plaques of dirt, which are three-dimensional layers of dirt that are clearly visible and cover a significant portion of the udder. There is also dirt around the teats. This level of dirtiness meets the criteria for a score of 2, as it goes beyond minor splashing and includes distinct plaques of dirt on the udder and around the teats.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286814, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=113, prompt_tokens=3238, total_tokens=3351))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,113,3238,0.036
+0_clean_udder_DSC_0449-1024x680.jpg,udder cleanliness,original,0,clean,2,high,"The udder of the cow in the image shows significant dirt accumulation, especially around the lower parts and on the teats. There are distinct plaques of dirt present that are larger than the size of a palm of a hand. This meets the criteria for a score of 2, as there is more than minor splashing and the dirt includes both plaques and coverage on and around the teats.","ChatCompletion(id='chatcmpl-9AUJeWEK3ph4ZbeSRWjZeWAiLCLVK', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the cow in the image shows significant dirt accumulation, especially around the lower parts and on the teats. There are distinct plaques of dirt present that are larger than the size of a palm of a hand. This meets the criteria for a score of 2, as there is more than minor splashing and the dirt includes both plaques and coverage on and around the teats.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286842, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=108, prompt_tokens=3238, total_tokens=3346))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,108,3238,0.036
+0_clean_udder_IMG_0434-1024x768.jpg,udder cleanliness,original,0,clean,2,high,"The cow in the image has distinct plaques of dirt on the udder, which are clearly visible as three-dimensional layers of dirt. These plaques cover a significant portion of the udder's surface area, exceeding the threshold for a score of 0, which would only allow for minor splashing other than on the teats. The degree of dirt present on the udder, particularly around the teats, aligns with the criteria for a score of 2, indicating that the udder is dirty.","ChatCompletion(id='chatcmpl-9AUKBJ1XlT3snnPbCjfaSpooKj337', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has distinct plaques of dirt on the udder, which are clearly visible as three-dimensional layers of dirt. These plaques cover a significant portion of the udder\'s surface area, exceeding the threshold for a score of 0, which would only allow for minor splashing other than on the teats. The degree of dirt present on the udder, particularly around the teats, aligns with the criteria for a score of 2, indicating that the udder is dirty.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286875, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=133, prompt_tokens=3238, total_tokens=3371))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,133,3238,0.036
+0_clean_udder_VS_03-1024x768.jpg,udder cleanliness,original,0,clean,2,high,"The cow in the image has significant patches of dirt on the udder, with large areas covered by what appears to be a combination of faeces and mud. The dirt is not limited to minor splashing but includes distinct plaques that are larger than the palm of a hand. Additionally, there is visible dirt on and around the teats. The condition of the udder clearly falls under the '2 – Distinct plaques of dirt on udder or any dirt on and around the teats' category, as per the welfare assessment criteria provided.","ChatCompletion(id='chatcmpl-9AUKiT682fvcKFfIDGWpp55hN2Pbv', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has significant patches of dirt on the udder, with large areas covered by what appears to be a combination of faeces and mud. The dirt is not limited to minor splashing but includes distinct plaques that are larger than the palm of a hand. Additionally, there is visible dirt on and around the teats. The condition of the udder clearly falls under the \'2 – Distinct plaques of dirt on udder or any dirt on and around the teats\' category, as per the welfare assessment criteria provided.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286908, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=141, prompt_tokens=3238, total_tokens=3379))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,141,3238,0.037
+2_dirty_udder_DSC_0175-1024x680.jpg,udder cleanliness,original,2,dirty,2,high,"The cow in the image has distinct plaques of dirt on the udder, which are clearly visible as three-dimensional layers of dirt. There is also noticeable dirt on the hind legs, which suggests that the udder has been exposed to a dirty environment, leading to the accumulation of dirt. This level of dirtiness meets the criteria for a score of 2, as it goes beyond minor splashing and includes distinct plaques of dirt on the udder. The assessment is made with high confidence based on the clear visibility of the dirt and the provided criteria for scoring udder cleanliness.","ChatCompletion(id='chatcmpl-9AULDcKrINT4cLt6aH70C8WpZylq1', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has distinct plaques of dirt on the udder, which are clearly visible as three-dimensional layers of dirt. There is also noticeable dirt on the hind legs, which suggests that the udder has been exposed to a dirty environment, leading to the accumulation of dirt. This level of dirtiness meets the criteria for a score of 2, as it goes beyond minor splashing and includes distinct plaques of dirt on the udder. The assessment is made with high confidence based on the clear visibility of the dirt and the provided criteria for scoring udder cleanliness.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286939, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=147, prompt_tokens=3238, total_tokens=3385))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,147,3238,0.037
+2_dirty_udder_DSC_0203-1024x680.jpg,udder cleanliness,original,2,dirty,2,high,"The cow in the image has distinct plaques of dirt on the udder, which are clearly visible as three-dimensional layers of dirt. These dirt plaques are larger than the size of a human palm, and more than half of the area under consideration (the udder) is covered. This matches the criteria for a score of 2, indicating a dirty udder. The assessment is made with high confidence due to the clear visibility of the dirt and the adherence to the provided criteria descriptions and examples.","ChatCompletion(id='chatcmpl-9AULjSPjjbfQmoaDzEIF3mft4SnQV', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has distinct plaques of dirt on the udder, which are clearly visible as three-dimensional layers of dirt. These dirt plaques are larger than the size of a human palm, and more than half of the area under consideration (the udder) is covered. This matches the criteria for a score of 2, indicating a dirty udder. The assessment is made with high confidence due to the clear visibility of the dirt and the adherence to the provided criteria descriptions and examples.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712286971, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=130, prompt_tokens=3238, total_tokens=3368))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,130,3238,0.036
+2_dirty_udder_VS_02-768x1024.jpg,udder cleanliness,original,2,dirty,2,high,"The cow in the image has significant plaques of dirt across the majority of the udder area, which are clearly visible as three-dimensional layers. These plaques cover much more than half of the udder area and are larger than the size of a human hand, which aligns with the criteria for a score of 2. There is no ambiguity in the assessment as the dirt is extensive and unmistakable, hence the high confidence in the scoring.","ChatCompletion(id='chatcmpl-9AUMEuFsY66nzz75TWl7m9tFRRsPs', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has significant plaques of dirt across the majority of the udder area, which are clearly visible as three-dimensional layers. These plaques cover much more than half of the udder area and are larger than the size of a human hand, which aligns with the criteria for a score of 2. There is no ambiguity in the assessment as the dirt is extensive and unmistakable, hence the high confidence in the scoring.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287002, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=118, prompt_tokens=3238, total_tokens=3356))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,118,3238,0.036
+2_dirty_udder_VS_07-1024x768.jpg,udder cleanliness,original,2,dirty,2,high,"The cow in the image has significant patches of dirt on the udder, particularly around the teats. The dirt is not just minor splashing; it appears to be three-dimensional layers that cover more than half of the udder area, meeting the criteria for a score of 2. The plaques are large enough to be considered distinct, as they are larger than the palm of a hand. The condition of the udder indicates a clear need for improved cleanliness to ensure the welfare and health of the animal.","ChatCompletion(id='chatcmpl-9AUMkD46phXuvjNpogtCGJQoXHODu', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow in the image has significant patches of dirt on the udder, particularly around the teats. The dirt is not just minor splashing; it appears to be three-dimensional layers that cover more than half of the udder area, meeting the criteria for a score of 2. The plaques are large enough to be considered distinct, as they are larger than the palm of a hand. The condition of the udder indicates a clear need for improved cleanliness to ensure the welfare and health of the animal.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287034, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=132, prompt_tokens=3238, total_tokens=3370))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,132,3238,0.036
+0_clean_udder_DSC_0248-1-1024x680_seg.png,udder cleanliness,segment,0,clean,2,high,"The udder of the cow in the image shows clear signs of significant dirt accumulation. There are large, three-dimensional plaques of dirt covering a substantial portion of the udder's surface. This level of dirtiness, especially with the size and coverage of the plaques, fits the description for a score of 2. The dirt is not limited to minor splashing; it is extensive and affects both the udder and the surrounding areas, including the teats. The assessment is made with high confidence as the dirtiness closely matches the provided example of a cow assessed as 2 dirty.","ChatCompletion(id='chatcmpl-9AUNG5QDRdWjrq02r0z2cxrU9VzSI', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the cow in the image shows clear signs of significant dirt accumulation. There are large, three-dimensional plaques of dirt covering a substantial portion of the udder\'s surface. This level of dirtiness, especially with the size and coverage of the plaques, fits the description for a score of 2. The dirt is not limited to minor splashing; it is extensive and affects both the udder and the surrounding areas, including the teats. The assessment is made with high confidence as the dirtiness closely matches the provided example of a cow assessed as 2 dirty.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287066, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=148, prompt_tokens=3238, total_tokens=3386))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,148,3238,0.037
+0_clean_udder_DSC_0449-1024x680_seg.png,udder cleanliness,segment,0,clean,2,high,"The udder of the cow in the image shows clear signs of significant dirt accumulation. There are distinct plaques of dirt on the udder, particularly on the right side, which are large enough to be considered more than minor splashing. Furthermore, there is dirt present around the teats. According to the provided criteria, any dirt on and around the teats or distinct plaques of dirt on the udder should result in a score of 2. The amount and size of the dirt present on the udder match the description and examples of a score of 2. Therefore, with high confidence, the udder cleanliness of this cow is assessed as 2, indicating a dirty condition that would require attention to improve hygiene and potentially overall animal welfare.","ChatCompletion(id='chatcmpl-9AUNm0EwJuaZLwcFcpCCSTJFjEDTE', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the cow in the image shows clear signs of significant dirt accumulation. There are distinct plaques of dirt on the udder, particularly on the right side, which are large enough to be considered more than minor splashing. Furthermore, there is dirt present around the teats. According to the provided criteria, any dirt on and around the teats or distinct plaques of dirt on the udder should result in a score of 2. The amount and size of the dirt present on the udder match the description and examples of a score of 2. Therefore, with high confidence, the udder cleanliness of this cow is assessed as 2, indicating a dirty condition that would require attention to improve hygiene and potentially overall animal welfare.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287098, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=183, prompt_tokens=3238, total_tokens=3421))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,183,3238,0.038
+0_clean_udder_IMG_0434-1024x768_seg.png,udder cleanliness,segment,0,clean,2,high,"The udder of the cow in the image shows extensive areas covered with dirt, which includes both splashing and plaques. There are three-dimensional layers of dirt that cover more than half of the udder's surface area, which is consistent with the criteria for a score of 2. The dirt is not limited to minor splashing; it forms distinct plaques, particularly around the lower parts of the udder and teats. This assessment is made with high confidence based on the clear visibility of the dirt and the substantial coverage, which aligns with the provided examples for a score of 2.","ChatCompletion(id='chatcmpl-9AUOHqQ9sni6kCInlOrX5iteFSg0k', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the cow in the image shows extensive areas covered with dirt, which includes both splashing and plaques. There are three-dimensional layers of dirt that cover more than half of the udder\'s surface area, which is consistent with the criteria for a score of 2. The dirt is not limited to minor splashing; it forms distinct plaques, particularly around the lower parts of the udder and teats. This assessment is made with high confidence based on the clear visibility of the dirt and the substantial coverage, which aligns with the provided examples for a score of 2.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287129, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=150, prompt_tokens=3238, total_tokens=3388))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,150,3238,0.037
+0_clean_udder_VS_03-1024x768_seg.png,udder cleanliness,segment,0,clean,2,high,"The cow's udder has distinct plaques of dirt that are larger than the size of a hand, particularly noticeable on the side and underneath the udder. There are also areas where more than half of the surface under consideration is covered with dirt. The presence of these plaques and the extent of the dirt coverage meet the criteria for a score of 2, indicating the udder is dirty. The assessment is made with high confidence based on the clear visibility of the dirt and the adherence to the given assessment criteria.","ChatCompletion(id='chatcmpl-9AUOt00zQPDcFWHbs6NFESWnhmhsP', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow\'s udder has distinct plaques of dirt that are larger than the size of a hand, particularly noticeable on the side and underneath the udder. There are also areas where more than half of the surface under consideration is covered with dirt. The presence of these plaques and the extent of the dirt coverage meet the criteria for a score of 2, indicating the udder is dirty. The assessment is made with high confidence based on the clear visibility of the dirt and the adherence to the given assessment criteria.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287167, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=133, prompt_tokens=3238, total_tokens=3371))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,133,3238,0.036
+2_dirty_udder_DSC_0175-1024x680_seg.png,udder cleanliness,segment,2,dirty,2,high,"The udder of the cow in the image shows clear signs of significant dirt accumulation. There are large areas covered with what appears to be a combination of mud and fecal material, which is not limited to minor splashing. The extent of the dirt covers more than half of the udder's surface area, including areas around the teats, which meets the criteria for a score of 2 according to the provided assessment guidelines. The dirt is not just superficial but forms distinct plaques, which is consistent with the examples provided for a cow assessed as 2 dirty.","ChatCompletion(id='chatcmpl-9AUPJE0y0qjGdCRKb7Z1vQFBoeWKt', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the cow in the image shows clear signs of significant dirt accumulation. There are large areas covered with what appears to be a combination of mud and fecal material, which is not limited to minor splashing. The extent of the dirt covers more than half of the udder\'s surface area, including areas around the teats, which meets the criteria for a score of 2 according to the provided assessment guidelines. The dirt is not just superficial but forms distinct plaques, which is consistent with the examples provided for a cow assessed as 2 dirty.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287193, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=142, prompt_tokens=3238, total_tokens=3380))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,142,3238,0.037
+2_dirty_udder_DSC_0203-1024x680_seg.png,udder cleanliness,segment,2,dirty,2,high,"The udder of the cow in the image shows clear plaques of dirt that are larger than the palm of a hand, especially visible on the lower parts of the udder and extending towards the teats. This amount of dirt coverage meets the criteria for a score of 2, which indicates distinct plaques of dirt on the udder or any dirt on and around the teats. The assessment is made with high confidence due to the clear visibility of the dirt and its extent, closely matching the example provided for a cow assessed as 2 dirty.","ChatCompletion(id='chatcmpl-9AUPpjNrUXAB6EgFLh1kQW16Fj3Hw', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the cow in the image shows clear plaques of dirt that are larger than the palm of a hand, especially visible on the lower parts of the udder and extending towards the teats. This amount of dirt coverage meets the criteria for a score of 2, which indicates distinct plaques of dirt on the udder or any dirt on and around the teats. The assessment is made with high confidence due to the clear visibility of the dirt and its extent, closely matching the example provided for a cow assessed as 2 dirty.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287225, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=140, prompt_tokens=3238, total_tokens=3378))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,140,3238,0.037
+2_dirty_udder_VS_02-768x1024_seg.png,udder cleanliness,segment,2,dirty,2,high,"The udder of the cow in the image shows extensive areas covered with distinct plaques of dirt, which are three-dimensional and cover more than half of the udder's surface area. This assessment is based on the criteria that a score of 2 is given to udders with distinct plaques of dirt or any dirt on and around the teats. The size and coverage of the dirt clearly meet the criteria for a score of 2, indicating a dirty udder.","ChatCompletion(id='chatcmpl-9AUQL65HgQ6YeWsgwVuSnV53xgCD3', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the cow in the image shows extensive areas covered with distinct plaques of dirt, which are three-dimensional and cover more than half of the udder\'s surface area. This assessment is based on the criteria that a score of 2 is given to udders with distinct plaques of dirt or any dirt on and around the teats. The size and coverage of the dirt clearly meet the criteria for a score of 2, indicating a dirty udder.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287257, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=125, prompt_tokens=3238, total_tokens=3363))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,125,3238,0.036
+2_dirty_udder_VS_07-1024x768_seg.png,udder cleanliness,segment,2,dirty,2,high,"The cow's udder has distinct plaques of dirt that are larger than the size of a hand, and more than half of the udder area under consideration is covered with dirt. This assessment is based on the criteria that a score of 2 is given for distinct plaques of dirt on the udder or any dirt on and around the teats. The visible plaques and the extent of the dirt coverage clearly meet this condition.","ChatCompletion(id='chatcmpl-9AUQq2RFkdS4vN75iws5vAbcnsRZn', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The cow\'s udder has distinct plaques of dirt that are larger than the size of a hand, and more than half of the udder area under consideration is covered with dirt. This assessment is based on the criteria that a score of 2 is given for distinct plaques of dirt on the udder or any dirt on and around the teats. The visible plaques and the extent of the dirt coverage clearly meet this condition.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287288, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=117, prompt_tokens=3238, total_tokens=3355))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,117,3238,0.036
+0_clean_udder_DSC_0248-1-1024x680_segBody.png,udder cleanliness,segment_bodyPart,0,clean,0,high,"The udder in the image appears to be free of any distinct plaques of dirt or significant splashing. There is no visible dirt on the teats or around them. The coloration and texture of the udder seem uniform and clean, with no signs of three-dimensional layers of dirt that could amount to the size of a palm or cover more than half of the area under consideration. Based on the provided criteria, this udder would be classified as score 0, indicating no dirt or minor splashing, other than on teats. The assessment is made with high confidence as the image provides a clear view of the udder's cleanliness, and it matches the example images provided for a cow assessed as 0 clean.","ChatCompletion(id='chatcmpl-9AURMul04iJ3pyLx2QzikQPyEg48F', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""0"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder in the image appears to be free of any distinct plaques of dirt or significant splashing. There is no visible dirt on the teats or around them. The coloration and texture of the udder seem uniform and clean, with no signs of three-dimensional layers of dirt that could amount to the size of a palm or cover more than half of the area under consideration. Based on the provided criteria, this udder would be classified as score 0, indicating no dirt or minor splashing, other than on teats. The assessment is made with high confidence as the image provides a clear view of the udder\'s cleanliness, and it matches the example images provided for a cow assessed as 0 clean.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287320, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=176, prompt_tokens=2728, total_tokens=2904))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,176,2728,0.033
+0_clean_udder_DSC_0449-1024x680_segBody.png,udder cleanliness,segment_bodyPart,0,clean,2,high,"The udder of the cow in the image has a significant amount of dirt covering the lower portion, with visible plaques of dirt that are larger than the palm of a hand. According to the criteria, if there are distinct plaques of dirt on the udder or any dirt on and around the teats, the cow should be assessed as 2. The image shows that more than half of the area under consideration is covered with dirt, which clearly meets the criteria for a score of 2. The assessment is made with high confidence based on the clear visibility of the dirt and the adherence to the provided assessment criteria.","ChatCompletion(id='chatcmpl-9AURs6V8I4OvwkNrmwqqnnMWyURU7', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder of the cow in the image has a significant amount of dirt covering the lower portion, with visible plaques of dirt that are larger than the palm of a hand. According to the criteria, if there are distinct plaques of dirt on the udder or any dirt on and around the teats, the cow should be assessed as 2. The image shows that more than half of the area under consideration is covered with dirt, which clearly meets the criteria for a score of 2. The assessment is made with high confidence based on the clear visibility of the dirt and the adherence to the provided assessment criteria.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287352, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=153, prompt_tokens=2728, total_tokens=2881))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,7,0.5,153,2728,0.032
+0_clean_udder_VS_03-1024x768_segBody.png,udder cleanliness,segment_bodyPart,0,clean,2,high,"The udder in the image shows clear signs of dirt and staining across the majority of its surface. There are distinct areas where the dirt has formed plaques, which are three-dimensional layers of dirt. These plaques cover more than half of the area under consideration, as per the guidelines provided. The dirt is not limited to minor splashing but is rather extensive, affecting both the udder and the surrounding areas, including the teats. This assessment is made with high confidence as the visible evidence of dirtiness on the udder matches the criteria for a score of 2, which is described as having distinct plaques of dirt on the udder or any dirt on and around the teats.","ChatCompletion(id='chatcmpl-9AUWfUd3qlyRVG3AbdnvNc6FWGrCl', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder in the image shows clear signs of dirt and staining across the majority of its surface. There are distinct areas where the dirt has formed plaques, which are three-dimensional layers of dirt. These plaques cover more than half of the area under consideration, as per the guidelines provided. The dirt is not limited to minor splashing but is rather extensive, affecting both the udder and the surrounding areas, including the teats. This assessment is made with high confidence as the visible evidence of dirtiness on the udder matches the criteria for a score of 2, which is described as having distinct plaques of dirt on the udder or any dirt on and around the teats.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287649, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=170, prompt_tokens=2728, total_tokens=2898))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,700,0.5,170,2728,0.032
+2_dirty_udder_DSC_0175-1024x680_segBody.png,udder cleanliness,segment_bodyPart,2,dirty,0,high,"The udder appears to be free of any distinct plaques of dirt and there is no visible dirt on or around the teats. The udder surface looks clean with only minor discolorations that do not qualify as splashing or plaques of dirt according to the provided criteria. The assessment is based on the visible parts of the udder, which do not show any signs of significant soiling that would warrant a score of 2.","ChatCompletion(id='chatcmpl-9AUWtQxJV4q3N6terwMSWFe7cdJ0p', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""0"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder appears to be free of any distinct plaques of dirt and there is no visible dirt on or around the teats. The udder surface looks clean with only minor discolorations that do not qualify as splashing or plaques of dirt according to the provided criteria. The assessment is based on the visible parts of the udder, which do not show any signs of significant soiling that would warrant a score of 2.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287663, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=118, prompt_tokens=2728, total_tokens=2846))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,700,0.5,118,2728,0.031
+2_dirty_udder_DSC_0203-1024x680_segBody.png,udder cleanliness,segment_bodyPart,2,dirty,2,high,"The image shows distinct plaques of dirt on the udder which are larger than the size of the palm of a hand. According to the criteria provided, any three-dimensional layers of dirt of this size, or if more than half of the area under consideration is covered, should be scored as 2. The dirt observed in the image is significant enough to meet this threshold, and there is visible dirt on and around the teats as well, which further supports the score of 2 for udder cleanliness.","ChatCompletion(id='chatcmpl-9AUXFcf692e71sgXBcIf4jgA1N3LI', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The image shows distinct plaques of dirt on the udder which are larger than the size of the palm of a hand. According to the criteria provided, any three-dimensional layers of dirt of this size, or if more than half of the area under consideration is covered, should be scored as 2. The dirt observed in the image is significant enough to meet this threshold, and there is visible dirt on and around the teats as well, which further supports the score of 2 for udder cleanliness.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287685, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=130, prompt_tokens=2728, total_tokens=2858))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,700,0.5,130,2728,0.031
+2_dirty_udder_VS_02-768x1024_segBody.png,udder cleanliness,segment_bodyPart,2,dirty,2,high,"The image shows a close-up of a cow's teat with visible dirt covering a significant portion of the surface area. According to the criteria, any dirt on and around the teats warrants a score of 2. The dirt observed is not minor splashing but appears to be a significant amount that covers more than half of the teat's visible area, which aligns with the description for a score of 2. The assessment is made with high confidence based on the clear visibility of the dirt and the application of the provided scoring criteria.","ChatCompletion(id='chatcmpl-9AUXlsvwtg76waumVUDTuid4j2JPl', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""2"",\n  ""confidence"": ""high"",\n  ""reason"": ""The image shows a close-up of a cow\'s teat with visible dirt covering a significant portion of the surface area. According to the criteria, any dirt on and around the teats warrants a score of 2. The dirt observed is not minor splashing but appears to be a significant amount that covers more than half of the teat\'s visible area, which aligns with the description for a score of 2. The assessment is made with high confidence based on the clear visibility of the dirt and the application of the provided scoring criteria.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287717, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=135, prompt_tokens=2728, total_tokens=2863))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,700,0.5,135,2728,0.031
+2_dirty_udder_VS_07-1024x768_segBody.png,udder cleanliness,segment_bodyPart,2,dirty,0,high,"The udder in the image appears to be free of distinct plaques of dirt and there is no visible dirt on and around the teats. The udder surface shows no signs of three-dimensional layers of dirt amounting to the size of the palm of a hand, nor is more than half of the area under consideration covered with dirt. There might be minor splashing, but it does not qualify for a score of 2 according to the provided criteria. Therefore, the udder cleanliness can be assessed as 0, indicating no significant dirtiness.","ChatCompletion(id='chatcmpl-9AUYHaPWQDpdNZJ3ee4IChxlawcVn', choices=[Choice(finish_reason='stop', index=0, message=ChatCompletionMessage(content='```json\n{\n  ""assessment_result"": ""0"",\n  ""confidence"": ""high"",\n  ""reason"": ""The udder in the image appears to be free of distinct plaques of dirt and there is no visible dirt on and around the teats. The udder surface shows no signs of three-dimensional layers of dirt amounting to the size of the palm of a hand, nor is more than half of the area under consideration covered with dirt. There might be minor splashing, but it does not qualify for a score of 2 according to the provided criteria. Therefore, the udder cleanliness can be assessed as 0, indicating no significant dirtiness.""\n}\n```', role='assistant', function_call=None, tool_calls=None), logprobs=None)], created=1712287749, model='gpt-4-1106-vision-preview', object='chat.completion', system_fingerprint=None, usage=CompletionUsage(completion_tokens=140, prompt_tokens=2728, total_tokens=2868))",gpt-4-vision-preview,2024-04-04,"You are an experienced expert in animal welfare science focusing on cattle behavior and health, with 20 years of experience in conducting farm audit for welfare assessment. 
+ ","Below are text instructions for assessing **udder cleanliness** of cattle as part of the routine welfare assessment on farm: This measure applied to lactation cows as well as to dry cows and pregnant heifers if kept with lactating animals, and groups of dry cows which are kept separately.
+Cleanliness of the applicable body parts is defined as the degree of dirt on the body parts considered:
+-	Splashing (e.g faeces, mud)
+-	Plaques: three-dimensional layers of dirt of amounting to the size of the palm of a hand or if more than half of the area under the consideration covered.
+Assess one side of the body (random side selection, especially in tie stalls) and from behind. The following areas are scored:
+-	The udder
+
+Udder: 
+0 – No dirt or minor splashing, other than on teats 
+2 – Distinct plaques of dirt on udder or any dirt on and around the teats
+
+ Below are some example images you can learn from: 
+ 
+**example images**
+
+Your task involves evaluating the **udder cleanliness** of cattle shown in the subsequent image, and record your score under ""assessment_result"", based on the previously provided criteria descriptions and examples. 
+ 
+ Give your assessment with a confidence score (low, medium or high) and briefly explain your reasoning to clarify your thought process step by step. Take a deep breath before you answer. This task is vital to my career, and I greatly value your thorough analysis. 
+
+ Answer format: ```json 
+ {
+  ""assessment_result"": ""..."",
+  ""confidence"": ""..."",
+  ""reason"": ""...""}``` 
+
+ The following image requires your assessment: 
+
+**test images**
+",1000,high,700,0.5,140,2728,0.031
