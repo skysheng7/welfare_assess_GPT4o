@@ -13,9 +13,13 @@ from datetime import datetime
 import json
 import random
 
+os.chdir('C:/Users/skysheng/OneDrive - UBC/R package project and Git/lameness_GPT4V/src')
+from utils import *
+from welfare_assess_helpers import *
+
 # define result directory
 results_folder = '../results_welfare_assess/cleanliness'
-results_file = 'welfare_assess_cleanliness_result.csv' # store the results in a csv file
+results_file = 'welfare_assess_cleanliness_result2.csv' # store the results in a csv file
 results_path = crete_result_path(results_folder, results_file)
 
 # connect to OpenAI API
@@ -23,15 +27,11 @@ load_dotenv()  # This loads the variables (API key) from .env
 openai_api_key = os.getenv('OPENAI_API_KEY')
 client = OpenAI(api_key=openai_api_key)
 
-os.chdir('C:/Users/skysheng/OneDrive - UBC/R package project and Git/lameness_GPT4V/src')
-from utils import *
-from welfare_assess_helpers import *
-
 # choose model parameters  
 seed = 7
 max_tokens=1000
 detail_level="high"
-temperature = 0.2
+temperature = 0.5
 
 ###################################################################################################
 ############################## welfare assessment: Hindleg_cleanliness ############################
