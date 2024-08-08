@@ -1,5 +1,6 @@
-setwd("/Users/skysheng/Library/CloudStorage/OneDrive-UBC/R package project and Git/lameness_GPT4V/results_welfare_assess/cleanliness")
-results <- read.csv("welfare_assess_cleanliness_result2.csv", header = TRUE)
+setwd("C:/Users/skysheng/Desktop/lameness_GPT4V/results_welfare_assess/cleanliness")
+results <- read.csv("welfare_assess_cleanliness_gpt4o.csv", header = TRUE)
+
 original <- results[which(results$treatment == "original"),]
 
 # Convert scores to binary format if they are not already (e.g., from character to numeric)
