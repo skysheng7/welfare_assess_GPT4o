@@ -1,6 +1,8 @@
-#library(dplyr)
 library(ggplot2)
 library(viridis)
+library(irr)
+
+source("cleanliness_analysis_helper.R")
 
 setwd("C:/Users/skysheng/Desktop/lameness_GPT4V/results_welfare_assess/cleanliness")
 results <- read.csv("welfare_assess_cleanliness_gpt4o.csv", header = TRUE)
@@ -15,24 +17,15 @@ results$predict_score <- as.numeric(results$predict_score)
 # we calculate the frequency of each image being predicted as score 0 and 2
 # for each image, we get an accuracy measure, that reprecent percentage of times
 # GPT-4o made the right prediction
-hindleg <- results[which(results$assess_area == "hindleg cleanliness"),]
-summary_df <- summarize_scores(results)
-summary_df$inaccurate_pct <- 1-summary_df$accurate_predict_pct
-overall_accuracy <- mean(summary_df$accurate_predict_pct)
-metrics_list <- weighted_precision_recall(summary_df)
-overall_precision <- metrics_list$precision
-overall_recall <- metrics_list$recall
-
-
-##################### accuracy, precision, recall for each group###########################
 all_metrics_df <- calculate_metrics(results)
 # Plot heatmaps for each metric
 accuracy_heatmap <- plot_heatmap(all_metrics_df, "Accuracy")
 precision_heatmap <- plot_heatmap(all_metrics_df, "Precision")
 recall_heatmap <- plot_heatmap(all_metrics_df, "Recall")
-
+kappa_heatmap <- plot_heatmap(all_metrics_df, "Kappa")
 
 # Print or save the plots
 print(accuracy_heatmap)
 print(precision_heatmap)
 print(recall_heatmap)
+print(kappa_heatmap)

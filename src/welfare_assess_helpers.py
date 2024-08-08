@@ -180,4 +180,4 @@ def test_images_in_range(full_path, start_index, end_index, client, system_promp
         cur_file_name = test_files[i]
         cur_image = test_images[i]
         result = prompt_welfare_assess_test_image(client, system_prompt, user_prompt1, user_prompt2, train_images, train_files, cur_image, detail_level, max_tokens, s, temp)
-        save_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, s, temp, body_type, treatment)
+        save_results_to_csv(full_path, cur_file_name, result, system_prompt, user_prompt, max_tokens, detail_level, seed = s, temperature = temp, body_type = body_type, treatment = treatment)

@@ -57,11 +57,11 @@ for rd in range(0, total_random_rounds):
         with open(description_path, 'r', encoding='utf-8') as file:
             description = file.read()
         
-        cur_test = os.path.join(test, treatment)
         if (treatment == 'original_boxed'):
-            #cur_test = os.path.join(test, 'original')
+            cur_test = os.path.join(test, 'original')
             description = description + "\n\n Please be aware that the body area of interest for evaluation is highlighted with red box(es)."
-        #else:
+        else:
+            cur_test = os.path.join(test, treatment)
             
         
         # Get all PNG and JPG files in the train folder and sort them
