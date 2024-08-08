@@ -19,7 +19,7 @@ from welfare_assess_helpers import *
 
 # define result directory
 results_folder = '../results_welfare_assess/cleanliness'
-results_file = 'welfare_assess_cleanliness_gpt4o.csv' # store the results in a csv file
+results_file = 'welfare_assess_cleanliness_gpt4o_boxed_test.csv' # store the results in a csv file
 results_path = crete_result_path(results_folder, results_file)
 
 # connect to OpenAI API
@@ -36,7 +36,7 @@ mother_seed = 70
 max_tokens=1000
 detail_level="high"
 temperature = 0.2
-total_random_rounds = 9 # run multiple rounds of assessments
+total_random_rounds = 1 # run multiple rounds of assessments
 
 ###################################################################################################
 ############################## welfare assessment: Hindleg_cleanliness ############################
@@ -52,16 +52,17 @@ treatment_list = [item for item in os.listdir(train) if os.path.isdir(os.path.jo
 for rd in range(0, total_random_rounds):
     seed = mother_seed + (10*rd)
 
-    for treatment in treatment_list: # specify the image processing treatment: "original", "segment", or "segment_bodyPart"
+    for treatment in treatment_list: # specify the image processing treatment: "original", "original_boxed", "segment", or "segment_bodyPart"
         description_path = os.path.join(train, 'description.txt')
         with open(description_path, 'r', encoding='utf-8') as file:
             description = file.read()
         
+        cur_test = os.path.join(test, treatment)
         if (treatment == 'original_boxed'):
-            cur_test = os.path.join(test, 'original')
+            #cur_test = os.path.join(test, 'original')
             description = description + "\n\n Please be aware that the body area of interest for evaluation is highlighted with red box(es)."
-        else:
-            cur_test = os.path.join(test, treatment)
+        #else:
+            
         
         # Get all PNG and JPG files in the train folder and sort them
         cur_train = os.path.join(train, treatment)
