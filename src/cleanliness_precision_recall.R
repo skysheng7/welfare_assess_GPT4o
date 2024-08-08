@@ -27,15 +27,10 @@ overall_recall <- metrics_list$recall
 ##################### accuracy, precision, recall for each group###########################
 all_metrics_df <- calculate_metrics(results)
 # Plot heatmaps for each metric
-<<<<<<< HEAD
 accuracy_heatmap <- plot_heatmap(all_metrics_df, "Accuracy")
 precision_heatmap <- plot_heatmap(all_metrics_df, "Precision")
 recall_heatmap <- plot_heatmap(all_metrics_df, "Recall")
-=======
-accuracy_heatmap <- plot_heatmap(all_metrics_df, "accuracy")
-precision_heatmap <- plot_heatmap(all_metrics_df, "precision")
-recall_heatmap <- plot_heatmap(all_metrics_df, "recall")
->>>>>>> 5d1fe4b29a735dc4996beee70911d3cb34178fda
+
 
 # Print or save the plots
 print(accuracy_heatmap)
