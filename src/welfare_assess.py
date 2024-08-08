@@ -36,7 +36,7 @@ mother_seed = 70
 max_tokens=1000
 detail_level="high"
 temperature = 0.2
-total_random_rounds = 8 # run multiple rounds of assessments
+total_random_rounds = 9 # run multiple rounds of assessments
 
 ###################################################################################################
 ############################## welfare assessment: Hindleg_cleanliness ############################

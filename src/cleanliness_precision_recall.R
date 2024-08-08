@@ -1,13 +1,23 @@
+library(dplyr)
+
 setwd("C:/Users/skysheng/Desktop/lameness_GPT4V/results_welfare_assess/cleanliness")
 results <- read.csv("welfare_assess_cleanliness_gpt4o.csv", header = TRUE)
 
-original <- results[which(results$treatment == "original"),]
-
 # Convert scores to binary format if they are not already (e.g., from character to numeric)
-original$true_score <- as.numeric(original$true_score)
-original$predict_score <- as.numeric(original$predict_score)
+results$true_score <- as.numeric(results$true_score)
+results$predict_score <- as.numeric(results$predict_score)
+
+############################ percentage of predicted score ############################
+# as large language models output are probability distribution, we randomly run the 
+# same test image multiple times to get GPT-4o's assessment results. 
+# we calculate the frequency of each image being predicted as score 0 and 2
+hindleg <- results[which(results$assess_area == "hindleg cleanliness"),]
+summary_df <- summarize_scores(hindleg)
+
+
 
 ############################ overall precision & recall ############################
+original <- results[which(results$treatment == "original"),]
 # Calculate True Positives (TP), False Positives (FP), and False Negatives (FN)
 TP <- sum(original$predict_score == 2 & original$true_score == 2)
 FP <- sum(original$predict_score == 2 & original$true_score == 0)
