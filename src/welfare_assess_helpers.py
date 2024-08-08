@@ -102,7 +102,7 @@ def prompt_welfare_assess_test_image(client, system_prompt, user_prompt1, user_p
 
     # Parameters for the API call
     params = {
-        "model": "gpt-4-vision-preview",
+        "model": "gpt-4o",
         "messages": prompt_messages,
         "max_tokens": max_tokens,
         "seed": s,
@@ -151,7 +151,7 @@ def save_results_to_csv(full_path, cur_file_name, result, system_prompt, user_pr
         "predict_confidence": conf,
         "predict_reason": reason,
         "predict_result": result,
-        "model": "gpt-4-vision-preview",
+        "model": "gpt-4o",
         "date": datetime.now().date(),
         "system_prompt": system_prompt,
         "user_prompt": user_prompt,
