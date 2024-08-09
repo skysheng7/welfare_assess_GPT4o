@@ -149,7 +149,6 @@ calculate_metrics <- function(data) {
 
 
 
-
 plot_heatmap <- function(metrics_df, metric) {
   # Ensure the metric column is treated as numeric
   metrics_df[[metric]] <- as.numeric(metrics_df[[metric]])
@@ -172,7 +171,8 @@ plot_heatmap <- function(metrics_df, metric) {
     labs(title = metric, x = NULL, y = NULL) +
     theme_classic(base_size = 27) +  # Apply classic theme with larger base text size
     theme(
-      axis.text.y = element_text(color = "black"),  # Ensure y-axis labels are visible
+      axis.text.x = element_text(size = 25, color = "black", face = "bold"),  # Increase and embolden x-axis labels
+      axis.text.y = element_text(size = 25, color = "black", face = "bold"),  # Increase and embolden y-axis labels
       axis.ticks = element_blank(),  # Remove axis ticks
       axis.ticks.length = unit(0, "points"),  # Ensure no tick marks
       axis.line = element_blank(),  # Remove the axis lines
