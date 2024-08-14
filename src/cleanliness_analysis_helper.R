@@ -146,9 +146,6 @@ calculate_metrics <- function(data) {
   
   return(metrics_df)
 }
-
-
-
 plot_heatmap <- function(metrics_df, metric) {
   # Ensure the metric column is treated as numeric
   metrics_df[[metric]] <- as.numeric(metrics_df[[metric]])
@@ -171,14 +168,17 @@ plot_heatmap <- function(metrics_df, metric) {
     labs(title = metric, x = NULL, y = NULL) +
     theme_classic(base_size = 27) +  # Apply classic theme with larger base text size
     theme(
-      axis.text.x = element_text(size = 25, color = "black", face = "bold"),  # Increase and embolden x-axis labels
-      axis.text.y = element_text(size = 25, color = "black", face = "bold"),  # Increase and embolden y-axis labels
+      plot.background = element_rect(fill = "#262626", color = NA), # Set plot background to #262626
+      panel.background = element_rect(fill = "#262626", color = NA), # Set panel background to #262626
+      axis.text.x = element_text(size = 25, color = "white", face = "bold"),  # White, bold x-axis labels
+      axis.text.y = element_text(size = 25, color = "white", face = "bold"),  # White, bold y-axis labels
       axis.ticks = element_blank(),  # Remove axis ticks
       axis.ticks.length = unit(0, "points"),  # Ensure no tick marks
       axis.line = element_blank(),  # Remove the axis lines
-      plot.title = element_text(size = 30, hjust = 0.5)  # Center the plot title
+      plot.title = element_text(size = 30, hjust = 0.5, color = "white")  # White centered plot title
     ) +
     scale_x_discrete(position = "top")  # Move x-axis labels to the top
   
   return(plot)
 }
+
