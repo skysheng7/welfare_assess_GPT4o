@@ -2,7 +2,7 @@
 
 This repository contains the code for our project: **Cow welfare assessment using ChatGPT Vision**.
 
-[Download/View the Poster](results_welfare_assess/poster.pdf)
+[Download/View the Poster](results_welfare_assess/cleanliness/poster.pdf)
 
 ## Getting Started
 1. Repository Structure
